@@ -1,0 +1,91 @@
+{
+  "common": {
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "readMore": "Read More",
+    "viewAll": "View All"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "industries": "Industries",
+    "caseStudies": "Case Studies",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact"
+  },
+  "services": {
+    "aiDevelopment": "AI Development",
+    "aiDescription": "Build intelligent systems with LLMs, generative AI, and machine learning.",
+    "saasEngineering": "SaaS Engineering",
+    "saasDescription": "Design cloud-native SaaS platforms that scale to millions.",
+    "cybersecurity": "Cybersecurity",
+    "cybersecurityDescription": "AI-enhanced threat detection and 24×7 monitoring.",
+    "qaTesting": "QA & Testing",
+    "qaDescription": "Intelligent test automation and quality assurance.",
+    "cloudDevOps": "Cloud & DevOps",
+    "cloudDescription": "Multi-cloud architecture and automated CI/CD.",
+    "dataAnalytics": "Data & Analytics",
+    "dataDescription": "Transform data into strategic intelligence."
+  },
+  "hero": {
+    "title": "Build Smarter. Scale Faster. Lead with AI.",
+    "subtitle": "Partner with Netsmartz — a global AI-first technology company trusted by 2,000+ SaaS businesses for over 25 years.",
+    "cta1": "Start Your Journey",
+    "cta2": "Watch Story"
+  },
+  "stats": {
+    "yearsExcellence": "Years of Excellence",
+    "globalClients": "Global Clients",
+    "aiEngineers": "AI Engineers",
+    "retentionRate": "Retention Rate"
+  },
+  "whyUs": {
+    "title": "More Than a Vendor. We're Your Strategic Partner.",
+    "subtitle": "With 25+ years of deep domain expertise and an AI-first approach, Netsmartz delivers technology solutions that drive measurable ROI.",
+    "skilled": "Top 3% AI-Skilled Engineers",
+    "skilledDesc": "Access to elite talent from our global pool of 1,500+ engineers",
+    "faster": "40% Faster Time-to-Market",
+    "fasterDesc": "AI-accelerated development processes and agile methodologies",
+    "support": "24×7 Support Across Time Zones",
+    "supportDesc": "Dedicated customer success managers and follow-the-sun support model",
+    "security": "Enterprise-Grade Security",
+    "securityDesc": "ISO 27001, SOC 2, and CMMI Level 3 certified processes"
+  },
+  "contact": {
+    "title": "Ready to Build Your AI-Powered Future?",
+    "subtitle": "Join 2,000+ enterprises. Get 40 hours of complimentary consultation.",
+    "formTitle": "Get Free Consultation",
+    "name": "Full Name",
+    "email": "Work Email",
+    "phone": "Phone Number",
+    "company": "Company Name",
+    "message": "Tell us about your project",
+    "service": "Service Interested In",
+    "submit": "Schedule Consultation",
+    "sending": "Sending...",
+    "success": "Thank you! We'll contact you shortly.",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "description": "AI-Powered Technology Company Since 1999",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "leadership": "Leadership",
+    "careersFooter": "Careers",
+    "newsEvents": "News & Events",
+    "resources": "Resources",
+    "blog": "Blog",
+    "whitepapers": "Whitepapers",
+    "caseStudiesFooter": "Case Studies",
+    "documentation": "Documentation",
+    "contactInfo": "Contact Information",
+    "phone": "+1-888-661-8967",
+    "email": "info@netsmartz.com",
+    "address": "Rochester, NY - Headquarters",
+    "allRightsReserved": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

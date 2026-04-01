@@ -24,7 +24,12 @@ const Header: React.FC = () => {
 
   const handleLanguageSwitch = () => {
     const newLocale = locale === 'en' ? 'ar' : 'en';
+    console.log('Language switch:', { from: locale, to: newLocale, pathname });
     router.push(pathname, { locale: newLocale });
+    // Force reload to ensure all content updates
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
   };
 
   const megaMenus: Record<string, any> = {
@@ -131,20 +136,22 @@ const Header: React.FC = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-6">
               {['services', 'industries', 'ai', 'products', 'partners', 'about', 'resources'].map((key) => (
-                <div
-                  key={key}
-                  className="nav-item relative"
-                  onMouseEnter={() => setActiveMenu(key)}
-                  onMouseLeave={() => setActiveMenu(null)}
-                >
-                  <button className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm flex items-center gap-1 transition-colors">
+                <div key={key} className="nav-item relative">
+                  <button 
+                    onMouseEnter={() => setActiveMenu(key)}
+                    className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm flex items-center gap-1 transition-colors"
+                  >
                     {megaMenus[key].title}
                     <FiChevronDown className="text-xs" />
                   </button>
 
                   {activeMenu === key && (
-                    <div className="fixed left-0 right-0 bg-white border-t border-gray-200 shadow-2xl"
-                         style={{ top: isScrolled ? '70px' : '104px', zIndex: 40 }}>
+                    <div 
+                      className="fixed left-0 right-0 bg-white border-t border-gray-200 shadow-2xl"
+                      style={{ top: isScrolled ? '70px' : '104px', zIndex: 60 }}
+                      onMouseEnter={() => setActiveMenu(key)}
+                      onMouseLeave={() => setActiveMenu(null)}
+                    >
                       <div className="container mx-auto px-6 max-w-7xl py-8">
                         <div className="flex gap-8">
                           <div className="w-[35%] pr-8 border-r border-gray-200">

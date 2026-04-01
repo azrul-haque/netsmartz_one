@@ -5,14 +5,14 @@ import { Section } from '../ui/Section';
 
 const AIStorySection: React.FC = () => {
   return (
-    <section className="relative py-32 bg-gradient-to-br from-black via-purple-900/20 to-black overflow-hidden">
+    <section className="relative py-32 bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] overflow-hidden">
       {/* Animated Background Pattern */}
-      <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
+      <div className="absolute inset-0 bg-hero-pattern opacity-20"></div>
       
       {/* Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-pulse-glow"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse-glow" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#fe7725] rounded-full mix-blend-screen filter blur-3xl opacity-40 animate-pulse-glow"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-40 animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-pulse-glow" style={{ animationDelay: '2s' }}></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -21,24 +21,24 @@ const AIStorySection: React.FC = () => {
             {/* Central AI Logo with Neon Effect */}
             <div className="relative w-full aspect-square flex items-center justify-center">
               {/* Outer Rings */}
-              <div className="absolute inset-0 rounded-full border-4 border-primary opacity-30 animate-pulse-glow"></div>
-              <div className="absolute inset-4 rounded-full border-4 border-purple-500 opacity-30 animate-pulse-glow" style={{ animationDelay: '0.5s' }}></div>
-              <div className="absolute inset-8 rounded-full border-4 border-blue-500 opacity-30 animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute inset-0 rounded-full border-4 border-[#fe7725] opacity-50 animate-pulse-glow"></div>
+              <div className="absolute inset-4 rounded-full border-4 border-purple-500 opacity-50 animate-pulse-glow" style={{ animationDelay: '0.5s' }}></div>
+              <div className="absolute inset-8 rounded-full border-4 border-blue-500 opacity-50 animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
               
               {/* Swirling Lines - Using CSS */}
               <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
                 <defs>
                   <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#fe7725" stopOpacity="0.8"/>
-                    <stop offset="100%" stopColor="#ff4500" stopOpacity="0.4"/>
+                    <stop offset="0%" stopColor="#fe7725" stopOpacity="1"/>
+                    <stop offset="100%" stopColor="#ff4500" stopOpacity="0.6"/>
                   </linearGradient>
                   <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#a855f7" stopOpacity="0.8"/>
-                    <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.4"/>
+                    <stop offset="0%" stopColor="#a855f7" stopOpacity="1"/>
+                    <stop offset="100%" stopColor="#7c3aed" stopOpacity="0.6"/>
                   </linearGradient>
                   <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8"/>
-                    <stop offset="100%" stopColor="#2563eb" stopOpacity="0.4"/>
+                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="1"/>
+                    <stop offset="100%" stopColor="#2563eb" stopOpacity="0.6"/>
                   </linearGradient>
                   <filter id="glow">
                     <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
@@ -80,8 +80,8 @@ const AIStorySection: React.FC = () => {
 
               {/* Center AI Text */}
               <div className="relative z-10">
-                <div className="text-8xl font-bold">
-                  <span className="bg-gradient-to-r from-primary via-purple-500 to-blue-500 bg-clip-text text-transparent animate-pulse-glow">
+                <div className="text-9xl font-bold">
+                  <span className="bg-gradient-to-r from-[#fe7725] via-purple-500 to-blue-500 bg-clip-text text-transparent">
                     AI
                   </span>
                 </div>
@@ -109,22 +109,22 @@ const AIStorySection: React.FC = () => {
             </p>
             
             {/* CTA Button */}
-            <button className="px-8 py-4 bg-white text-black rounded-lg font-semibold text-lg hover:bg-primary hover:text-white transition-all duration-300 shadow-large hover:scale-105">
+            <button className="px-8 py-4 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-lg hover:shadow-glow-lg transition-all duration-300 shadow-large hover:scale-105">
               Learn More
             </button>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-700">
               <div>
-                <div className="text-3xl font-bold text-primary">1500+</div>
+                <div className="text-3xl font-bold text-[#fe7725]">1500+</div>
                 <div className="text-sm text-gray-400">AI Engineers</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-purple-500">500+</div>
+                <div className="text-3xl font-bold text-[#fe7725]">500+</div>
                 <div className="text-sm text-gray-400">AI Projects</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-blue-500">98%</div>
+                <div className="text-3xl font-bold text-[#fe7725]">98%</div>
                 <div className="text-sm text-gray-400">Success Rate</div>
               </div>
             </div>

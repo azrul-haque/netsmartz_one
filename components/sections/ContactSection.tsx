@@ -6,8 +6,7 @@ import { Section } from '../ui/Section';
 import { Input } from '../ui/Input';
 import { Textarea } from '../ui/Textarea';
 import { Select } from '../ui/Select';
-import { Button } from '../ui/Button';
-import { FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
+import { FiCheckCircle, FiAlertCircle, FiSend } from 'react-icons/fi';
 
 const ContactSection: React.FC = () => {
   const t = useTranslations('contact');
@@ -62,7 +61,6 @@ const ContactSection: React.FC = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error for this field
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
@@ -109,22 +107,28 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <Section id="contact" background="gray">
-      <div className="max-w-4xl mx-auto">
+    <Section id="contact" className="bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-hero-pattern opacity-5"></div>
+      
+      {/* Gradient Orbs */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-semibold mb-4 border border-white/20">
+            Get in Touch
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {t('title')}
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-xl text-gray-300">
             {t('subtitle')}
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">
-            {t('formTitle')}
-          </h3>
-
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input
@@ -187,37 +191,49 @@ const ContactSection: React.FC = () => {
               data-testid="contact-form-message"
             />
 
-            <Button
+            <button
               type="submit"
-              variant="primary"
-              size="lg"
               disabled={isSubmitting}
-              className="w-full"
+              className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold text-lg shadow-large hover:shadow-glow transition-all duration-300 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               data-testid="contact-form-submit"
             >
-              {isSubmitting ? t('sending') : t('submit')}
-            </Button>
+              {isSubmitting ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                  {t('sending')}
+                </>
+              ) : (
+                <>
+                  <FiSend />
+                  {t('submit')}
+                </>
+              )}
+            </button>
           </form>
 
           {/* Success Message */}
           {submitStatus === 'success' && (
             <div
-              className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3 rtl:space-x-reverse animate-fade-in"
+              className="mt-6 p-4 bg-green-50 border-2 border-green-200 rounded-xl flex items-center gap-3 animate-fade-in"
               data-testid="contact-form-success"
             >
-              <FiCheckCircle className="text-green-600 text-2xl flex-shrink-0" />
-              <p className="text-green-800">{t('success')}</p>
+              <div className="flex-shrink-0 w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                <FiCheckCircle className="text-white text-xl" />
+              </div>
+              <p className="text-green-800 font-medium">{t('success')}</p>
             </div>
           )}
 
           {/* Error Message */}
           {submitStatus === 'error' && (
             <div
-              className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center space-x-3 rtl:space-x-reverse animate-fade-in"
+              className="mt-6 p-4 bg-red-50 border-2 border-red-200 rounded-xl flex items-center gap-3 animate-fade-in"
               data-testid="contact-form-error"
             >
-              <FiAlertCircle className="text-red-600 text-2xl flex-shrink-0" />
-              <p className="text-red-800">{t('error')}</p>
+              <div className="flex-shrink-0 w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
+                <FiAlertCircle className="text-white text-xl" />
+              </div>
+              <p className="text-red-800 font-medium">{t('error')}</p>
             </div>
           )}
         </div>

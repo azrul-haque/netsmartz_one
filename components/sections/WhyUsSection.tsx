@@ -3,7 +3,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Section } from '../ui/Section';
-import { Card } from '../ui/Card';
 import { FiUsers, FiZap, FiHeadphones, FiAward } from 'react-icons/fi';
 
 const WhyUsSection: React.FC = () => {
@@ -14,70 +13,106 @@ const WhyUsSection: React.FC = () => {
       icon: <FiUsers className="text-4xl" />,
       title: t('skilled'),
       description: t('skilledDesc'),
+      gradient: 'from-blue-500 to-cyan-500',
     },
     {
       icon: <FiZap className="text-4xl" />,
       title: t('faster'),
       description: t('fasterDesc'),
+      gradient: 'from-purple-500 to-pink-500',
     },
     {
       icon: <FiHeadphones className="text-4xl" />,
       title: t('support'),
       description: t('supportDesc'),
+      gradient: 'from-orange-500 to-red-500',
     },
     {
       icon: <FiAward className="text-4xl" />,
       title: t('security'),
       description: t('securityDesc'),
+      gradient: 'from-green-500 to-emerald-500',
     },
   ];
 
   return (
-    <Section background="gray" id="why-us">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          {t('title')}
-        </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          {t('subtitle')}
-        </p>
-      </div>
+    <Section id="why-us" className="bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {benefits.map((benefit, index) => (
-          <Card
-            key={index}
-            className="flex items-start space-x-4 rtl:space-x-reverse"
-            data-testid={`benefit-card-${index}`}
-          >
-            <div className="text-primary-600 flex-shrink-0">{benefit.icon}</div>
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {benefit.title}
-              </h3>
-              <p className="text-gray-600">{benefit.description}</p>
+      <div className="relative z-10">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-4">
+            Why Choose Us
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            More Than a Vendor.
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              We're Your Strategic Partner.
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            {t('subtitle')}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {benefits.map((benefit, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border border-gray-100 hover:border-transparent hover:-translate-y-1"
+              data-testid={`benefit-card-${index}`}
+            >
+              <div className="flex items-start gap-6">
+                {/* Icon */}
+                <div className={`flex-shrink-0 p-4 rounded-xl bg-gradient-to-br ${benefit.gradient} text-white shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                  {benefit.icon}
+                </div>
+
+                {/* Content */}
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
             </div>
-          </Card>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Additional Stats Row */}
-      <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div className="text-center">
-          <div className="text-3xl font-bold text-primary-600 mb-2">25+</div>
-          <div className="text-sm text-gray-600">Years Excellence</div>
-        </div>
-        <div className="text-center">
-          <div className="text-3xl font-bold text-primary-600 mb-2">2000+</div>
-          <div className="text-sm text-gray-600">Happy Clients</div>
-        </div>
-        <div className="text-center">
-          <div className="text-3xl font-bold text-primary-600 mb-2">10+</div>
-          <div className="text-sm text-gray-600">Global Locations</div>
-        </div>
-        <div className="text-center">
-          <div className="text-3xl font-bold text-primary-600 mb-2">4.8★</div>
-          <div className="text-sm text-gray-600">Client Rating</div>
+        {/* Stats Grid */}
+        <div className="bg-white rounded-3xl shadow-large p-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-2">
+                25+
+              </div>
+              <div className="text-sm text-gray-600 font-medium">Years Excellence</div>
+            </div>
+            <div className="text-center border-l border-gray-200">
+              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+                2000+
+              </div>
+              <div className="text-sm text-gray-600 font-medium">Happy Clients</div>
+            </div>
+            <div className="text-center border-l border-gray-200">
+              <div className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">
+                10+
+              </div>
+              <div className="text-sm text-gray-600 font-medium">Global Locations</div>
+            </div>
+            <div className="text-center border-l border-gray-200">
+              <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">
+                4.8★
+              </div>
+              <div className="text-sm text-gray-600 font-medium">Client Rating</div>
+            </div>
+          </div>
         </div>
       </div>
     </Section>

@@ -42,36 +42,41 @@ const Header: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white shadow-md py-3'
-            : 'bg-white/95 backdrop-blur-sm py-4'
+            ? 'bg-white/95 backdrop-blur-lg shadow-medium py-4'
+            : 'bg-white/80 backdrop-blur-sm py-6'
         }`}
         dir={locale === 'ar' ? 'rtl' : 'ltr'}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <div className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                Netsmartz
+            <Link href="/" className="flex items-center group">
+              <div className="flex items-center">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl mr-3 group-hover:scale-110 transition-transform">
+                  N
+                </div>
+                <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  Netsmartz
+                </div>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+            <nav className="hidden lg:flex items-center space-x-1 rtl:space-x-reverse">
               {navItems.map((item) => (
                 <div key={item.label} className="relative group">
                   {item.hasMenu ? (
                     <button
-                      className="flex items-center text-gray-700 hover:text-primary-600 transition-colors font-medium"
+                      className="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium rounded-lg hover:bg-blue-50"
                       onMouseEnter={() => setIsServicesOpen(true)}
                     >
                       {item.label}
-                      <FiChevronDown className="ml-1 rtl:mr-1 rtl:ml-0" />
+                      <FiChevronDown className="ml-1 rtl:mr-1 rtl:ml-0 text-sm" />
                     </button>
                   ) : (
                     <a
                       href={item.href}
-                      className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+                      className="px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium rounded-lg hover:bg-blue-50 block"
                     >
                       {item.label}
                     </a>
@@ -85,28 +90,31 @@ const Header: React.FC = () => {
               {/* Language Switcher */}
               <button
                 onClick={toggleLanguage}
-                className="flex items-center text-gray-700 hover:text-primary-600 transition-colors"
+                className="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50"
                 aria-label="Toggle language"
               >
                 <FiGlobe className="text-xl mr-2 rtl:mr-0 rtl:ml-2" />
-                <span className="font-medium">{locale === 'en' ? 'العربية' : 'English'}</span>
+                <span className="font-medium text-sm">{locale === 'en' ? 'AR' : 'EN'}</span>
               </button>
 
-              <Button variant="primary" size="md">
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold shadow-md hover:shadow-large transition-all duration-300 hover:scale-105"
+              >
                 {t('common.contactUs')}
-              </Button>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden text-gray-700 hover:text-primary-600 transition-colors"
+              className="lg:hidden p-2 text-gray-700 hover:text-blue-600 transition-colors"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
-                <FiX className="text-2xl" />
+                <FiX className="text-3xl" />
               ) : (
-                <FiMenu className="text-2xl" />
+                <FiMenu className="text-3xl" />
               )}
             </button>
           </div>
@@ -124,33 +132,44 @@ const Header: React.FC = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 lg:hidden bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-40 lg:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         >
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-gray-900/50 backdrop-blur-sm"></div>
+          
+          {/* Menu Panel */}
           <div
-            className="fixed right-0 rtl:right-auto rtl:left-0 top-0 bottom-0 w-80 bg-white shadow-xl overflow-y-auto"
+            className="absolute right-0 rtl:right-auto rtl:left-0 top-0 bottom-0 w-80 bg-white shadow-2xl overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
             dir={locale === 'ar' ? 'rtl' : 'ltr'}
           >
             <div className="p-6">
+              {/* Header */}
               <div className="flex items-center justify-between mb-8">
-                <div className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
-                  Netsmartz
+                <div className="flex items-center">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl mr-3">
+                    N
+                  </div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                    Netsmartz
+                  </div>
                 </div>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-gray-700"
+                  className="p-2 text-gray-700 hover:text-blue-600"
                 >
                   <FiX className="text-2xl" />
                 </button>
               </div>
 
-              <nav className="space-y-4">
+              {/* Navigation */}
+              <nav className="space-y-2 mb-8">
                 {navItems.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
-                    className="block py-2 text-gray-700 hover:text-primary-600 transition-colors font-medium"
+                    className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -158,18 +177,25 @@ const Header: React.FC = () => {
                 ))}
               </nav>
 
-              <div className="mt-8 space-y-4">
+              {/* Actions */}
+              <div className="space-y-4 pt-6 border-t border-gray-200">
                 <button
                   onClick={toggleLanguage}
-                  className="flex items-center w-full py-2 text-gray-700 hover:text-primary-600 transition-colors"
+                  className="flex items-center w-full py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                 >
                   <FiGlobe className="text-xl mr-3 rtl:mr-0 rtl:ml-3" />
                   <span className="font-medium">{locale === 'en' ? 'العربية' : 'English'}</span>
                 </button>
 
-                <Button variant="primary" className="w-full">
+                <button 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold shadow-md"
+                >
                   {t('common.contactUs')}
-                </Button>
+                </button>
               </div>
             </div>
           </div>

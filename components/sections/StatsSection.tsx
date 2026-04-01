@@ -10,37 +10,37 @@ const StatsSection: React.FC = () => {
     { 
       number: '25+', 
       label: t('yearsExcellence'),
-      gradient: 'from-blue-600 to-cyan-600',
+      gradient: 'from-primary to-orange-600',
       icon: '🏆'
     },
     { 
       number: '2000+', 
       label: t('globalClients'),
-      gradient: 'from-purple-600 to-pink-600',
+      gradient: 'from-gray-800 to-black',
       icon: '🌍'
     },
     { 
       number: '1500+', 
       label: t('aiEngineers'),
-      gradient: 'from-orange-600 to-red-600',
+      gradient: 'from-primary-600 to-red-600',
       icon: '👥'
     },
     { 
       number: '98%', 
       label: t('retentionRate'),
-      gradient: 'from-green-600 to-emerald-600',
+      gradient: 'from-yellow-600 to-primary',
       icon: '⭐'
     },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
       
       {/* Gradient Orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600 rounded-full mix-blend-screen filter blur-3xl opacity-20"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">

@@ -3,9 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, useRouter } from '@/i18n/routing';
-import { FiMenu, FiX, FiChevronDown, FiGlobe } from 'react-icons/fi';
-import { Button } from '../ui/Button';
-import MegaMenu from './MegaMenu';
+import { FiMenu, FiX, FiChevronDown, FiGlobe, FiPhone, FiMail } from 'react-icons/fi';
 
 const Header: React.FC = () => {
   const t = useTranslations();
@@ -29,55 +27,95 @@ const Header: React.FC = () => {
   };
 
   const navItems = [
-    { label: t('nav.home'), href: '/' },
-    { label: t('nav.services'), href: '#services', hasMenu: true },
-    { label: t('nav.industries'), href: '#industries' },
-    { label: t('nav.caseStudies'), href: '#case-studies' },
-    { label: t('nav.about'), href: '#about' },
-    { label: t('nav.careers'), href: '#careers' },
+    { label: 'Services', href: '#services', hasDropdown: true },
+    { label: 'Industries', href: '#industries' },
+    { label: 'Case Studies', href: '#case-studies' },
+    { label: 'About Us', href: '#about' },
+    { label: 'Careers', href: '#careers' },
+  ];
+
+  const services = [
+    { label: 'AI Development', href: '#ai-development' },
+    { label: 'SaaS Engineering', href: '#saas-engineering' },
+    { label: 'Cybersecurity', href: '#cybersecurity' },
+    { label: 'QA & Testing', href: '#qa-testing' },
+    { label: 'Cloud & DevOps', href: '#cloud-devops' },
+    { label: 'Data & Analytics', href: '#data-analytics' },
   ];
 
   return (
     <>
+      {/* Top Bar */}
+      <div className="bg-black text-white py-2">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="flex justify-between items-center text-sm">
+            <div className="flex items-center gap-6">
+              <a href="tel:+18886618967" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <FiPhone className="text-primary" />
+                +1-888-661-8967
+              </a>
+              <a href="mailto:info@netsmartz.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <FiMail className="text-primary" />
+                info@netsmartz.com
+              </a>
+            </div>
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 hover:text-primary transition-colors"
+            >
+              <FiGlobe />
+              {locale === 'en' ? 'العربية' : 'English'}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/95 backdrop-blur-lg shadow-medium py-4'
-            : 'bg-white/80 backdrop-blur-sm py-6'
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white shadow-medium' : 'bg-white'
         }`}
         dir={locale === 'ar' ? 'rtl' : 'ltr'}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <div className="flex items-center">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl mr-3 group-hover:scale-110 transition-transform">
-                  N
-                </div>
-                <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  Netsmartz
-                </div>
+              <div className="text-3xl font-bold">
+                <span className="text-black">Nets</span>
+                <span className="text-primary">martz</span>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1 rtl:space-x-reverse">
+            <nav className="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
               {navItems.map((item) => (
                 <div key={item.label} className="relative group">
-                  {item.hasMenu ? (
-                    <button
-                      className="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium rounded-lg hover:bg-blue-50"
+                  {item.hasDropdown ? (
+                    <div
                       onMouseEnter={() => setIsServicesOpen(true)}
+                      onMouseLeave={() => setIsServicesOpen(false)}
                     >
-                      {item.label}
-                      <FiChevronDown className="ml-1 rtl:mr-1 rtl:ml-0 text-sm" />
-                    </button>
+                      <button className="flex items-center text-gray-800 hover:text-primary transition-colors font-medium py-2">
+                        {item.label}
+                        <FiChevronDown className="ml-1 rtl:mr-1 rtl:ml-0" />
+                      </button>
+                      {isServicesOpen && (
+                        <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-large rounded-lg overflow-hidden border border-gray-100">
+                          {services.map((service) => (
+                            <a
+                              key={service.label}
+                              href={service.href}
+                              className="block px-6 py-3 text-gray-800 hover:bg-primary hover:text-white transition-colors"
+                            >
+                              {service.label}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ) : (
-                    <a
-                      href={item.href}
-                      className="px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors font-medium rounded-lg hover:bg-blue-50 block"
-                    >
+                    <a href={item.href} className="text-gray-800 hover:text-primary transition-colors font-medium">
                       {item.label}
                     </a>
                   )}
@@ -85,118 +123,96 @@ const Header: React.FC = () => {
               ))}
             </nav>
 
-            {/* Right Side Actions */}
-            <div className="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
-              {/* Language Switcher */}
-              <button
-                onClick={toggleLanguage}
-                className="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 transition-colors rounded-lg hover:bg-blue-50"
-                aria-label="Toggle language"
-              >
-                <FiGlobe className="text-xl mr-2 rtl:mr-0 rtl:ml-2" />
-                <span className="font-medium text-sm">{locale === 'en' ? 'AR' : 'EN'}</span>
-              </button>
-
+            {/* CTA Button */}
+            <div className="hidden lg:block">
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold shadow-md hover:shadow-large transition-all duration-300 hover:scale-105"
+                className="px-6 py-3 bg-primary hover:bg-primary-600 text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-md"
               >
-                {t('common.contactUs')}
+                Contact Us
               </button>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-gray-700 hover:text-blue-600 transition-colors"
-              aria-label="Toggle mobile menu"
+              className="lg:hidden text-gray-800 hover:text-primary transition-colors"
             >
-              {isMobileMenuOpen ? (
-                <FiX className="text-3xl" />
-              ) : (
-                <FiMenu className="text-3xl" />
-              )}
+              {isMobileMenuOpen ? <FiX className="text-3xl" /> : <FiMenu className="text-3xl" />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mega Menu */}
-      {isServicesOpen && (
-        <MegaMenu
-          isOpen={isServicesOpen}
-          onClose={() => setIsServicesOpen(false)}
-        />
-      )}
-
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-40 lg:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          {/* Backdrop */}
-          <div className="absolute inset-0 bg-gray-900/50 backdrop-blur-sm"></div>
-          
-          {/* Menu Panel */}
+        <div className="fixed inset-0 z-40 lg:hidden" onClick={() => setIsMobileMenuOpen(false)}>
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
           <div
             className="absolute right-0 rtl:right-auto rtl:left-0 top-0 bottom-0 w-80 bg-white shadow-2xl overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
             dir={locale === 'ar' ? 'rtl' : 'ltr'}
           >
             <div className="p-6">
-              {/* Header */}
               <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl mr-3">
-                    N
-                  </div>
-                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                    Netsmartz
-                  </div>
+                <div className="text-2xl font-bold">
+                  <span className="text-black">Nets</span>
+                  <span className="text-primary">martz</span>
                 </div>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 text-gray-700 hover:text-blue-600"
-                >
+                <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-800">
                   <FiX className="text-2xl" />
                 </button>
               </div>
 
-              {/* Navigation */}
-              <nav className="space-y-2 mb-8">
+              <nav className="space-y-2">
                 {navItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="block py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors font-medium"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
+                  <div key={item.label}>
+                    {item.hasDropdown ? (
+                      <div>
+                        <button 
+                          onClick={() => setIsServicesOpen(!isServicesOpen)}
+                          className="w-full flex items-center justify-between py-3 px-4 text-gray-800 hover:bg-primary hover:text-white rounded-lg transition-colors font-medium"
+                        >
+                          {item.label}
+                          <FiChevronDown className={`transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                        </button>
+                        {isServicesOpen && (
+                          <div className="ml-4 mt-2 space-y-2">
+                            {services.map((service) => (
+                              <a
+                                key={service.label}
+                                href={service.href}
+                                className="block py-2 px-4 text-gray-600 hover:text-primary rounded-lg"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {service.label}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <a
+                        href={item.href}
+                        className="block py-3 px-4 text-gray-800 hover:bg-primary hover:text-white rounded-lg transition-colors font-medium"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </a>
+                    )}
+                  </div>
                 ))}
               </nav>
 
-              {/* Actions */}
-              <div className="space-y-4 pt-6 border-t border-gray-200">
-                <button
-                  onClick={toggleLanguage}
-                  className="flex items-center w-full py-3 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                >
-                  <FiGlobe className="text-xl mr-3 rtl:mr-0 rtl:ml-3" />
-                  <span className="font-medium">{locale === 'en' ? 'العربية' : 'English'}</span>
-                </button>
-
-                <button 
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-semibold shadow-md"
-                >
-                  {t('common.contactUs')}
-                </button>
-              </div>
+              <button 
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="w-full mt-6 px-6 py-3 bg-primary hover:bg-primary-600 text-white rounded-lg font-semibold transition-all duration-300"
+              >
+                Contact Us
+              </button>
             </div>
           </div>
         </div>

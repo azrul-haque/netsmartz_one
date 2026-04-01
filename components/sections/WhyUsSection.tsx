@@ -13,33 +13,33 @@ const WhyUsSection: React.FC = () => {
       icon: <FiUsers className="text-4xl" />,
       title: t('skilled'),
       description: t('skilledDesc'),
-      gradient: 'from-blue-500 to-cyan-500',
+      gradient: 'from-primary to-orange-600',
     },
     {
       icon: <FiZap className="text-4xl" />,
       title: t('faster'),
       description: t('fasterDesc'),
-      gradient: 'from-purple-500 to-pink-500',
+      gradient: 'from-gray-800 to-black',
     },
     {
       icon: <FiHeadphones className="text-4xl" />,
       title: t('support'),
       description: t('supportDesc'),
-      gradient: 'from-orange-500 to-red-500',
+      gradient: 'from-primary-600 to-red-600',
     },
     {
       icon: <FiAward className="text-4xl" />,
       title: t('security'),
       description: t('securityDesc'),
-      gradient: 'from-green-500 to-emerald-500',
+      gradient: 'from-yellow-600 to-primary',
     },
   ];
 
   return (
     <Section id="why-us" className="bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-300/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
 
       <div className="relative z-10">
         <div className="text-center mb-16">
@@ -49,7 +49,7 @@ const WhyUsSection: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             More Than a Vendor.
             <br />
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="text-primary">
               We're Your Strategic Partner.
             </span>
           </h2>
@@ -89,25 +89,25 @@ const WhyUsSection: React.FC = () => {
         <div className="bg-white rounded-3xl shadow-large p-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-gradient-to-r from-primary to-orange-600 bg-clip-text text-transparent mb-2">
                 25+
               </div>
               <div className="text-sm text-gray-600 font-medium">Years Excellence</div>
             </div>
             <div className="text-center border-l border-gray-200">
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-black bg-clip-text text-transparent mb-2">
                 2000+
               </div>
               <div className="text-sm text-gray-600 font-medium">Happy Clients</div>
             </div>
             <div className="text-center border-l border-gray-200">
-              <div className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-red-600 bg-clip-text text-transparent mb-2">
                 10+
               </div>
               <div className="text-sm text-gray-600 font-medium">Global Locations</div>
             </div>
             <div className="text-center border-l border-gray-200">
-              <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-gradient-to-r from-yellow-600 to-primary bg-clip-text text-transparent mb-2">
                 4.8★
               </div>
               <div className="text-sm text-gray-600 font-medium">Client Rating</div>

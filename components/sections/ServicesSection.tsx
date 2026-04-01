@@ -13,43 +13,43 @@ const ServicesSection: React.FC = () => {
       icon: <FiCpu className="text-4xl" />,
       title: t('aiDevelopment'),
       description: t('aiDescription'),
-      gradient: 'from-blue-500 to-cyan-500',
-      bgGradient: 'from-blue-50 to-cyan-50',
+      gradient: 'from-primary to-orange-600',
+      bgGradient: 'from-orange-50 to-orange-100',
     },
     {
       icon: <FiCloud className="text-4xl" />,
       title: t('saasEngineering'),
       description: t('saasDescription'),
-      gradient: 'from-purple-500 to-pink-500',
-      bgGradient: 'from-purple-50 to-pink-50',
+      gradient: 'from-gray-800 to-black',
+      bgGradient: 'from-gray-50 to-gray-100',
     },
     {
       icon: <FiShield className="text-4xl" />,
       title: t('cybersecurity'),
       description: t('cybersecurityDescription'),
-      gradient: 'from-red-500 to-orange-500',
+      gradient: 'from-primary to-red-600',
       bgGradient: 'from-red-50 to-orange-50',
     },
     {
       icon: <FiCheckCircle className="text-4xl" />,
       title: t('qaTesting'),
       description: t('qaDescription'),
-      gradient: 'from-green-500 to-emerald-500',
-      bgGradient: 'from-green-50 to-emerald-50',
+      gradient: 'from-gray-700 to-gray-900',
+      bgGradient: 'from-gray-50 to-gray-100',
     },
     {
       icon: <FiServer className="text-4xl" />,
       title: t('cloudDevOps'),
       description: t('cloudDescription'),
-      gradient: 'from-indigo-500 to-blue-500',
-      bgGradient: 'from-indigo-50 to-blue-50',
+      gradient: 'from-primary-600 to-yellow-600',
+      bgGradient: 'from-yellow-50 to-orange-50',
     },
     {
       icon: <FiBarChart2 className="text-4xl" />,
       title: t('dataAnalytics'),
       description: t('dataDescription'),
-      gradient: 'from-yellow-500 to-amber-500',
-      bgGradient: 'from-yellow-50 to-amber-50',
+      gradient: 'from-black to-gray-800',
+      bgGradient: 'from-gray-50 to-slate-100',
     },
   ];
 
@@ -62,7 +62,7 @@ const ServicesSection: React.FC = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Comprehensive Technology Services
           <br />
-          <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <span className="text-primary">
             Built for Scale
           </span>
         </h2>
@@ -116,7 +116,7 @@ const ServicesSection: React.FC = () => {
         <p className="text-gray-600 mb-6">
           Need a custom solution for your business?
         </p>
-        <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold shadow-large hover:shadow-glow transition-all duration-300 hover:scale-105">
+        <button className="px-8 py-4 bg-primary hover:bg-primary-600 text-white rounded-xl font-semibold shadow-large hover:shadow-glow transition-all duration-300 hover:scale-105">
           Schedule a Consultation
           <FiArrowRight className="inline-block ml-2" />
         </button>

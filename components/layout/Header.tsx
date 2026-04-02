@@ -33,6 +33,7 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -428,9 +429,57 @@ const Header: React.FC = () => {
                   )}
                 </div>
               ))}
-              <Link href="/contact" className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">
-                Contact
-              </Link>
+              
+              {/* Contact Dropdown */}
+              <div className="relative">
+                <button 
+                  onClick={() => setIsContactDropdownOpen(!isContactDropdownOpen)}
+                  onMouseEnter={() => setIsContactDropdownOpen(true)}
+                  className="flex items-center gap-1 text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors"
+                >
+                  Contact
+                  <FiChevronDown className={`text-xs transition-transform ${isContactDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isContactDropdownOpen && (
+                  <>
+                    <div 
+                      className="fixed inset-0 z-30" 
+                      onClick={() => setIsContactDropdownOpen(false)}
+                    />
+                    <div 
+                      className="absolute right-0 mt-2 w-56 bg-[#2d3540] rounded-lg shadow-xl py-3 z-40"
+                      onMouseLeave={() => setIsContactDropdownOpen(false)}
+                    >
+                      <div className="px-4 py-2 text-white font-semibold text-sm border-b border-gray-600">
+                        Contact
+                      </div>
+                      <Link
+                        href="/contact"
+                        onClick={() => setIsContactDropdownOpen(false)}
+                        className="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-[#3a4550] transition-colors text-sm"
+                      >
+                        Request Proposal
+                      </Link>
+                      <Link
+                        href="/gcc-campus-visit"
+                        onClick={() => setIsContactDropdownOpen(false)}
+                        className="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-[#3a4550] transition-colors text-sm"
+                      >
+                        GCC Campus Visit
+                      </Link>
+                      <Link
+                        href="/become-partner"
+                        onClick={() => setIsContactDropdownOpen(false)}
+                        className="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-[#3a4550] transition-colors text-sm"
+                      >
+                        Become a Partner
+                      </Link>
+                    </div>
+                  </>
+                )}
+              </div>
+              
               <Link href="/careers" className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">
                 Career
               </Link>
@@ -535,13 +584,52 @@ const Header: React.FC = () => {
                     )}
                   </div>
                 ))}
-                <Link 
-                  href="/contact" 
-                  className="block py-2 text-[#1a1a1a] hover:text-[#fe7725] font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact
-                </Link>
+                
+                {/* Contact Dropdown - Mobile */}
+                <div>
+                  <button 
+                    onClick={() => setIsContactDropdownOpen(!isContactDropdownOpen)} 
+                    className="w-full flex justify-between py-2 text-[#1a1a1a] hover:text-[#fe7725] font-medium"
+                  >
+                    Contact
+                    <FiChevronDown className={`transition-transform ${isContactDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  {isContactDropdownOpen && (
+                    <div className="ml-4 mt-2 space-y-2">
+                      <Link 
+                        href="/contact"
+                        className="block py-1 text-sm text-gray-700 hover:text-[#fe7725]"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsContactDropdownOpen(false);
+                        }}
+                      >
+                        Request Proposal
+                      </Link>
+                      <Link 
+                        href="/gcc-campus-visit"
+                        className="block py-1 text-sm text-gray-700 hover:text-[#fe7725]"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsContactDropdownOpen(false);
+                        }}
+                      >
+                        GCC Campus Visit
+                      </Link>
+                      <Link 
+                        href="/become-partner"
+                        className="block py-1 text-sm text-gray-700 hover:text-[#fe7725]"
+                        onClick={() => {
+                          setIsMobileMenuOpen(false);
+                          setIsContactDropdownOpen(false);
+                        }}
+                      >
+                        Become a Partner
+                      </Link>
+                    </div>
+                  )}
+                </div>
+                
                 <Link 
                   href="/careers" 
                   className="block py-2 text-[#1a1a1a] hover:text-[#fe7725] font-medium"

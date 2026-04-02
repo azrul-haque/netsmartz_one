@@ -26,9 +26,10 @@ const AIStorySection: React.FC = () => {
               <div className="absolute inset-8 rounded-full border-4 border-blue-500 opacity-50 animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
               
               {/* Swirling Lines - Using CSS */}
-              <svg className="absolute inset-0 w-full h-full animate-rotate-slow" viewBox="0 0 400 400" >
-                
+              <svg className="absolute inset-0 w-full h-full animate-rotate-slow origin-center" viewBox="0 0 400 400" >
+              
                 <defs>
+                  
                   <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#fe7725" stopOpacity="1"/>
                     <stop offset="100%" stopColor="#ff4500" stopOpacity="0.6"/>
@@ -77,6 +78,7 @@ const AIStorySection: React.FC = () => {
                   className="animate-float"
                   style={{ animationDelay: '2s' }}
                 />
+                
               </svg>
 
               {/* Center AI Text */}
@@ -102,10 +104,10 @@ const AIStorySection: React.FC = () => {
               <br />
               Now has a Home
             </h2>
-            <p className="text-2xl text-gray-300 leading-relaxed">
+            <p className="text-2xl text-white leading-relaxed">
               Designed for discovery, engagement and exploration
             </p>
-            <p className="text-lg text-gray-400 leading-relaxed">
+            <p className="text-lg text-white leading-relaxed">
               Experience the power of artificial intelligence through our comprehensive platform. From machine learning to generative AI, we're transforming businesses with cutting-edge technology solutions.
             </p>
             

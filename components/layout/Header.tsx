@@ -68,9 +68,13 @@ const Header: React.FC = () => {
         { 
           title: 'GCC', 
           links: [
-            { label: 'Global Capability Centers', href: '/services/gcc/global-capability-centers' },
-            { label: 'Build-Operate-Transfer', href: '/services/gcc/build-operate-transfer' }
-          ] 
+            { label: 'SaaS PODS', href: '/services/gcc/global-capability-centers' },
+            { label: 'Executive Search Firms', href: '/services/gcc/build-operate-transfer' },
+            { label: 'AI PODS', href: '/services/gcc/build-operate-transfer' },
+            { label: 'Data PODS', href: '/services/gcc/build-operate-transfer' },
+            { label: 'Microsoft Support PODS for MSPs', href: '/services/gcc/build-operate-transfer' },
+            { label: 'Existing Indian GCCs scalling in the Tier2', href: '/services/gcc/build-operate-transfer' }
+          ]
         },
         { 
           title: 'Cloud, DevOps & Infrastructure', 
@@ -79,7 +83,9 @@ const Header: React.FC = () => {
             { label: 'DevOps Engineering', href: '/services/cloud/devops' },
             { label: 'CI/CD & Automation', href: '/services/cloud/cicd-automation' },
             { label: 'Infrastructure Modernization', href: '/services/cloud/infrastructure' },
-            { label: 'SRE (24×7)', href: '/services/cloud/sre' }
+            { label: 'SRE (24×7)', href: '/services/cloud/sre' },
+            { label: 'Verticalization for Home Healthcare', href: '/services/cloud/sre' }
+            
           ] 
         },
         { 
@@ -209,7 +215,7 @@ const Header: React.FC = () => {
       desc: 'Innovative SaaS products and platforms designed for the modern enterprise.',
       categories: [
         { 
-          title: 'Products', 
+          title: '', 
           links: [
             { label: 'ProjectPro', href: '/products/projectpro' },
             { label: 'CFPro', href: '/products/cfpro' },

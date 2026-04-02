@@ -25,8 +25,13 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
     {
       title: 'GCC',
       services: [
-        { name: 'Global Capability Centers', href: '#gcc' },
-        { name: 'Build-Operate-Transfer', href: '#bot' },
+        { name: 'SaaS PODS', href: '#gcc' },
+        { name: 'Executive Search Firms', href: '#bot' },
+        { name: 'AI PODS', href: '#bot' },
+        { name: 'Data PODS', href: '#bot' },
+        { name: 'Microsoft Support PODS for MSPs', href: '#bot' },
+        { name: 'Existing Indian GCCs scalling in the Tier2', href: '#bot' },
+        { name: 'GCC for Mid-sized American Companies', href: '#bot' },
       ],
     },
     {

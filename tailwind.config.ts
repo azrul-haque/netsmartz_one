@@ -55,8 +55,8 @@ export default {
         'float': 'float 3s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
     
-        'rotate-slow': 'rotateSlow 20s linear infinite',
-        'swirl': 'swirlMove 12s ease-in-out infinite',
+        'rotate-slow': 'rotateSlow 10s linear infinite',
+        'swirl': 'swirlMove 10s ease-in-out infinite',
       },
       keyframes: {
         slide: {
@@ -73,7 +73,7 @@ export default {
         },
         rotateSlow: {
           '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
+          '100%': { transform: 'rotate(90deg)' },
         },
         swirlMove: {
           '0%': { transform: 'rotate(0deg) translateY(0px)' },

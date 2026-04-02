@@ -26,7 +26,7 @@ const HeroSlider: React.FC = () => {
     },
     {
       title: '25+ Years',
-      highlight: 'of Excellence',
+      highlight: ' of Excellence',
       subtitle: 'Delivering enterprise-grade solutions with 98% client satisfaction rate.',
       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80',
       cta: 'Our Success Stories',
@@ -128,7 +128,7 @@ const HeroSlider: React.FC = () => {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`h-1 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'w-12 bg-primary' : 'w-8 bg-white/40'
+              index === currentSlide ? 'w-12 bg-[#fe7725]' : 'w-8 bg-white/40'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

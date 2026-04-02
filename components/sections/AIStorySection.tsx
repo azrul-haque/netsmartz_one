@@ -26,7 +26,7 @@ const AIStorySection: React.FC = () => {
               <div className="absolute inset-8 rounded-full border-4 border-blue-500 opacity-50 animate-pulse-glow" style={{ animationDelay: '1s' }}></div>
               
               {/* Swirling Lines - Using CSS */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400" >
+              <svg className="absolute inset-0 w-full h-full animate-rotate-slow" viewBox="0 0 400 400" >
                 
                 <defs>
                   <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">

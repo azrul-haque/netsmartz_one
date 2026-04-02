@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { FiAward, FiGlobe, FiUsers, FiStar } from 'react-icons/fi';
 
 const StatsSection: React.FC = () => {
   const t = useTranslations('stats');
@@ -11,25 +12,25 @@ const StatsSection: React.FC = () => {
       number: '25+', 
       label: t('yearsExcellence'),
       gradient: 'from-primary to-orange-600',
-      icon: '🏆'
+      icon: FiAward
     },
     { 
       number: '2000+', 
       label: t('globalClients'),
       gradient: 'from-gray-800 to-black',
-      icon: '🌍'
+      icon: FiGlobe
     },
     { 
       number: '1500+', 
       label: t('aiEngineers'),
       gradient: 'from-primary-600 to-red-600',
-      icon: '👥'
+      icon: FiUsers
     },
     { 
       number: '98%', 
       label: t('retentionRate'),
       gradient: 'from-yellow-600 to-primary',
-      icon: '⭐'
+      icon: FiStar
     },
   ];
 
@@ -44,37 +45,42 @@ const StatsSection: React.FC = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="group text-center"
-              data-testid={`stat-${index}`}
-            >
-              {/* Card */}
-              <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-glow">
-                {/* Icon */}
-                <div className="text-4xl mb-4">{stat.icon}</div>
-                
-                {/* Number */}
-                <div className={`text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
-                  {stat.number}
-                </div>
-                
-                {/* Label */}
-                <div className="text-sm md:text-base text-gray-200 font-medium">
-                  {stat.label}
-                </div>
+          {stats.map((stat, index) => {
+            const IconComponent = stat.icon;
+            return (
+              <div
+                key={index}
+                className="group text-center"
+                data-testid={`stat-${index}`}
+              >
+                {/* Card */}
+                <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 hover:shadow-glow">
+                  {/* Icon */}
+                  <div className="text-4xl mb-4 flex justify-center">
+                    <IconComponent className="text-[#fe7725]" size={48} />
+                  </div>
+                  
+                  {/* Number */}
+                  <div className={`text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
+                    {stat.number}
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-sm md:text-base text-white font-medium">
+                    {stat.label}
+                  </div>
 
-                {/* Shine Effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom Text */}
         <div className="text-center mt-16">
-          <p className="text-xl text-gray-300 font-medium">
+          <p className="text-xl text-white font-medium">
             Trusted by leading enterprises worldwide
           </p>
         </div>

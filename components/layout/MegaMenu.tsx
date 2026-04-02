@@ -12,42 +12,61 @@ interface MegaMenuProps {
 const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
   const t = useTranslations('services');
 
-  const services = [
+  const serviceCategories = [
     {
-      icon: <FiCpu className="text-3xl" />,
-      title: t('aiDevelopment'),
-      description: t('aiDescription'),
-      href: '#ai-development',
+      title: 'AI',
+      services: [
+        { name: 'AI Agents Marketplace', href: '#ai-agents' },
+        { name: 'AI Platforms', href: '#ai-platforms' },
+        { name: 'AI Pods', href: '#ai-pods' },
+        { name: 'AI/ML Services', href: '#ai-ml-services' },
+      ],
     },
     {
-      icon: <FiCloud className="text-3xl" />,
-      title: t('saasEngineering'),
-      description: t('saasDescription'),
-      href: '#saas-engineering',
+      title: 'GCC',
+      services: [
+        { name: 'Global Capability Centers', href: '#gcc' },
+        { name: 'Build-Operate-Transfer', href: '#bot' },
+      ],
     },
     {
-      icon: <FiShield className="text-3xl" />,
-      title: t('cybersecurity'),
-      description: t('cybersecurityDescription'),
-      href: '#cybersecurity',
+      title: 'Cloud, DevOps & Infrastructure',
+      services: [
+        { name: 'Cloud Modernization', href: '#cloud-modernization' },
+        { name: 'DevOps Engineering', href: '#devops' },
+        { name: 'CI/CD & Automation', href: '#cicd' },
+        { name: 'Infrastructure Modernization', href: '#infrastructure' },
+        { name: 'SRE (24x7)', href: '#sre' },
+      ],
     },
     {
-      icon: <FiCheckCircle className="text-3xl" />,
-      title: t('qaTesting'),
-      description: t('qaDescription'),
-      href: '#qa-testing',
+      title: 'Data & Analytics',
+      services: [
+        { name: 'Data Management & Analytics', href: '#data-management' },
+        { name: 'DataLake & Warehouse', href: '#datalake' },
+        { name: 'Data Pods', href: '#data-pods' },
+        { name: 'Data Visualization Services', href: '#data-viz' },
+      ],
     },
     {
-      icon: <FiServer className="text-3xl" />,
-      title: t('cloudDevOps'),
-      description: t('cloudDescription'),
-      href: '#cloud-devops',
+      title: 'Digital Engineering',
+      services: [
+        { name: 'Software as a Service', href: '#saas' },
+        { name: 'Full-Stack Engineering', href: '#fullstack' },
+        { name: 'Custom Software Development', href: '#custom-dev' },
+        { name: 'Mobile Application Development', href: '#mobile' },
+        { name: 'Digital Commerce', href: '#ecommerce' },
+      ],
     },
     {
-      icon: <FiBarChart2 className="text-3xl" />,
-      title: t('dataAnalytics'),
-      description: t('dataDescription'),
-      href: '#data-analytics',
+      title: 'Cybersecurity',
+      services: [
+        { name: 'Cybersecurity Assessment', href: '#security-assessment' },
+        { name: 'Penetration Testing', href: '#pentest' },
+        { name: 'SOC-as-a-Service', href: '#soc' },
+        { name: 'MDR', href: '#mdr' },
+        { name: 'Cloud Security', href: '#cloud-security' },
+      ],
     },
   ];
 
@@ -57,36 +76,55 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
     <>
       {/* Overlay */}
       <div
-        className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
         onClick={onClose}
         onMouseEnter={onClose}
       />
 
       {/* Mega Menu Content */}
       <div
-        className="fixed left-0 right-0 top-[72px] bg-white shadow-2xl z-50 border-t border-gray-100"
+        className="fixed left-0 right-0 top-[72px] bg-[#2d3540] shadow-2xl z-50 border-t border-gray-700"
         onMouseLeave={onClose}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <a
-                key={index}
-                href={service.href}
-                className="group p-6 rounded-lg hover:bg-gradient-to-br hover:from-primary-50 hover:to-secondary-50 transition-all duration-300"
-                onClick={onClose}
-              >
-                <div className="text-primary-600 group-hover:text-primary-700 mb-3">
-                  {service.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-gray-600 group-hover:text-gray-700">
-                  {service.description}
-                </p>
-              </a>
-            ))}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-12 gap-0">
+            {/* Left Sidebar */}
+            <div className="col-span-3 bg-[#1f2630] p-8 py-12">
+              <h2 className="text-4xl font-bold text-white mb-6">Services</h2>
+              <p className="text-gray-300 leading-relaxed">
+                We transform businesses at the intersection of deep domain knowledge and emerging technologies expertise, helping organizations modernize operations, optimize processes, and accelerate digital transformation with scalable, future-ready solutions.
+              </p>
+            </div>
+
+            {/* Services Grid */}
+            <div className="col-span-9 p-8 py-12">
+              <div className="grid grid-cols-3 gap-x-12 gap-y-10">
+                {serviceCategories.map((category, index) => (
+                  <div key={index}>
+                    {/* Category Title with Underline */}
+                    <h3 className="text-[#fe7725] font-bold text-lg mb-1">
+                      {category.title}
+                    </h3>
+                    <div className="w-12 h-1 bg-[#fe7725] mb-4"></div>
+                    
+                    {/* Service Links */}
+                    <ul className="space-y-3">
+                      {category.services.map((service, idx) => (
+                        <li key={idx}>
+                          <a
+                            href={service.href}
+                            className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
+                            onClick={onClose}
+                          >
+                            {service.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

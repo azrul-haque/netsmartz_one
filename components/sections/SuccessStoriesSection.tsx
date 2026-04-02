@@ -1,24 +1,56 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { FiArrowRight } from 'react-icons/fi';
 
-interface SuccessStory {
-  id: string;
-  title: string;
-  slug: string;
-  category: string | null;
-  image: string;
-  excerpt: string | null;
-}
+// Static success stories data
+const successStories = [
+  {
+    id: '1',
+    title: "Strategic BOT Transformation for a Leading Australian Bank",
+    category: "GCCs",
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+    excerpt: "Discover how we helped transform operations and deliver remarkable outcomes through cutting-edge AI solutions."
+  },
+  {
+    id: '2',
+    title: "Pioneering New Capabilities in a $6Bn PEO Firm's Operations",
+    category: "GCCs",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    excerpt: "Revolutionizing HR operations through AI-powered automation and intelligent workforce management systems."
+  },
+  {
+    id: '3',
+    title: "AI-Driven Healthcare Transformation for Major Hospital Network",
+    category: "Healthcare",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+    excerpt: "Implementing intelligent patient care systems that improve outcomes and reduce operational complexity."
+  },
+  {
+    id: '4',
+    title: "Cloud Migration Success for Global Manufacturing Leader",
+    category: "Manufacturing",
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
+    excerpt: "Seamless migration to cloud infrastructure enabling real-time operations and global collaboration."
+  },
+  {
+    id: '5',
+    title: "Digital Commerce Revolution for Leading Retail Chain",
+    category: "Retail",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+    excerpt: "Building an omnichannel retail experience that drives engagement and boosts revenue."
+  },
+  {
+    id: '6',
+    title: "Cybersecurity Excellence for Financial Services Provider",
+    category: "Financial Services",
+    image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80",
+    excerpt: "Implementing enterprise-grade security solutions that protect against evolving cyber threats."
+  }
+];
 
-interface SuccessStoriesSectionProps {
-  stories: SuccessStory[];
-}
-
-const SuccessStoriesSection: React.FC<SuccessStoriesSectionProps> = ({ stories }) => {
+const SuccessStoriesSection: React.FC = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -35,12 +67,11 @@ const SuccessStoriesSection: React.FC<SuccessStoriesSectionProps> = ({ stories }
 
         {/* Stories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {stories.map((story) => (
-            <Link
+          {successStories.map((story) => (
+            <div
               key={story.id}
-              href={`/success-stories/${story.slug}`}
-              className="group bg-white rounded-xl overflow-hidden shadow-medium hover:shadow-large transition-all duration-300 hover:-translate-y-1"
-              data-testid={`success-story-${story.slug}`}
+              className="group bg-white rounded-xl overflow-hidden shadow-medium hover:shadow-large transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              data-testid={`success-story-${story.id}`}
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden bg-gray-200">
@@ -65,33 +96,25 @@ const SuccessStoriesSection: React.FC<SuccessStoriesSectionProps> = ({ stories }
                   {story.title}
                 </h3>
                 
-                {story.excerpt && (
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                    {story.excerpt}
-                  </p>
-                )}
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                  {story.excerpt}
+                </p>
 
                 <div className="flex items-center text-[#fe7725] font-semibold text-sm group-hover:gap-2 transition-all">
                   Read More
                   <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
-        {/* View All Link */}
-        {stories.length >= 6 && (
-          <div className="text-center mt-12">
-            <Link
-              href="/success-stories"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-lg hover:shadow-glow-lg transition-all duration-300 hover:scale-105"
-            >
-              View All Success Stories
-              <FiArrowRight />
-            </Link>
-          </div>
-        )}
+        {/* Note for Future */}
+        <div className="text-center mt-12">
+          <p className="text-sm text-gray-500 italic">
+            * Success stories are currently static. Admin dashboard coming soon for dynamic management.
+          </p>
+        </div>
       </div>
     </section>
   );

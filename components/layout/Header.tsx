@@ -3,8 +3,27 @@
 import React, { useState, useEffect } from 'react';
 import { useLocale } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/routing';
+import Link from 'next/link';
 import { FiMenu, FiX, FiChevronDown, FiGlobe, FiPhone, FiMail } from 'react-icons/fi';
 import { FaLinkedinIn, FaTwitter, FaFacebookF } from 'react-icons/fa';
+
+// Type Definitions
+interface MenuLink {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
+interface MenuCategory {
+  title: string;
+  links: MenuLink[];
+}
+
+interface MegaMenu {
+  title: string;
+  desc: string;
+  categories: MenuCategory[];
+}
 
 const Header: React.FC = () => {
   const locale = useLocale();
@@ -32,68 +51,258 @@ const Header: React.FC = () => {
     }, 100);
   };
 
-  const megaMenus: Record<string, any> = {
+  const megaMenus: Record<string, MegaMenu> = {
     services: {
       title: 'Services',
       desc: 'We transform businesses at the intersection of deep domain knowledge and emerging technologies expertise.',
       categories: [
-        { title: 'AI', links: ['AI Agents Marketplace', 'AI Platforms', 'AI Pods', 'AI/ML Services'] },
-        { title: 'GCC', links: ['Global Capability Centers', 'Build-Operate-Transfer'] },
-        { title: 'Cloud, DevOps & Infrastructure', links: ['Cloud Modernization', 'DevOps Engineering', 'CI/CD & Automation', 'Infrastructure Modernization', 'SRE (24×7)'] },
-        { title: 'Data & Analytics', links: ['Data Management & Analytics', 'DataLake & Warehouse', 'Data Pods', 'Data Visualization Services'] },
-        { title: 'Digital Engineering', links: ['Software as a Service', 'Full-Stack Engineering', 'Custom Software Development', 'Mobile Application Development', 'Digital Commerce'] },
-        { title: 'Cybersecurity', links: ['Cybersecurity Assessment', 'Penetration Testing', 'SOC-as-a-Service', 'MDR', 'Cloud Security', 'Identity & Access Security'] },
-        { title: 'Business Applications & Platforms', links: ['Microsoft Solutions', 'Salesforce Solutions', 'ServiceNow Solutions', 'Adobe Solutions', 'IBM Solutions'] },
-        { title: 'Quality Engineering', links: ['Test Automation', 'AI Powered Testing', 'AI Powered QE', 'Performance Testing', 'Regression Testing', 'Mobile & Web App Testing', 'Functional Testing', 'QA Pods'] },
-        { title: 'Data Centers', links: [] },
-        { title: 'Private Equity', links: [] }
+        { 
+          title: 'AI', 
+          links: [
+            { label: 'AI Agents Marketplace', href: '/services/ai/agents-marketplace' },
+            { label: 'AI Platforms', href: '/services/ai/platforms' },
+            { label: 'AI Pods', href: '/services/ai/pods' },
+            { label: 'AI/ML Services', href: '/services/ai/ml-services' }
+          ] 
+        },
+        { 
+          title: 'GCC', 
+          links: [
+            { label: 'Global Capability Centers', href: '/services/gcc/global-capability-centers' },
+            { label: 'Build-Operate-Transfer', href: '/services/gcc/build-operate-transfer' }
+          ] 
+        },
+        { 
+          title: 'Cloud, DevOps & Infrastructure', 
+          links: [
+            { label: 'Cloud Modernization', href: '/services/cloud/modernization' },
+            { label: 'DevOps Engineering', href: '/services/cloud/devops' },
+            { label: 'CI/CD & Automation', href: '/services/cloud/cicd-automation' },
+            { label: 'Infrastructure Modernization', href: '/services/cloud/infrastructure' },
+            { label: 'SRE (24×7)', href: '/services/cloud/sre' }
+          ] 
+        },
+        { 
+          title: 'Data & Analytics', 
+          links: [
+            { label: 'Data Management & Analytics', href: '/services/data/management-analytics' },
+            { label: 'DataLake & Warehouse', href: '/services/data/datalake-warehouse' },
+            { label: 'Data Pods', href: '/services/data/pods' },
+            { label: 'Data Visualization Services', href: '/services/data/visualization' }
+          ] 
+        },
+        { 
+          title: 'Digital Engineering', 
+          links: [
+            { label: 'Software as a Service', href: '/services/digital/saas' },
+            { label: 'Full-Stack Engineering', href: '/services/digital/fullstack' },
+            { label: 'Custom Software Development', href: '/services/digital/custom-software' },
+            { label: 'Mobile Application Development', href: '/services/digital/mobile' },
+            { label: 'Digital Commerce', href: '/services/digital/ecommerce' }
+          ] 
+        },
+        { 
+          title: 'Cybersecurity', 
+          links: [
+            { label: 'Cybersecurity Assessment', href: '/services/cybersecurity/assessment' },
+            { label: 'Penetration Testing', href: '/services/cybersecurity/penetration-testing' },
+            { label: 'SOC-as-a-Service', href: '/services/cybersecurity/soc' },
+            { label: 'MDR', href: '/services/cybersecurity/mdr' },
+            { label: 'Cloud Security', href: '/services/cybersecurity/cloud-security' },
+            { label: 'Identity & Access Security', href: '/services/cybersecurity/identity-access' }
+          ] 
+        },
+        { 
+          title: 'Business Applications & Platforms', 
+          links: [
+            { label: 'Microsoft Solutions', href: '/services/business-apps/microsoft' },
+            { label: 'Salesforce Solutions', href: '/services/business-apps/salesforce' },
+            { label: 'ServiceNow Solutions', href: '/services/business-apps/servicenow' },
+            { label: 'Adobe Solutions', href: '/services/business-apps/adobe' },
+            { label: 'IBM Solutions', href: '/services/business-apps/ibm' }
+          ] 
+        },
+        { 
+          title: 'Quality Engineering', 
+          links: [
+            { label: 'Test Automation', href: '/services/quality/test-automation' },
+            { label: 'AI Powered Testing', href: '/services/quality/ai-testing' },
+            { label: 'AI Powered QE', href: '/services/quality/ai-qe' },
+            { label: 'Performance Testing', href: '/services/quality/performance' },
+            { label: 'Regression Testing', href: '/services/quality/regression' },
+            { label: 'Mobile & Web App Testing', href: '/services/quality/mobile-web' },
+            { label: 'Functional Testing', href: '/services/quality/functional' },
+            { label: 'QA Pods', href: '/services/quality/qa-pods' }
+          ] 
+        },
+        { 
+          title: 'Data Centers', 
+          links: [
+            { label: 'Data Center Solutions', href: '/services/data-centers' }
+          ] 
+        },
+        { 
+          title: 'Private Equity', 
+          links: [
+            { label: 'Private Equity Services', href: '/services/private-equity' }
+          ] 
+        }
       ]
     },
     industries: {
       title: 'Industries',
       desc: 'Delivering industry-specific solutions powered by deep domain expertise.',
       categories: [
-        { title: '', links: ['Construction & Real Estate', 'Healthcare & Life Sciences', 'Technology & SaaS', 'Telecommunication', 'Manufacturing & Logistics', 'Retail', 'Media & Entertainment', 'Travel & Tourism', 'Non Profit & Public Sector', 'F & B', 'Aerospace', 'E-Commerce'] }
+        { 
+          title: '', 
+          links: [
+            { label: 'Construction & Real Estate', href: '/industries/construction-real-estate' },
+            { label: 'Healthcare & Life Sciences', href: '/industries/healthcare' },
+            { label: 'Technology & SaaS', href: '/industries/technology-saas' },
+            { label: 'Telecommunication', href: '/industries/telecommunication' },
+            { label: 'Manufacturing & Logistics', href: '/industries/manufacturing-logistics' },
+            { label: 'Retail', href: '/industries/retail' },
+            { label: 'Media & Entertainment', href: '/industries/media-entertainment' },
+            { label: 'Travel & Tourism', href: '/industries/travel-tourism' },
+            { label: 'Non Profit & Public Sector', href: '/industries/non-profit-public' },
+            { label: 'F & B', href: '/industries/food-beverage' },
+            { label: 'Aerospace', href: '/industries/aerospace' },
+            { label: 'E-Commerce', href: '/industries/ecommerce' }
+          ] 
+        }
       ]
     },
     ai: {
       title: 'Artificial Intelligence',
       desc: 'Leading the AI revolution with cutting-edge intelligent automation solutions.',
       categories: [
-        { title: 'AI Platforms', links: ['Salesforce Agentforce', 'ServiceNow Now Assist', 'Microsoft Copilot', 'IBM WatsonX'] },
-        { title: 'AI Solutions', links: ['AI for Construction', 'AI for Healthcare', 'AI for SaaS', 'Manufacturing AI', 'Retail Ecommerce AI', 'Generative AI'] },
-        { title: 'AI Marketplace', links: ['AI Agents Marketplace'] }
+        { 
+          title: 'AI Platforms', 
+          links: [
+            { label: 'Salesforce Agentforce', href: '/ai/platforms/salesforce-agentforce' },
+            { label: 'ServiceNow Now Assist', href: '/ai/platforms/servicenow' },
+            { label: 'Microsoft Copilot', href: '/ai/platforms/microsoft-copilot' },
+            { label: 'IBM WatsonX', href: '/ai/platforms/ibm-watsonx' }
+          ] 
+        },
+        { 
+          title: 'AI Solutions', 
+          links: [
+            { label: 'AI for Construction', href: '/ai/solutions/construction' },
+            { label: 'AI for Healthcare', href: '/ai/solutions/healthcare' },
+            { label: 'AI for SaaS', href: '/ai/solutions/saas' },
+            { label: 'Manufacturing AI', href: '/ai/solutions/manufacturing' },
+            { label: 'Retail Ecommerce AI', href: '/ai/solutions/retail-ecommerce' },
+            { label: 'Generative AI', href: '/ai/solutions/generative-ai' }
+          ] 
+        },
+        { 
+          title: 'AI Marketplace', 
+          links: [
+            { label: 'AI Agents Marketplace', href: '/ai/marketplace' }
+          ] 
+        }
       ]
     },
     products: {
       title: 'Products',
       desc: 'Innovative SaaS products and platforms designed for the modern enterprise.',
       categories: [
-        { title: 'Products', links: ['ProjectPro', 'CFPro', 'AgentSmartz', 'Construction365', 'PropSmartz', 'AI Talent Solution'] }
+        { 
+          title: 'Products', 
+          links: [
+            { label: 'ProjectPro', href: '/products/projectpro' },
+            { label: 'CFPro', href: '/products/cfpro' },
+            { label: 'AgentSmartz', href: '/products/agentsmartz' },
+            { label: 'Construction365', href: '/products/construction365' },
+            { label: 'PropSmartz', href: '/products/propsmartz' },
+            { label: 'AI Talent Solution', href: '/products/ai-talent-solution' }
+          ] 
+        }
       ]
     },
     partners: {
       title: 'Partners',
       desc: 'Strategic alliances with global technology leaders.',
       categories: [
-        { title: '', links: ['Microsoft Partner', 'IBM Partner', 'Adobe Partner', 'Salesforce Partner', 'ServiceNow Partner', 'AWS Partner', 'Google Partner', 'Crowdstrike Partner', 'SentinelOne Partner'] }
+        { 
+          title: '', 
+          links: [
+            { label: 'Microsoft Partner', href: '/partners/microsoft' },
+            { label: 'IBM Partner', href: '/partners/ibm' },
+            { label: 'Adobe Partner', href: '/partners/adobe' },
+            { label: 'Salesforce Partner', href: '/partners/salesforce' },
+            { label: 'ServiceNow Partner', href: '/partners/servicenow' },
+            { label: 'AWS Partner', href: '/partners/aws' },
+            { label: 'Google Partner', href: '/partners/google' },
+            { label: 'Crowdstrike Partner', href: '/partners/crowdstrike' },
+            { label: 'SentinelOne Partner', href: '/partners/sentinelone' }
+          ] 
+        }
       ]
     },
     about: {
       title: 'About',
       desc: '25+ years of excellence in technology innovation',
       categories: [
-        { title: 'Company', links: ['Our Story', 'Leaders', 'Awards and Recognition', 'School of AI & Cybersecurity', 'Innovation Labs'] },
-        { title: 'Global Locations', links: ['Rochester, NY', 'Vancouver, BC', 'Toronto, ON', 'Dubai', 'Singapore', 'Melbourne', 'Mohali', 'Gurugram', 'Noida'] },
-        { title: 'Culture', links: ['Talent Stories', 'Giving Back', 'CSR', 'Sustainability'] }
+        { 
+          title: 'Company', 
+          links: [
+            { label: 'Our Story', href: '/about/story' },
+            { label: 'Leaders', href: '/about/leaders' },
+            { label: 'Awards and Recognition', href: '/about/awards' },
+            { label: 'School of AI & Cybersecurity', href: '/about/school' },
+            { label: 'Innovation Labs', href: '/about/innovation-labs' }
+          ] 
+        },
+        { 
+          title: 'Global Locations', 
+          links: [
+            { label: 'Rochester, NY', href: '/about/locations/rochester' },
+            { label: 'Vancouver, BC', href: '/about/locations/vancouver' },
+            { label: 'Toronto, ON', href: '/about/locations/toronto' },
+            { label: 'Dubai', href: '/about/locations/dubai' },
+            { label: 'Singapore', href: '/about/locations/singapore' },
+            { label: 'Melbourne', href: '/about/locations/melbourne' },
+            { label: 'Mohali', href: '/about/locations/mohali' },
+            { label: 'Gurugram', href: '/about/locations/gurugram' },
+            { label: 'Noida', href: '/about/locations/noida' }
+          ] 
+        },
+        { 
+          title: 'Culture', 
+          links: [
+            { label: 'Talent Stories', href: '/about/culture/talent-stories' },
+            { label: 'Giving Back', href: '/about/culture/giving-back' },
+            { label: 'CSR', href: '/about/culture/csr' },
+            { label: 'Sustainability', href: '/about/culture/sustainability' }
+          ] 
+        }
       ]
     },
     resources: {
       title: 'Resources',
       desc: 'Insights, research, and thought leadership.',
       categories: [
-        { title: 'Customer Success', links: ['Case Studies', 'Testimonials', 'Certifications', 'Events & Media'] },
-        { title: 'Thought Leadership', links: ['Blogs', 'Expert Q&A', 'Whitepapers', 'Industry Reports', 'Podcasts'] }
+        { 
+          title: 'Customer Success', 
+          links: [
+            { label: 'Case Studies', href: '/resources/case-studies' },
+            { label: 'Testimonials', href: '/resources/testimonials' },
+            { label: 'Certifications', href: '/resources/certifications' },
+            { label: 'Events & Media', href: '/resources/events-media' }
+          ] 
+        },
+        { 
+          title: 'Thought Leadership', 
+          links: [
+            { label: 'Blogs', href: '/resources/blogs' },
+            { label: 'Expert Q&A', href: '/resources/expert-qa' },
+            { label: 'Whitepapers', href: '/resources/whitepapers' },
+            { label: 'Industry Reports', href: '/resources/industry-reports' },
+            { label: 'Podcasts', href: '/resources/podcasts' }
+          ] 
+        }
       ]
     }
   };
@@ -115,9 +324,15 @@ const Header: React.FC = () => {
               </a>
             </div>
             <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-black transition-colors"><FaLinkedinIn /></a>
-              <a href="#" className="hover:text-black transition-colors"><FaTwitter /></a>
-              <a href="#" className="hover:text-black transition-colors"><FaFacebookF /></a>
+              <a href="https://www.linkedin.com/company/netsmartz" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                <FaLinkedinIn />
+              </a>
+              <a href="https://twitter.com/netsmartz" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                <FaTwitter />
+              </a>
+              <a href="https://www.facebook.com/netsmartz" target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+                <FaFacebookF />
+              </a>
             </div>
           </div>
         </div>
@@ -128,9 +343,9 @@ const Header: React.FC = () => {
         <nav className="container mx-auto px-6 max-w-7xl">
           <div className="flex items-center justify-between h-20">
            {/* Logo */}
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <img src="/logo.webp" alt="Netsmartz Logo" className="h-10 w-auto" />
-          </a>
+          </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-6">
@@ -159,13 +374,30 @@ const Header: React.FC = () => {
                           </div>
                           <div className="w-[65%] max-h-[400px] overflow-y-auto">
                             <div className="grid grid-cols-3 gap-x-12 gap-y-8">
-                              {megaMenus[key].categories.map((cat: any, idx: number) => (
+                              {megaMenus[key].categories.map((cat: MenuCategory, idx: number) => (
                                 <div key={idx}>
                                   {cat.title && <h3 className="text-sm font-semibold text-[#fe7725] mb-3">{cat.title}</h3>}
                                   <ul className="space-y-2">
-                                    {cat.links.map((link: string, linkIdx: number) => (
+                                    {cat.links.map((link: MenuLink, linkIdx: number) => (
                                       <li key={linkIdx}>
-                                        <a href="#" className="text-sm text-gray-700 hover:text-[#fe7725] transition-colors">{link}</a>
+                                        {link.external ? (
+                                          <a 
+                                            href={link.href} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="text-sm text-gray-700 hover:text-[#fe7725] transition-colors"
+                                          >
+                                            {link.label}
+                                          </a>
+                                        ) : (
+                                          <Link 
+                                            href={link.href} 
+                                            className="text-sm text-gray-700 hover:text-[#fe7725] transition-colors"
+                                            onClick={() => setActiveMenu(null)}
+                                          >
+                                            {link.label}
+                                          </Link>
+                                        )}
                                       </li>
                                     ))}
                                   </ul>
@@ -179,8 +411,12 @@ const Header: React.FC = () => {
                   )}
                 </div>
               ))}
-              <a href="#contact" className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">Contact</a>
-              <a href="#careers" className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">Career</a>
+              <Link href="/contact" className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">
+                Contact
+              </Link>
+              <Link href="/careers" className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">
+                Career
+              </Link>
               
               <button onClick={handleLanguageSwitch} className="flex items-center gap-1 text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">
                 <FiGlobe />
@@ -189,9 +425,9 @@ const Header: React.FC = () => {
             </div>
 
             {/* CTA */}
-            <a href="#contact" className="hidden lg:block px-6 py-3 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-sm hover:shadow-lg transition-all">
+            <Link href="/contact" className="hidden lg:block px-6 py-3 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-sm hover:shadow-lg transition-all">
               Get Started
-            </a>
+            </Link>
 
             {/* Mobile Toggle */}
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden text-[#1a1a1a]">
@@ -220,11 +456,31 @@ const Header: React.FC = () => {
                     </button>
                     {activeMenu === key && (
                       <div className="ml-4 mt-2 space-y-2">
-                        {megaMenus[key].categories.map((cat: any, idx: number) => (
+                        {megaMenus[key].categories.map((cat: MenuCategory, idx: number) => (
                           <div key={idx}>
                             {cat.title && <div className="text-xs font-semibold text-[#fe7725] mt-2">{cat.title}</div>}
-                            {cat.links.map((link: string, linkIdx: number) => (
-                              <a key={linkIdx} href="#" className="block py-1 text-sm text-gray-700 hover:text-[#fe7725]">{link}</a>
+                            {cat.links.map((link: MenuLink, linkIdx: number) => (
+                              <React.Fragment key={linkIdx}>
+                                {link.external ? (
+                                  <a 
+                                    href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block py-1 text-sm text-gray-700 hover:text-[#fe7725]"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                  >
+                                    {link.label}
+                                  </a>
+                                ) : (
+                                  <Link 
+                                    href={link.href}
+                                    className="block py-1 text-sm text-gray-700 hover:text-[#fe7725]"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                  >
+                                    {link.label}
+                                  </Link>
+                                )}
+                              </React.Fragment>
                             ))}
                           </div>
                         ))}
@@ -232,12 +488,28 @@ const Header: React.FC = () => {
                     )}
                   </div>
                 ))}
-                <a href="#contact" className="block py-2 text-[#1a1a1a] hover:text-[#fe7725] font-medium">Contact</a>
-                <a href="#careers" className="block py-2 text-[#1a1a1a] hover:text-[#fe7725] font-medium">Career</a>
+                <Link 
+                  href="/contact" 
+                  className="block py-2 text-[#1a1a1a] hover:text-[#fe7725] font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+                <Link 
+                  href="/careers" 
+                  className="block py-2 text-[#1a1a1a] hover:text-[#fe7725] font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Career
+                </Link>
               </nav>
-              <a href="#contact" className="block mt-6 px-6 py-3 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-center">
+              <Link 
+                href="/contact" 
+                className="block mt-6 px-6 py-3 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-center"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Get Started
-              </a>
+              </Link>
             </div>
           </div>
         </div>

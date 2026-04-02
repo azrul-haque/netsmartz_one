@@ -383,7 +383,7 @@ const Header: React.FC = () => {
                       onMouseEnter={() => setActiveMenu(key)}
                       onMouseLeave={() => setActiveMenu(null)}
                     >
-                      <div className="container mx-auto px-6 max-w-7xl py-8">
+                      <div className="container mx-auto px-6 max-w-7xl py-8 h-[80vh]">
                         <div className="flex gap-8">
                           <div className="w-[35%] pr-8 border-r border-gray-200">
                             <h2 className="text-3xl font-bold text-[#1a1a1a] mb-4">{megaMenus[key].title}</h2>

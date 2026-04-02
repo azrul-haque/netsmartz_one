@@ -86,7 +86,7 @@ const WhyUsSection: React.FC = () => {
         </div>
 
         {/* Stats Grid */}
-        <div className="bg-white rounded-3xl shadow-large p-12">
+        {/* <div className="bg-white rounded-3xl shadow-large p-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-4xl font-bold bg-gradient-to-r from-primary to-orange-600 bg-clip-text text-transparent mb-2">
@@ -113,7 +113,7 @@ const WhyUsSection: React.FC = () => {
               <div className="text-sm text-gray-600 font-medium">Client Rating</div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </Section>
   );

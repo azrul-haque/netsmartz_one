@@ -11,19 +11,22 @@ const HeroSlider: React.FC = () => {
 
   const slides = [
     {
-      title: 'Build Smarter. Scale Faster. Lead with AI.',
+      title: 'Build Smarter. Scale Faster. Lead with ',
+      highlight: 'AI',
       subtitle: 'Partner with Netsmartz — a global AI-first technology company trusted by 2,000+ SaaS businesses for over 25 years.',
       image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80',
       cta: 'Start Your Journey',
     },
     {
-      title: 'Transform Your Business with AI Innovation',
+      title: 'Transform Your Business with ',
+      highlight: 'AI Innovation',
       subtitle: 'Leverage cutting-edge AI solutions to drive measurable ROI and accelerate digital transformation.',
       image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920&q=80',
       cta: 'Explore Solutions',
     },
     {
-      title: '25+ Years of Excellence in Technology',
+      title: '25+ Years',
+      highlight: 'of Excellence',
       subtitle: 'Delivering enterprise-grade solutions with 98% client satisfaction rate.',
       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80',
       cta: 'Our Success Stories',
@@ -46,7 +49,7 @@ const HeroSlider: React.FC = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black">
+    <section className="relative h-[80vh] w-full overflow-hidden bg-black">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -69,17 +72,18 @@ const HeroSlider: React.FC = () => {
           </div>
 
           {/* Content */}
-          <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-full flex items-center">
-            <div className="max-w-3xl space-y-8">
+          <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-full flex items-center text-center justify-center">
+            <div className="max-w-3xl space-y-8 flex flex-col items-center justify-center">
               {/* Slide Indicator Badge */}
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#fe7725] to-[#ff9555] backdrop-blur-sm ">
                 <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
-                <span className="text-white text-sm font-semibold">AI-Powered Technology Company · Since 1999</span>
+                <span className="text-white text-sm font-semibold ">AI-Powered Technology Company · Since 1999</span>
               </div>
 
               {/* Title */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight animate-fade-up">
+              <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold text-white leading-tight animate-fade-up">
                 {slide.title}
+                <span className="text-[#fe7725]">{slide.highlight}</span>
               </h1>
 
               {/* Subtitle */}
@@ -91,7 +95,7 @@ const HeroSlider: React.FC = () => {
               <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
                 <button
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="px-8 py-4 bg-primary hover:bg-primary-600 text-white rounded-lg font-semibold text-lg shadow-glow-lg transition-all duration-300 hover:scale-105"
+                  className="px-8 py-4 bg-[#fe7725] hover:bg-[#e5661f] text-white rounded-lg font-semibold text-lg shadow-glow-lg transition-all duration-300 hover:scale-105"
                 >
                   {slide.cta}
                 </button>

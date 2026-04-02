@@ -10,8 +10,8 @@ export default function Home() {
     <>
       <HeroSlider />
       <AIStorySection />
-      <StatsSection />
       <ServicesSection />
+      <StatsSection />
       <WhyUsSection />
       <ContactSection />
     </>

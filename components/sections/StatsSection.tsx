@@ -61,7 +61,7 @@ const StatsSection: React.FC = () => {
                   </div>
                   
                   {/* Number */}
-                  <div className={`text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
+                  <div className={`text-4xl md:text-5xl font-bold mb-2 bg-[#fe7725] bg-clip-text text-transparent`}>
                     {stat.number}
                   </div>
                   

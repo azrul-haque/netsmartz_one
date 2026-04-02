@@ -127,11 +127,10 @@ const Header: React.FC = () => {
       <header className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${isScrolled ? 'shadow-lg' : ''}`}>
         <nav className="container mx-auto px-6 max-w-7xl">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <a href="/" className="text-3xl font-bold">
-              <span className="text-[#1a1a1a]">Nets</span>
-              <span className="text-[#fe7725]">martz</span>
-            </a>
+           {/* Logo */}
+          <a href="/" className="flex items-center">
+            <img src="/logo.webp" alt="Netsmartz Logo" className="h-10 w-auto" />
+          </a>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-6">

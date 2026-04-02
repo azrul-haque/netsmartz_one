@@ -116,7 +116,7 @@ const ServicesSection: React.FC = () => {
         <p className="text-gray-600 mb-6">
           Need a custom solution for your business?
         </p>
-        <button className="px-8 py-4 bg-primary hover:bg-primary-600 text-white rounded-xl font-semibold shadow-large hover:shadow-glow transition-all duration-300 hover:scale-105">
+        <button className="px-8 py-4 bg-gradient-to-r from-[#fe7725] to-[#ff9555] hover:bg-primary-600 text-white rounded-xl font-semibold shadow-large hover:shadow-glow transition-all duration-300 hover:scale-105">
           Schedule a Consultation
           <FiArrowRight className="inline-block ml-2" />
         </button>

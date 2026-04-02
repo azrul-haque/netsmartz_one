@@ -2,7 +2,7 @@ import HeroSlider from '@/components/sections/HeroSlider';
 import AIStorySection from '@/components/sections/AIStorySection';
 import StatsSection from '@/components/sections/StatsSection';
 import ServicesSection from '@/components/sections/ServicesSection';
-import WhyUsSection from '@/components/sections/WhyUsSection';
+import OurPartnersSection from '@/components/sections/OurPartnersSection';
 import ContactSection from '@/components/sections/ContactSection';
 import SuccessStoriesSection from '@/components/sections/SuccessStoriesSection';
 
@@ -14,7 +14,7 @@ export default function Home() {
       <ServicesSection />
       <StatsSection />
       <SuccessStoriesSection />
-      <WhyUsSection />
+      <OurPartnersSection />
       <ContactSection />
     </>
   );

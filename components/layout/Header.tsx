@@ -448,30 +448,35 @@ const Header: React.FC = () => {
                       onClick={() => setIsContactDropdownOpen(false)}
                     />
                     <div 
-                      className="absolute right-0 mt-2 w-56 bg-[#2d3540] rounded-lg shadow-xl py-3 z-40"
+                      className="absolute right-0 mt-2 w-56 bg-[#fff] rounded-lg shadow-xl py-3 z-40"
                       onMouseLeave={() => setIsContactDropdownOpen(false)}
                     >
-                      <div className="px-4 py-2 text-white font-semibold text-sm border-b border-gray-600">
-                        Contact
-                      </div>
+                    
                       <Link
                         href="/contact"
                         onClick={() => setIsContactDropdownOpen(false)}
-                        className="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-[#3a4550] transition-colors text-sm"
+                        className="block px-4 py-2.5 text-[#000] hover:text-[#fe7725] transition-colors text-sm"
+                      >
+                        Contact
+                      </Link>
+                      <Link
+                        href="/contact"
+                        onClick={() => setIsContactDropdownOpen(false)}
+                        className="block px-4 py-2.5 text-[#000] hover:text-[#fe7725] transition-colors text-sm"
                       >
                         Request Proposal
                       </Link>
                       <Link
-                        href="/gcc-campus-visit"
+                        href="/contact"
                         onClick={() => setIsContactDropdownOpen(false)}
-                        className="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-[#3a4550] transition-colors text-sm"
+                        className="block px-4 py-2.5 text-[#000] hover:text-[#fe7725] transition-colors text-sm"
                       >
                         GCC Campus Visit
                       </Link>
                       <Link
-                        href="/become-partner"
+                        href="/contact"
                         onClick={() => setIsContactDropdownOpen(false)}
-                        className="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-[#3a4550] transition-colors text-sm"
+                        className="block px-4 py-2.5 text-[#000] hover:text-[#fe7725] transition-colors text-sm"
                       >
                         Become a Partner
                       </Link>

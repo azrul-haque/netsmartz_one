@@ -57,7 +57,7 @@ const SuccessStoriesSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            success stories
+            Success Stories
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Discover how we've harnessed the disruptive power of cutting-edge AI to tackle daunting 
@@ -110,11 +110,11 @@ const SuccessStoriesSection: React.FC = () => {
         </div>
 
         {/* Note for Future */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <p className="text-sm text-gray-500 italic">
             * Success stories are currently static. Admin dashboard coming soon for dynamic management.
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

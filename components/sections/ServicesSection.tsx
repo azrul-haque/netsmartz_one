@@ -112,7 +112,7 @@ const ServicesSection: React.FC = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="mt-16 text-center">
+      {/* <div className="mt-16 text-center">
         <p className="text-gray-600 mb-6">
           Need a custom solution for your business?
         </p>
@@ -120,7 +120,7 @@ const ServicesSection: React.FC = () => {
           Schedule a Consultation
           <FiArrowRight className="inline-block ml-2" />
         </button>
-      </div>
+      </div> */}
     </Section>
   );
 };

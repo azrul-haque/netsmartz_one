@@ -32,6 +32,7 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,9 +42,9 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLanguageSwitch = () => {
-    const newLocale = locale === 'en' ? 'ar' : 'en';
+  const handleLanguageSwitch = (newLocale: string) => {
     console.log('Language switch:', { from: locale, to: newLocale, pathname });
+    setIsLanguageDropdownOpen(false);
     router.push(pathname, { locale: newLocale });
     // Force reload to ensure all content updates
     setTimeout(() => {
@@ -165,11 +166,21 @@ const Header: React.FC = () => {
             { label: 'Construction & Real Estate', href: '/industries/construction-real-estate' },
             { label: 'Healthcare & Life Sciences', href: '/industries/healthcare' },
             { label: 'Technology & SaaS', href: '/industries/technology-saas' },
-            { label: 'Telecommunication', href: '/industries/telecommunication' },
+            { label: 'Telecommunication', href: '/industries/telecommunication' }
+          ] 
+        },
+        { 
+          title: '', 
+          links: [
             { label: 'Manufacturing & Logistics', href: '/industries/manufacturing-logistics' },
             { label: 'Retail', href: '/industries/retail' },
             { label: 'Media & Entertainment', href: '/industries/media-entertainment' },
-            { label: 'Travel & Tourism', href: '/industries/travel-tourism' },
+            { label: 'Travel & Tourism', href: '/industries/travel-tourism' }
+          ] 
+        },
+        { 
+          title: '', 
+          links: [
             { label: 'Non Profit & Public Sector', href: '/industries/non-profit-public' },
             { label: 'F & B', href: '/industries/food-beverage' },
             { label: 'Aerospace', href: '/industries/aerospace' },
@@ -424,10 +435,40 @@ const Header: React.FC = () => {
                 Career
               </Link>
               
-              <button onClick={handleLanguageSwitch} className="flex items-center gap-1 text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">
-                <FiGlobe />
-                {locale.toUpperCase()}
-              </button>
+              {/* Language Dropdown */}
+              <div className="relative">
+                <button 
+                  onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+                  className="flex items-center gap-1 text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors"
+                >
+                  <FiGlobe />
+                  {locale.toUpperCase()}
+                  <FiChevronDown className={`text-xs transition-transform ${isLanguageDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isLanguageDropdownOpen && (
+                  <>
+                    <div 
+                      className="fixed inset-0 z-30" 
+                      onClick={() => setIsLanguageDropdownOpen(false)}
+                    />
+                    <div className="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-40">
+                      <button
+                        onClick={() => handleLanguageSwitch('en')}
+                        className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${locale === 'en' ? 'text-[#fe7725] font-semibold' : 'text-gray-700'}`}
+                      >
+                        English
+                      </button>
+                      <button
+                        onClick={() => handleLanguageSwitch('ar')}
+                        className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 transition-colors ${locale === 'ar' ? 'text-[#fe7725] font-semibold' : 'text-gray-700'}`}
+                      >
+                        العربية
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
 
             {/* CTA */}

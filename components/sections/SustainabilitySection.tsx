@@ -89,7 +89,7 @@ const SustainabilitySection: React.FC = () => {
         </div>
 
         {/* Badges */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+        {/* <div className="flex flex-wrap justify-center gap-4 mb-16">
           {badges.map((badge, index) => (
             <div
               key={index}
@@ -100,17 +100,17 @@ const SustainabilitySection: React.FC = () => {
               <span className="font-semibold text-gray-700 text-sm">{badge.label}</span>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Purpose Section */}
-        <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-white/50">
+        {/* <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-white/50">
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
             {t('purposeTitle')}
           </h3>
           <p className="text-lg text-gray-600 leading-relaxed text-center max-w-4xl mx-auto">
             {t('purposeDescription')}
           </p>
-        </div>
+        </div> */}
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-16">
@@ -130,13 +130,13 @@ const SustainabilitySection: React.FC = () => {
         </div>
 
         {/* Our Commitments - Interactive Section */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
             Our Commitments
           </h3>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Commitment Cards */}
+          
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {commitments.map((commitment, index) => (
                 <div
@@ -168,26 +168,26 @@ const SustainabilitySection: React.FC = () => {
               ))}
             </div>
 
-            {/* Right: Visual Representation */}
+         
             <div className="relative">
               <div className={`w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl transition-all duration-500 ${commitments[activeCommitment].bgColor}`}>
-                {/* Animated Circle Visualization */}
+              
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative w-80 h-80">
-                    {/* Outer Ring */}
+                
                     <div className={`absolute inset-0 rounded-full border-8 border-gradient-to-r ${commitments[activeCommitment].color} opacity-30 animate-pulse-glow`}></div>
                     
-                    {/* Middle Ring */}
+                 
                     <div className={`absolute inset-8 rounded-full border-8 bg-gradient-to-r ${commitments[activeCommitment].color} opacity-20 animate-pulse-glow`} style={{ animationDelay: '0.5s' }}></div>
                     
-                    {/* Inner Circle */}
+                 
                     <div className={`absolute inset-16 rounded-full bg-gradient-to-br ${commitments[activeCommitment].color} flex items-center justify-center shadow-2xl`}>
                       <div className="text-white text-6xl transform hover:scale-110 transition-transform">
                         {commitments[activeCommitment].icon}
                       </div>
                     </div>
                     
-                    {/* Rotating Border */}
+                 
                     <svg className="absolute inset-0 w-full h-full animate-rotate-slow" viewBox="0 0 400 400">
                       <circle
                         cx="200"
@@ -209,13 +209,13 @@ const SustainabilitySection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Floating Particles */}
+            
                 <div className="absolute top-20 right-20 w-4 h-4 bg-green-400 rounded-full animate-float blur-sm"></div>
                 <div className="absolute bottom-32 left-20 w-3 h-3 bg-teal-400 rounded-full animate-float blur-sm" style={{ animationDelay: '1s' }}></div>
                 <div className="absolute top-1/2 right-32 w-5 h-5 bg-emerald-400 rounded-full animate-float blur-sm" style={{ animationDelay: '0.5s' }}></div>
               </div>
 
-              {/* Current Commitment Info */}
+          
               <div className="mt-6 text-center">
                 <h4 className="text-2xl font-bold text-gray-900 mb-2">
                   {commitments[activeCommitment].title}
@@ -226,7 +226,7 @@ const SustainabilitySection: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Solar Panel Visual */}
         <div className="relative h-64 rounded-3xl overflow-hidden shadow-2xl mb-8">

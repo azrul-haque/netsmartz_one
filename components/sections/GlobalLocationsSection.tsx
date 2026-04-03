@@ -59,7 +59,7 @@ const GlobalLocationsSection: React.FC = () => {
       description: t('descriptionShort'),
       subtitle: t('descriptionSuffix'),
       address: 'Level 14, 380 St Kilda Road\nMelbourne, VIC, 3000',
-      image: '/assets/office_locations/melbourne.jpg',
+      image: '/assets/office_locations/melbourne.jpeg',
       mapIcon: '🇦🇺'
     },
     {
@@ -69,7 +69,7 @@ const GlobalLocationsSection: React.FC = () => {
       description: t('descriptionShort'),
       subtitle: t('descriptionSuffix'),
       address: 'DUO Tower, 3 Fraser Street Level 08-21\nSingapore 189352',
-      image: '/assets/office_locations/singapore.jpg',
+      image: '/assets/office_locations/singapore.png',
       mapIcon: '🇸🇬'
     },
     {
@@ -79,7 +79,7 @@ const GlobalLocationsSection: React.FC = () => {
       description: t('descriptionShort'),
       subtitle: t('descriptionSuffix'),
       address: '22 B Wing, City Vista, Fountain Road\nAshoka Nagar, Kharadi, Pune, Maharashtra 411014',
-      image: '/assets/office_locations/pune.jpg',
+      image: '/assets/office_locations/Pune.jpg',
       mapIcon: '🇮🇳'
     },
     {
@@ -89,7 +89,7 @@ const GlobalLocationsSection: React.FC = () => {
       description: t('descriptionShort'),
       subtitle: t('descriptionSuffix'),
       address: '9th Floor, JMD IT Megapolis, Sector 48\nSohna Road, Gurugram, Haryana 122001',
-      image: '/assets/office_locations/gurugram.jpg',
+      image: '/assets/office_locations/Gurgaon.jpg',
       mapIcon: '🇮🇳'
     },
     {
@@ -99,7 +99,7 @@ const GlobalLocationsSection: React.FC = () => {
       description: t('descriptionShort'),
       subtitle: t('descriptionSuffix'),
       address: 'Advant Navis Business Park Pvt Ltd, #7, Sector - 142\nExpressway, Noida, Uttar Pradesh - 201301',
-      image: '/assets/office_locations/noida.jpg',
+      image: '/assets/office_locations/Noida.jpg',
       mapIcon: '🇮🇳'
     },
     {
@@ -109,7 +109,7 @@ const GlobalLocationsSection: React.FC = () => {
       description: t('descriptionShort'),
       subtitle: t('descriptionSuffix'),
       address: 'Plot no. 10, Rajiv Gandhi Technology Park\nChandigarh 160101',
-      image: '/assets/office_locations/chandigarh.jpg',
+      image: '/assets/office_locations/Chandigarh.jpg',
       mapIcon: '🇮🇳'
     },
     {
@@ -293,7 +293,7 @@ const GlobalLocationsSection: React.FC = () => {
         </div>
 
         {/* Stats Footer with Glass Effect */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+        {/* <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
           <div className="text-center p-6 bg-white/70 backdrop-blur-md rounded-xl shadow-xl border border-white/50 hover:bg-white/90 transition-all duration-300 hover:scale-105">
             <div className="text-3xl font-bold text-[#fe7725] mb-2">{t('stat1Number')}</div>
             <div className="text-sm text-gray-600 font-medium">{t('stat1Label')}</div>
@@ -310,7 +310,7 @@ const GlobalLocationsSection: React.FC = () => {
             <div className="text-3xl font-bold text-[#fe7725] mb-2">{t('stat4Number')}</div>
             <div className="text-sm text-gray-600 font-medium">{t('stat4Label')}</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

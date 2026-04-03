@@ -11,6 +11,7 @@ import { FaLinkedinIn, FaTwitter, FaFacebookF } from 'react-icons/fa';
 interface MenuLink {
   label: string;
   href: string;
+  icon?: string; // Added for product and partner icons
   external?: boolean;
 }
 
@@ -23,6 +24,7 @@ interface MegaMenu {
   title: string;
   desc: string;
   categories: MenuCategory[];
+  graphic?: string; // Added for right side graphics
 }
 
 const Header: React.FC = () => {
@@ -148,12 +150,6 @@ const Header: React.FC = () => {
           links: [
             { label: 'Data Center Solutions', href: '/services/data-centers' }
           ] 
-        },
-        { 
-          title: 'Private Equity', 
-          links: [
-            { label: 'Private Equity Services', href: '/services/private-equity' }
-          ] 
         }
       ]
     },
@@ -225,16 +221,17 @@ const Header: React.FC = () => {
     products: {
       title: t('products'),
       desc: t('productsDesc'),
+      graphic: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80',
       categories: [
         { 
           title: '', 
           links: [
-            { label: 'ProjectPro', href: '/products/projectpro' },
-            { label: 'CFPro', href: '/products/cfpro' },
-            { label: 'AgentSmartz', href: '/products/agentsmartz' },
-            { label: 'Construction365', href: '/products/construction365' },
-            { label: 'PropSmartz', href: '/products/propsmartz' },
-            { label: 'AI Talent Solution', href: '/products/ai-talent-solution' }
+            { label: 'ProjectPro', href: '/products/projectpro', icon: '/assets/products_icon/projectpro.png' },
+            { label: 'CFPro', href: '/products/cfpro', icon: '/assets/products_icon/cfpro.png' },
+            { label: 'AgentSmartz', href: '/products/agentsmartz', icon: '/assets/products_icon/agentsmartz.png' },
+            { label: 'Construction365', href: '/products/construction365', icon: '/assets/products_icon/construction365.png' },
+            { label: 'PropSmartz', href: '/products/propsmartz', icon: '/assets/products_icon/propsmartz.png' },
+            { label: 'AI Talent Solution', href: '/products/ai-talent-solution', icon: '/assets/products_icon/ai-talent-solution.png' }
           ] 
         }
       ]
@@ -242,19 +239,20 @@ const Header: React.FC = () => {
     partners: {
       title: t('partners'),
       desc: t('partnersDesc'),
+      graphic: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80',
       categories: [
         { 
           title: '', 
           links: [
-            { label: 'Microsoft Partner', href: '/partners/microsoft' },
-            { label: 'IBM Partner', href: '/partners/ibm' },
-            { label: 'Adobe Partner', href: '/partners/adobe' },
-            { label: 'Salesforce Partner', href: '/partners/salesforce' },
-            { label: 'ServiceNow Partner', href: '/partners/servicenow' },
-            { label: 'AWS Partner', href: '/partners/aws' },
-            { label: 'Google Partner', href: '/partners/google' },
-            { label: 'Crowdstrike Partner', href: '/partners/crowdstrike' },
-            { label: 'SentinelOne Partner', href: '/partners/sentinelone' }
+            { label: 'Microsoft Partner', href: '/partners/microsoft', icon: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg' },
+            { label: 'IBM Partner', href: '/partners/ibm', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg' },
+            { label: 'Adobe Partner', href: '/partners/adobe', icon: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Adobe_Corporate_logo.svg' },
+            { label: 'Salesforce Partner', href: '/partners/salesforce', icon: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg' },
+            { label: 'ServiceNow Partner', href: '/partners/servicenow', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg' },
+            { label: 'AWS Partner', href: '/partners/aws', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' },
+            { label: 'Google Partner', href: '/partners/google', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg' },
+            { label: 'Crowdstrike Partner', href: '/partners/crowdstrike', icon: 'https://logos-world.net/wp-content/uploads/2021/10/CrowdStrike-Logo.png' },
+            { label: 'SentinelOne Partner', href: '/partners/sentinelone', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZL8fYGZ-5vF0JQfXZqFZLQvZKQfXZqFZLQg&s' }
           ] 
         }
       ]
@@ -390,7 +388,7 @@ const Header: React.FC = () => {
                             <h2 className="text-3xl font-bold text-[#1a1a1a] mb-4">{megaMenus[key].title}</h2>
                             <p className="text-gray-600 text-sm leading-relaxed">{megaMenus[key].desc}</p>
                           </div>
-                          <div className="w-[65%] max-h-[400px] overflow-y-auto">
+                          <div className={`${megaMenus[key].graphic ? 'w-[45%]' : 'w-[65%]'} max-h-[400px] overflow-y-auto`}>
                             <div className="grid grid-cols-3 gap-x-12 gap-y-8">
                               {megaMenus[key].categories.map((cat: MenuCategory, idx: number) => (
                                 <div key={idx}>
@@ -403,16 +401,36 @@ const Header: React.FC = () => {
                                             href={link.href} 
                                             target="_blank" 
                                             rel="noopener noreferrer"
-                                            className="text-sm text-gray-700 hover:text-[#fe7725] transition-colors"
+                                            className="text-sm text-gray-700 hover:text-[#fe7725] transition-colors flex items-center gap-2"
                                           >
+                                            {link.icon && (
+                                              <img 
+                                                src={link.icon} 
+                                                alt={link.label} 
+                                                className="w-5 h-5 object-contain"
+                                                onError={(e) => {
+                                                  e.currentTarget.style.display = 'none';
+                                                }}
+                                              />
+                                            )}
                                             {link.label}
                                           </a>
                                         ) : (
                                           <Link 
                                             href={link.href} 
-                                            className="text-sm text-gray-700 hover:text-[#fe7725] transition-colors"
+                                            className="text-sm text-gray-700 hover:text-[#fe7725] transition-colors flex items-center gap-2"
                                             onClick={() => setActiveMenu(null)}
                                           >
+                                            {link.icon && (
+                                              <img 
+                                                src={link.icon} 
+                                                alt={link.label} 
+                                                className="w-5 h-5 object-contain"
+                                                onError={(e) => {
+                                                  e.currentTarget.style.display = 'none';
+                                                }}
+                                              />
+                                            )}
                                             {link.label}
                                           </Link>
                                         )}
@@ -423,6 +441,23 @@ const Header: React.FC = () => {
                               ))}
                             </div>
                           </div>
+                          {megaMenus[key].graphic && (
+                            <div className="w-[20%] pl-8 border-l border-gray-200">
+                              <div className="relative h-full rounded-xl overflow-hidden shadow-xl">
+                                <img 
+                                  src={megaMenus[key].graphic} 
+                                  alt={megaMenus[key].title}
+                                  className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                                  <div className="text-white">
+                                    <h3 className="text-xl font-bold mb-2">{megaMenus[key].title}</h3>
+                                    <p className="text-sm opacity-90">Explore our solutions</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>

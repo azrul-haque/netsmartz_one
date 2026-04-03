@@ -55,8 +55,12 @@ const SuccessStoriesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-rose-50 overflow-hidden relative">
+      {/* Animated Background Orbs */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200 to-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-glow"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-[#fe7725] to-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-glow" style={{ animationDelay: '2s' }}></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -72,20 +76,26 @@ const SuccessStoriesSection: React.FC = () => {
           {successStories.map((story) => (
             <div
               key={story.id}
-              className="group bg-white rounded-xl overflow-hidden shadow-medium hover:shadow-large transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              className="group bg-white/60 backdrop-blur-lg rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border border-white/50 relative"
               data-testid={`success-story-${story.id}`}
             >
+              {/* Orange Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#fe7725]/10 via-orange-500/5 to-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
               {/* Image */}
-              <div className="relative h-64 overflow-hidden bg-gray-200">
+              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-orange-100 to-rose-100">
                 <Image
                   src={story.image}
                   alt={story.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                {/* Gradient Overlay on Image */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#fe7725]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
                 {story.category && (
                   <div className="absolute top-4 left-4">
-                    <span className="inline-block px-4 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-sm font-semibold text-gray-900">
+                    <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#fe7725] to-orange-500 text-white backdrop-blur-sm rounded-full text-sm font-semibold shadow-lg">
                       {story.category}
                     </span>
                   </div>
@@ -93,7 +103,7 @@ const SuccessStoriesSection: React.FC = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 relative z-10">
                 <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#fe7725] transition-colors">
                   {story.title}
                 </h3>

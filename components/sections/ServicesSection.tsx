@@ -64,7 +64,7 @@ const ServicesSection: React.FC = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           {tSection('title')}
           <br />
-          <span className="text-primary">
+          <span className="text-[#fe7725]">
             {tSection('titleHighlight')}
           </span>
         </h2>

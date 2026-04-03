@@ -244,6 +244,18 @@ const SustainabilitySection: React.FC = () => {
           </div>
         </div>
 
+        {/* CTA Button */}
+        <div className="text-center">
+          <a
+            href="https://netsmartz.com/sustainability/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg font-semibold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+          >
+            Read More
+          </a>
+        </div>
+
       </div>
 
       {/* Rotate Animation for SVG */}

@@ -106,7 +106,7 @@ const AIStorySection: React.FC = () => {
             <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
               {t('title')}
               <br />
-              {t('titleLine2')}
+              <span className="text-[#fe7725]">{t('titleLine2')}</span>
             </h2>
             <p className="text-2xl text-white leading-relaxed">
               {t('tagline')}

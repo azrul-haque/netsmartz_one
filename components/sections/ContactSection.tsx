@@ -121,7 +121,7 @@ const ContactSection: React.FC = () => {
             Get in Touch
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            {t('title')}
+            Ready to Build Your <span className="text-[#fe7725]">AI-Driven Future?</span>
           </h2>
           <p className="text-xl text-gray-300">
             {t('subtitle')}

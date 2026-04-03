@@ -142,8 +142,12 @@ const GlobalLocationsSection: React.FC = () => {
   const activeLocation = locations[activeIndex];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-purple-50 overflow-hidden relative">
+      {/* Gradient Orbs Background */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200 to-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-glow"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-200 to-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-glow" style={{ animationDelay: '2s' }}></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -198,19 +202,29 @@ const GlobalLocationsSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Right: Location Pin Visual */}
+                {/* Right: Location Pin Visual with Glass Effect */}
                 <div className="flex justify-center lg:justify-end">
                   <div className="relative">
-                    <div className="w-64 h-64 rounded-full bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center relative overflow-hidden">
-                      <FiMapPin className="text-[#fe7725] text-9xl animate-bounce-slow" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#fe7725]/20 to-transparent"></div>
+                    {/* Outer Glow Ring */}
+                    <div className="absolute inset-0 w-48 h-48 rounded-full bg-gradient-to-br from-[#fe7725]/30 to-orange-300/30 blur-2xl animate-pulse-glow"></div>
+                    
+                    {/* Glass Circle */}
+                    <div className="relative w-48 h-48 rounded-full bg-gradient-to-br from-white/40 to-orange-100/40 backdrop-blur-xl flex items-center justify-center border border-white/60 shadow-2xl overflow-hidden">
+                      {/* Inner gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#fe7725]/10 to-orange-300/20"></div>
+                      
+                      {/* Animated shimmer effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 animate-shimmer"></div>
+                      
+                      {/* Map Pin Icon */}
+                      <FiMapPin className="text-[#fe7725] text-7xl relative z-10 drop-shadow-lg animate-bounce-slow" />
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Office Image and Address Card */}
-              <div className="bg-white rounded-2xl shadow-large overflow-hidden">
+              {/* Office Image and Address Card with Glass Effect */}
+              <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden border border-white/50">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
                   {/* Office Image */}
                   <div className="md:col-span-3 relative h-80 md:h-96 bg-gray-200">
@@ -278,21 +292,21 @@ const GlobalLocationsSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Stats Footer */}
+        {/* Stats Footer with Glass Effect */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="text-center p-6 bg-white rounded-xl shadow-medium">
+          <div className="text-center p-6 bg-white/70 backdrop-blur-md rounded-xl shadow-xl border border-white/50 hover:bg-white/90 transition-all duration-300 hover:scale-105">
             <div className="text-3xl font-bold text-[#fe7725] mb-2">{t('stat1Number')}</div>
             <div className="text-sm text-gray-600 font-medium">{t('stat1Label')}</div>
           </div>
-          <div className="text-center p-6 bg-white rounded-xl shadow-medium">
+          <div className="text-center p-6 bg-white/70 backdrop-blur-md rounded-xl shadow-xl border border-white/50 hover:bg-white/90 transition-all duration-300 hover:scale-105">
             <div className="text-3xl font-bold text-[#fe7725] mb-2">{t('stat2Number')}</div>
             <div className="text-sm text-gray-600 font-medium">{t('stat2Label')}</div>
           </div>
-          <div className="text-center p-6 bg-white rounded-xl shadow-medium">
+          <div className="text-center p-6 bg-white/70 backdrop-blur-md rounded-xl shadow-xl border border-white/50 hover:bg-white/90 transition-all duration-300 hover:scale-105">
             <div className="text-3xl font-bold text-[#fe7725] mb-2">{t('stat3Number')}</div>
             <div className="text-sm text-gray-600 font-medium">{t('stat3Label')}</div>
           </div>
-          <div className="text-center p-6 bg-white rounded-xl shadow-medium">
+          <div className="text-center p-6 bg-white/70 backdrop-blur-md rounded-xl shadow-xl border border-white/50 hover:bg-white/90 transition-all duration-300 hover:scale-105">
             <div className="text-3xl font-bold text-[#fe7725] mb-2">{t('stat4Number')}</div>
             <div className="text-sm text-gray-600 font-medium">{t('stat4Label')}</div>
           </div>

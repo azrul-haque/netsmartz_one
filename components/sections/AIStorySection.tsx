@@ -1,9 +1,13 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import { Section } from '../ui/Section';
 
 const AIStorySection: React.FC = () => {
+  const t = useTranslations('aiStory');
+  const tCommon = useTranslations('common');
+
   return (
     <section className="relative py-32 bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] overflow-hidden">
       {/* Animated Background Pattern */}
@@ -100,35 +104,35 @@ const AIStorySection: React.FC = () => {
           {/* Right: Content */}
           <div className="space-y-8">
             <h2 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-              Our AI Story
+              {t('title')}
               <br />
-              Now has a Home
+              {t('titleLine2')}
             </h2>
             <p className="text-2xl text-white leading-relaxed">
-              Designed for discovery, engagement and exploration
+              {t('tagline')}
             </p>
             <p className="text-lg text-white leading-relaxed">
-              Experience the power of artificial intelligence through our comprehensive platform. From machine learning to generative AI, we're transforming businesses with cutting-edge technology solutions.
+              {t('description')}
             </p>
             
             {/* CTA Button */}
             <button className="px-8 py-4 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-lg hover:shadow-glow-lg transition-all duration-300 shadow-large hover:scale-105">
-              Learn More
+              {tCommon('learnMore')}
             </button>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-700">
               <div>
-                <div className="text-3xl font-bold text-[#fe7725]">1500+</div>
-                <div className="text-sm text-gray-400">AI Engineers</div>
+                <div className="text-3xl font-bold text-[#fe7725]">{t('stat1Number')}</div>
+                <div className="text-sm text-gray-400">{t('stat1Label')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#fe7725]">500+</div>
-                <div className="text-sm text-gray-400">AI Projects</div>
+                <div className="text-3xl font-bold text-[#fe7725]">{t('stat2Number')}</div>
+                <div className="text-sm text-gray-400">{t('stat2Label')}</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-[#fe7725]">98%</div>
-                <div className="text-sm text-gray-400">Success Rate</div>
+                <div className="text-3xl font-bold text-[#fe7725]">{t('stat3Number')}</div>
+                <div className="text-sm text-gray-400">{t('stat3Label')}</div>
               </div>
             </div>
           </div>

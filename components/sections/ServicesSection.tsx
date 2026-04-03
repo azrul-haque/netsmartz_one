@@ -8,6 +8,7 @@ import { FiCpu, FiCloud, FiShield, FiCheckCircle, FiServer, FiBarChart2, FiArrow
 const ServicesSection: React.FC = () => {
   const t = useTranslations('services');
   const tNav = useTranslations('nav');
+  const tSection = useTranslations('servicesSection');
 
   const services = [
     {
@@ -58,17 +59,17 @@ const ServicesSection: React.FC = () => {
     <Section id="services" className="bg-white">
       <div className="text-center mb-16">
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-4">
-          Our Capabilities
+          {tSection('badge')}
         </div>
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Comprehensive Technology Services
+          {tSection('title')}
           <br />
           <span className="text-primary">
-            Built for Scale
+            {tSection('titleHighlight')}
           </span>
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Transform your business with our cutting-edge technology solutions designed for enterprise excellence
+          {tSection('subtitle')}
         </p>
       </div>
 
@@ -79,19 +80,21 @@ const ServicesSection: React.FC = () => {
             className="group relative bg-white rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border border-gray-100 hover:border-transparent hover:-translate-y-2"
             data-testid={`service-card-${index}`}
           >
-            {/* Gradient Background on Hover */}
+            {/* Hover Gradient */}
             <div className={`absolute inset-0 bg-gradient-to-br ${service.bgGradient} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-            
+
             <div className="relative z-10">
               {/* Icon */}
               <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.gradient} text-white mb-6 shadow-md group-hover:scale-110 transition-transform duration-300`}>
                 {service.icon}
               </div>
 
-              {/* Content */}
+              {/* Title */}
               <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-900">
                 {service.title}
               </h3>
+
+              {/* Description */}
               <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700">
                 {service.description}
               </p>
@@ -111,17 +114,6 @@ const ServicesSection: React.FC = () => {
           </div>
         ))}
       </div>
-
-      {/* CTA Section */}
-      {/* <div className="mt-16 text-center">
-        <p className="text-gray-600 mb-6">
-          Need a custom solution for your business?
-        </p>
-        <button className="px-8 py-4 bg-gradient-to-r from-[#fe7725] to-[#ff9555] hover:bg-primary-600 text-white rounded-xl font-semibold shadow-large hover:shadow-glow transition-all duration-300 hover:scale-105">
-          Schedule a Consultation
-          <FiArrowRight className="inline-block ml-2" />
-        </button>
-      </div> */}
     </Section>
   );
 };

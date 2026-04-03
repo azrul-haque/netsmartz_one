@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 const partners = [
@@ -19,6 +20,9 @@ const partners = [
 ];
 
 const OurPartnersSection: React.FC = () => {
+  const t = useTranslations('partners');
+  const tCommon = useTranslations('common');
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -26,11 +30,10 @@ const OurPartnersSection: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Partners
+            {t('title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Join hands with us and experience the difference of working with a trusted global AI-based technology partner. 
-            Let's unlock new possibilities and accelerate your journey to success.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -61,7 +64,7 @@ const OurPartnersSection: React.FC = () => {
             href="/partners"
             className="inline-block px-8 py-4 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-lg hover:shadow-glow-lg transition-all duration-300 hover:scale-105"
           >
-            Become a Partner
+            {tCommon('becomePartner')}
           </a>
         </div>
 

@@ -11,25 +11,25 @@ const HeroSlider: React.FC = () => {
 
   const slides = [
     {
-      title: 'Build Smarter. Scale Faster. Lead with ',
-      highlight: 'AI',
-      subtitle: 'Partner with Netsmartz — a global AI-first technology company trusted by 2,000+ SaaS businesses for over 25 years.',
+      title: t('slide1Title'),
+      highlight: t('slide1Highlight'),
+      subtitle: t('slide1Subtitle'),
       image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1920&q=80',
-      cta: 'Start Your Journey',
+      cta: t('slide1Cta'),
     },
     {
-      title: 'Transform Your Business with ',
-      highlight: 'AI Innovation',
-      subtitle: 'Leverage cutting-edge AI solutions to drive measurable ROI and accelerate digital transformation.',
+      title: t('slide2Title'),
+      highlight: t('slide2Highlight'),
+      subtitle: t('slide2Subtitle'),
       image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1920&q=80',
-      cta: 'Explore Solutions',
+      cta: t('slide2Cta'),
     },
     {
-      title: '25+ Years',
-      highlight: ' of Excellence',
-      subtitle: 'Delivering enterprise-grade solutions with 98% client satisfaction rate.',
+      title: t('slide3Title'),
+      highlight: t('slide3Highlight'),
+      subtitle: t('slide3Subtitle'),
       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80',
-      cta: 'Our Success Stories',
+      cta: t('slide3Cta'),
     },
   ];
 
@@ -77,7 +77,7 @@ const HeroSlider: React.FC = () => {
               {/* Slide Indicator Badge */}
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-[#fe7725] to-[#ff9555] backdrop-blur-sm ">
                 <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
-                <span className="text-white text-sm font-semibold ">AI-Powered Technology Company · Since 1999</span>
+                <span className="text-white text-sm font-semibold ">{t('badge')}</span>
               </div>
 
               {/* Title */}

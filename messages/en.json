@@ -4,7 +4,9 @@
     "learnMore": "Learn More",
     "contactUs": "Contact Us",
     "readMore": "Read More",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "readCaseStudy": "Read Case Study",
+    "becomePartner": "Become a Partner"
   },
   "nav": {
     "home": "Home",
@@ -49,7 +51,20 @@
     "title": "Build Smarter. Scale Faster. Lead with AI.",
     "subtitle": "Partner with Netsmartz — a global AI-first technology company trusted by 2,000+ SaaS businesses for over 25 years.",
     "cta1": "Start Your Journey",
-    "cta2": "Watch Story"
+    "cta2": "Watch Story",
+    "badge": "AI-Powered Technology Company · Since 1999",
+    "slide1Title": "Build Smarter. Scale Faster. Lead with ",
+    "slide1Highlight": "AI",
+    "slide1Subtitle": "Partner with Netsmartz — a global AI-first technology company trusted by 2,000+ SaaS businesses for over 25 years.",
+    "slide1Cta": "Start Your Journey",
+    "slide2Title": "Transform Your Business with ",
+    "slide2Highlight": "AI Innovation",
+    "slide2Subtitle": "Leverage cutting-edge AI solutions to drive measurable ROI and accelerate digital transformation.",
+    "slide2Cta": "Explore Solutions",
+    "slide3Title": "25+ Years",
+    "slide3Highlight": " of Excellence",
+    "slide3Subtitle": "Delivering enterprise-grade solutions with 98% client satisfaction rate.",
+    "slide3Cta": "Our Success Stories"
   },
   "stats": {
     "yearsExcellence": "Years of Excellence",
@@ -83,6 +98,69 @@
     "sending": "Sending...",
     "success": "Thank you! We'll contact you shortly.",
     "error": "Something went wrong. Please try again."
+  },
+  "aiStory": {
+    "title": "Our AI Story",
+    "titleLine2": "Now has a Home",
+    "tagline": "Designed for discovery, engagement and exploration",
+    "description": "Experience the power of artificial intelligence through our comprehensive platform. From machine learning to generative AI, we're transforming businesses with cutting-edge technology solutions.",
+    "stat1Number": "1500+",
+    "stat1Label": "AI Engineers",
+    "stat2Number": "500+",
+    "stat2Label": "AI Projects",
+    "stat3Number": "98%",
+    "stat3Label": "Success Rate"
+  },
+  "successStories": {
+    "title": "Success Stories",
+    "subtitle": "Discover how we've harnessed the disruptive power of cutting-edge AI to tackle daunting business challenges and deliver remarkable outcomes.",
+    "story1Title": "Strategic BOT Transformation for a Leading Australian Bank",
+    "story1Category": "GCCs",
+    "story1Excerpt": "Discover how we helped transform operations and deliver remarkable outcomes through cutting-edge AI solutions.",
+    "story2Title": "Pioneering New Capabilities in a $6Bn PEO Firm's Operations",
+    "story2Category": "GCCs",
+    "story2Excerpt": "Revolutionizing HR operations through AI-powered automation and intelligent workforce management systems.",
+    "story3Title": "AI-Driven Healthcare Transformation for Major Hospital Network",
+    "story3Category": "Healthcare",
+    "story3Excerpt": "Implementing intelligent patient care systems that improve outcomes and reduce operational complexity.",
+    "story4Title": "Cloud Migration Success for Global Manufacturing Leader",
+    "story4Category": "Manufacturing",
+    "story4Excerpt": "Seamless migration to cloud infrastructure enabling real-time operations and global collaboration.",
+    "story5Title": "Digital Commerce Revolution for Leading Retail Chain",
+    "story5Category": "Retail",
+    "story5Excerpt": "Building an omnichannel retail experience that drives engagement and boosts revenue.",
+    "story6Title": "Cybersecurity Excellence for Financial Services Provider",
+    "story6Category": "Financial Services",
+    "story6Excerpt": "Implementing enterprise-grade security solutions that protect against evolving cyber threats."
+  },
+  "partners": {
+    "title": "Our Partners",
+    "subtitle": "Join hands with us and experience the difference of working with a trusted global AI-based technology partner. Let's unlock new possibilities and accelerate your journey to success."
+  },
+  "locations": {
+    "title": "Our",
+    "titleHighlight": "Global Technology Centers",
+    "titleSuffix": "at a Glance",
+    "subtitle": "Spanning across continents with world-class infrastructure and innovation hubs",
+    "headquarters": "Headquarters",
+    "description": "With 10+ state-of-the-art global campuses spanning over 2,000,000 square feet and $100M+ investments,",
+    "descriptionSuffix": "we provide the foundation for your business to thrive in the digital age.",
+    "descriptionShort": "With state-of-the-art campuses spanning over 200,000 square feet,",
+    "stat1Number": "11+",
+    "stat1Label": "Global Locations",
+    "stat2Number": "2M+",
+    "stat2Label": "Square Feet",
+    "stat3Number": "$100M+",
+    "stat3Label": "Investments",
+    "stat4Number": "10+",
+    "stat4Label": "Countries",
+    "ofText": "of"
+  },
+  "servicesSection": {
+    "badge": "Our Capabilities",
+    "title": "Comprehensive Technology Services",
+    "titleHighlight": "Built for Scale",
+    "subtitle": "Transform your business with our cutting-edge technology solutions designed for enterprise excellence"
   },
   "footer": {
     "description": "AI-Powered Technology Company Since 1999",

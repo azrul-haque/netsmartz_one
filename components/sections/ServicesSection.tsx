@@ -7,6 +7,7 @@ import { FiCpu, FiCloud, FiShield, FiCheckCircle, FiServer, FiBarChart2, FiArrow
 
 const ServicesSection: React.FC = () => {
   const t = useTranslations('services');
+  const tNav = useTranslations('nav');
 
   const services = [
     {
@@ -100,7 +101,7 @@ const ServicesSection: React.FC = () => {
                 href="#"
                 className={`inline-flex items-center font-semibold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent hover:gap-2 transition-all duration-300`}
               >
-                Explore Solution
+                {tNav('exploreSolution')}
                 <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

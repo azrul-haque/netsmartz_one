@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname } from '@/i18n/routing';
 import Link from 'next/link';
 import { FiMenu, FiX, FiChevronDown, FiGlobe, FiPhone, FiMail } from 'react-icons/fi';
@@ -27,6 +27,8 @@ interface MegaMenu {
 
 const Header: React.FC = () => {
   const locale = useLocale();
+  const t = useTranslations('nav');
+  const tCommon = useTranslations('common');
   const router = useRouter();
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
@@ -53,8 +55,8 @@ const Header: React.FC = () => {
 
   const megaMenus: Record<string, MegaMenu> = {
     services: {
-      title: 'Services',
-      desc: 'We transform businesses at the intersection of deep domain knowledge and emerging technologies expertise.',
+      title: t('services'),
+      desc: t('servicesDesc'),
       categories: [
         { 
           title: 'AI', 
@@ -156,8 +158,8 @@ const Header: React.FC = () => {
       ]
     },
     industries: {
-      title: 'Industries',
-      desc: 'Delivering industry-specific solutions powered by deep domain expertise.',
+      title: t('industries'),
+      desc: t('industriesDesc'),
       categories: [
         { 
           title: '', 
@@ -189,8 +191,8 @@ const Header: React.FC = () => {
       ]
     },
     ai: {
-      title: 'Artificial Intelligence',
-      desc: 'Leading the AI revolution with cutting-edge intelligent automation solutions.',
+      title: t('ai'),
+      desc: t('aiDesc'),
       categories: [
         { 
           title: 'AI Platforms', 
@@ -221,8 +223,8 @@ const Header: React.FC = () => {
       ]
     },
     products: {
-      title: 'Products',
-      desc: 'Innovative SaaS products and platforms designed for the modern enterprise.',
+      title: t('products'),
+      desc: t('productsDesc'),
       categories: [
         { 
           title: '', 
@@ -238,8 +240,8 @@ const Header: React.FC = () => {
       ]
     },
     partners: {
-      title: 'Partners',
-      desc: 'Strategic alliances with global technology leaders.',
+      title: t('partners'),
+      desc: t('partnersDesc'),
       categories: [
         { 
           title: '', 
@@ -258,8 +260,8 @@ const Header: React.FC = () => {
       ]
     },
     about: {
-      title: 'About',
-      desc: '25+ years of excellence in technology innovation',
+      title: t('about'),
+      desc: t('aboutDesc'),
       categories: [
         { 
           title: 'Company', 
@@ -297,8 +299,8 @@ const Header: React.FC = () => {
       ]
     },
     resources: {
-      title: 'Resources',
-      desc: 'Insights, research, and thought leadership.',
+      title: t('resources'),
+      desc: t('resourcesDesc'),
       categories: [
         { 
           title: 'Customer Success', 
@@ -435,7 +437,7 @@ const Header: React.FC = () => {
                   onMouseEnter={() => setIsContactDropdownOpen(true)}
                   className="flex items-center gap-1 text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors"
                 >
-                  Contact
+                  {t('contact')}
                   <FiChevronDown className={`text-xs transition-transform ${isContactDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 
@@ -455,28 +457,28 @@ const Header: React.FC = () => {
                         onClick={() => setIsContactDropdownOpen(false)}
                         className="block px-4 py-2.5 text-[#000] hover:text-[#fe7725] transition-colors text-sm"
                       >
-                        Contact
+                        {t('contact')}
                       </Link>
                       <Link
                         href="/contact"
                         onClick={() => setIsContactDropdownOpen(false)}
                         className="block px-4 py-2.5 text-[#000] hover:text-[#fe7725] transition-colors text-sm"
                       >
-                        Request Proposal
+                        {t('requestProposal')}
                       </Link>
                       <Link
                         href="/contact"
                         onClick={() => setIsContactDropdownOpen(false)}
                         className="block px-4 py-2.5 text-[#000] hover:text-[#fe7725] transition-colors text-sm"
                       >
-                        GCC Campus Visit
+                        {t('gccCampusVisit')}
                       </Link>
                       <Link
                         href="/contact"
                         onClick={() => setIsContactDropdownOpen(false)}
                         className="block px-4 py-2.5 text-[#000] hover:text-[#fe7725] transition-colors text-sm"
                       >
-                        Become a Partner
+                        {t('becomePartner')}
                       </Link>
                     </div>
                   </>
@@ -484,7 +486,7 @@ const Header: React.FC = () => {
               </div>
               
               <Link href="/careers" className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">
-                Career
+                {t('career')}
               </Link>
               
               {/* Language Dropdown */}
@@ -525,7 +527,7 @@ const Header: React.FC = () => {
 
             {/* CTA */}
             <Link href="/contact" className="hidden lg:block px-6 py-3 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-sm hover:shadow-lg transition-all">
-              Get Started
+              {tCommon('getStarted')}
             </Link>
 
             {/* Mobile Toggle */}
@@ -594,7 +596,7 @@ const Header: React.FC = () => {
                     onClick={() => setIsContactDropdownOpen(!isContactDropdownOpen)} 
                     className="w-full flex justify-between py-2 text-[#1a1a1a] hover:text-[#fe7725] font-medium"
                   >
-                    Contact
+                    {t('contact')}
                     <FiChevronDown className={`transition-transform ${isContactDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   {isContactDropdownOpen && (
@@ -607,7 +609,7 @@ const Header: React.FC = () => {
                           setIsContactDropdownOpen(false);
                         }}
                       >
-                        Request Proposal
+                        {t('requestProposal')}
                       </Link>
                       <Link 
                         href="/gcc-campus-visit"
@@ -617,7 +619,7 @@ const Header: React.FC = () => {
                           setIsContactDropdownOpen(false);
                         }}
                       >
-                        GCC Campus Visit
+                        {t('gccCampusVisit')}
                       </Link>
                       <Link 
                         href="/become-partner"
@@ -627,7 +629,7 @@ const Header: React.FC = () => {
                           setIsContactDropdownOpen(false);
                         }}
                       >
-                        Become a Partner
+                        {t('becomePartner')}
                       </Link>
                     </div>
                   )}
@@ -638,7 +640,7 @@ const Header: React.FC = () => {
                   className="block py-2 text-[#1a1a1a] hover:text-[#fe7725] font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Career
+                  {t('career')}
                 </Link>
               </nav>
               <Link 
@@ -646,7 +648,7 @@ const Header: React.FC = () => {
                 className="block mt-6 px-6 py-3 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Get Started
+                {tCommon('getStarted')}
               </Link>
             </div>
           </div>

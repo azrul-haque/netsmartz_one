@@ -485,9 +485,9 @@ const Header: React.FC = () => {
                 )}
               </div>
               
-              <Link href="/careers" className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">
+              {/* <Link href="/careers" className="text-[#1a1a1a] hover:text-[#fe7725] font-medium text-sm transition-colors">
                 {t('career')}
-              </Link>
+              </Link> */}
               
               {/* Language Dropdown */}
               <div className="relative">

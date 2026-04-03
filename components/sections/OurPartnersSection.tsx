@@ -98,7 +98,7 @@ const OurPartnersSection: React.FC = () => {
               >
                 {/* Partner Logo Container */}
                 <div className="relative w-[200px] h-[100px] flex items-center justify-center bg-white rounded-xl shadow-md border border-gray-100 transition-all duration-300 group-hover:shadow-2xl group-hover:border-[#fe7725]">
-                  <div className="relative w-[180px] h-[90px] grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-150 transform">
+                  <div className="relative w-[180px] h-[90px] grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-100 transform">
                     <Image
                       src={partner.logo}
                       alt={`${partner.name} Partner Logo`}
@@ -117,14 +117,14 @@ const OurPartnersSection: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <a
             href="/partners"
             className="inline-block px-8 py-4 bg-gradient-to-r from-[#fe7725] to-[#ff9555] text-white rounded-lg font-semibold text-lg hover:shadow-glow-lg transition-all duration-300 hover:scale-105"
           >
             {tCommon('becomePartner')}
           </a>
-        </div>
+        </div> */}
 
       </div>
     </section>

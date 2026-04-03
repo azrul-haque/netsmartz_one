@@ -63,7 +63,7 @@ const HeroSlider: React.FC = () => {
   };
 
   return (
-    <section className="relative h-[80vh] w-full overflow-hidden bg-black">
+    <section className="relative h-[90vh] w-full overflow-hidden bg-black">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div

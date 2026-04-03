@@ -6,6 +6,7 @@ import OurPartnersSection from '@/components/sections/OurPartnersSection';
 import GlobalLocationsSection from '@/components/sections/GlobalLocationsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import SuccessStoriesSection from '@/components/sections/SuccessStoriesSection';
+import SustainabilitySection from '@/components/sections/SustainabilitySection';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <ServicesSection />
       <StatsSection />
       <SuccessStoriesSection />
+      <SustainabilitySection />
       <OurPartnersSection />
       <GlobalLocationsSection />
       <ContactSection />

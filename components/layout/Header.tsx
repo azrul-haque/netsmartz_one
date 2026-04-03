@@ -29,6 +29,7 @@ const Header: React.FC = () => {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -36,6 +37,7 @@ const Header: React.FC = () => {
   const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
@@ -47,10 +49,6 @@ const Header: React.FC = () => {
     console.log('Language switch:', { from: locale, to: newLocale, pathname });
     setIsLanguageDropdownOpen(false);
     router.push(pathname, { locale: newLocale });
-    // Force reload to ensure all content updates
-    setTimeout(() => {
-      window.location.reload();
-    }, 100);
   };
 
   const megaMenus: Record<string, MegaMenu> = {

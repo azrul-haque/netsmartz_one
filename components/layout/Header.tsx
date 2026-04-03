@@ -248,10 +248,10 @@ const Header: React.FC = () => {
             { label: 'IBM Partner', href: '/partners/ibm', icon: 'https://cdn.worldvectorlogo.com/logos/ibm-1.svg' },
             { label: 'Adobe Partner', href: '/partners/adobe', icon: 'https://cdn.worldvectorlogo.com/logos/adobe-2.svg' },
             { label: 'Salesforce Partner', href: '/partners/salesforce', icon: 'https://cdn.worldvectorlogo.com/logos/salesforce-2.svg' },
-            { label: 'ServiceNow Partner', href: '/partners/servicenow', icon: 'https://cdn.worldvectorlogo.com/logos/servicenow.svg' },
+            { label: 'ServiceNow Partner', href: '/partners/servicenow', icon: 'https://companieslogo.com/img/orig/NOW-85b54c7e.png?t=1720244492' },
             { label: 'AWS Partner', href: '/partners/aws', icon: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg' },
             { label: 'Google Cloud Partner', href: '/partners/google', icon: 'https://cdn.worldvectorlogo.com/logos/google-cloud-1.svg' },
-            { label: 'Crowdstrike Partner', href: '/partners/crowdstrike', icon: 'https://cdn.worldvectorlogo.com/logos/crowdstrike.svg' },
+            { label: 'Crowdstrike Partner', href: '/partners/crowdstrike', icon: 'https://companieslogo.com/img/orig/CRWD-4888ef1f.png?t=1634190011' },
             { label: 'SentinelOne Partner', href: '/partners/sentinelone', icon: 'https://companieslogo.com/img/orig/S-4b3d8c0f.png?t=1648546746' }
           ] 
         }
@@ -382,14 +382,14 @@ const Header: React.FC = () => {
                       onMouseEnter={() => setActiveMenu(key)}
                       onMouseLeave={() => setActiveMenu(null)}
                     >
-                      <div className="container mx-auto px-6 max-w-7xl py-8 h-[80vh]">
+                      <div className="container mx-auto px-6 max-w-7xl py-8">
                         <div className="flex gap-8">
                           <div className="w-[35%] pr-8 border-r border-gray-200">
                             <h2 className="text-3xl font-bold text-[#1a1a1a] mb-4">{megaMenus[key].title}</h2>
                             <p className="text-gray-600 text-sm leading-relaxed">{megaMenus[key].desc}</p>
                           </div>
-                          <div className={`${megaMenus[key].graphic ? 'w-[40%]' : 'w-[65%]'} max-h-[400px] overflow-y-auto`}>
-                            <div className="grid grid-cols-3 gap-x-12 gap-y-8">
+                          <div className={`${megaMenus[key].graphic ? 'w-[40%]' : 'w-[65%]'}`}>
+                            <div className="grid grid-cols-2 gap-x-16 gap-y-6">
                               {megaMenus[key].categories.map((cat: MenuCategory, idx: number) => (
                                 <div key={idx}>
                                   {cat.title && <h3 className="text-sm font-semibold text-[#fe7725] mb-3">{cat.title}</h3>}

@@ -6,17 +6,13 @@ import Image from 'next/image';
 
 const partners = [
   { name: 'Microsoft', logo: '/assets/partner_logos/png/microsoft.png' },
-  { name: 'AWS', logo: '/assets/partner_logos/png/microsoft-solutions.png' },
-  { name: 'Google Cloud', logo: '/assets/partner_logos/png/microsoft-solutions1.png' },
-  { name: 'IBM', logo: '/assets/partner_logos/png/microsoft-solutions-azure.jpg' },
+  { name: 'IBM', logo: '/assets/partner_logos/png/ibm.png' },
+  { name: 'Adobe', logo: '/assets/partner_logos/png/adobe.png' },
   { name: 'Salesforce', logo: '/assets/partner_logos/png/salesforce.png' },
   { name: 'ServiceNow', logo: '/assets/partner_logos/png/servicenow.png' },
-  { name: 'Adobe', logo: '/assets/partner_logos/png/adobe.png' },
-  { name: 'Oracle', logo: '/assets/partner_logos/png/cmmi.png' },
-  { name: 'SAP', logo: '/assets/partner_logos/png/google-partner.png' },
-  { name: 'Azure', logo: '/assets/partner_logos/png/iso1.png' },
-  { name: 'Cisco', logo: '/assets/partner_logos/png/iso2.png' },
-  { name: 'Dell', logo: '/assets/partner_logos/png/ibm.png' },
+  { name: 'AWS', logo: '/assets/partner_logos/png/microsoft-solutions.png' },
+  { name: 'Crowdstrike', logo: '/assets/partner_logos/png/microsoft-solutions1.png' },
+  { name: 'SentinelOne', logo: '/assets/partner_logos/png/microsoft-solutions-azure.jpg' },
 ];
 
 const OurPartnersSection: React.FC = () => {

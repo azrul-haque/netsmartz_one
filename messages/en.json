@@ -34,18 +34,18 @@
     "becomePartner": "Become a Partner"
   },
   "services": {
-    "aiDevelopment": "AI Development",
-    "aiDescription": "Build intelligent systems with LLMs, generative AI, and machine learning.",
-    "saasEngineering": "SaaS Engineering",
-    "saasDescription": "Design cloud-native SaaS platforms that scale to millions.",
-    "cybersecurity": "Cybersecurity",
-    "cybersecurityDescription": "AI-enhanced threat detection and 24×7 monitoring.",
-    "qaTesting": "QA & Testing",
-    "qaDescription": "Intelligent test automation and quality assurance.",
-    "cloudDevOps": "Cloud & DevOps",
-    "cloudDescription": "Multi-cloud architecture and automated CI/CD.",
-    "dataAnalytics": "Data & Analytics",
-    "dataDescription": "Transform data into strategic intelligence."
+    "aiDevelopment": "AI/ML Services",
+    "aiDescription": "Move beyond AI experimentation by turning data into intelligent systems that automate decisions and optimize operations. From use case to deployment, build scalable AI solutions that deliver measurable business impact.",
+    "saasEngineering": "SaaS Product Engineering",
+    "saasDescription": "Build, scale, and evolve SaaS products with AI-first engineering, cloud-native architecture, and integrated systems that enable faster innovation and sustained business growth.",
+    "cybersecurity": "AI-Powered Testing",
+    "cybersecurityDescription": "Enhance software quality with AI-driven testing that accelerates releases, reduces defects, and improves accuracy across complex, evolving systems.",
+    "qaTesting": "Custom Software Development",
+    "qaDescription": "Design and build tailored software solutions from MVP to enterprise platforms, enabling faster time-to-market, scalability, and long-term business growth.",
+    "cloudDevOps": "DevOps Engineering",
+    "cloudDescription": "Streamline development and operations with automated pipelines, continuous delivery, and real-time monitoring to accelerate releases and improve system reliability across environments.",
+    "dataAnalytics": "Data Management & Analytics",
+    "dataDescription": "Unify fragmented data into a scalable Microsoft Fabric ecosystem, enabling real-time insights, seamless integration, and reliable analytics for faster, data-driven decisions."
   },
   "hero": {
     "title": "Build Smarter. Scale Faster. Lead with AI.",
@@ -53,18 +53,26 @@
     "cta1": "Start Your Journey",
     "cta2": "Watch Story",
     "badge": "AI-Powered Technology Company · Since 1999",
-    "slide1Title": "Build Smarter. Scale Faster. Lead with ",
-    "slide1Highlight": "AI",
-    "slide1Subtitle": "Partner with Netsmartz — a global AI-first technology company trusted by 2,000+ SaaS businesses for over 25 years.",
-    "slide1Cta": "Start Your Journey",
-    "slide2Title": "Transform Your Business with ",
-    "slide2Highlight": "AI Innovation",
-    "slide2Subtitle": "Leverage cutting-edge AI solutions to drive measurable ROI and accelerate digital transformation.",
-    "slide2Cta": "Explore Solutions",
-    "slide3Title": "25+ Years",
-    "slide3Highlight": " of Excellence",
-    "slide3Subtitle": "Delivering enterprise-grade solutions with 98% client satisfaction rate.",
-    "slide3Cta": "Our Success Stories"
+    "slide1Title": "Build, Scale, and Run ",
+    "slide1Highlight": "AI-First Digital Businesses",
+    "slide1Subtitle": "Unify AI, data, engineering, and global delivery to accelerate growth, improve efficiency, and drive real business outcomes.",
+    "slide1Cta": "Get in Touch",
+    "slide2Title": "Turn AI into Real ",
+    "slide2Highlight": "Business Execution",
+    "slide2Subtitle": "Move beyond experimentation with AI pods designed to build, deploy, and scale intelligent systems across your workflows.",
+    "slide2Cta": "Explore AI POD Solutions",
+    "slide3Title": "Build a Unified Data Foundation for ",
+    "slide3Highlight": "Real-Time Insights",
+    "slide3Subtitle": "Eliminate silos and bring your data together into a scalable lakehouse architecture built for analytics, AI, and decision-making.",
+    "slide3Cta": "Explore Data Lakehouse Solutions",
+    "slide4Title": "Modernize Your Infrastructure for ",
+    "slide4Highlight": "Scale and Performance",
+    "slide4Subtitle": "Transform legacy systems into cloud-ready, resilient environments that support faster deployments, better performance, and long-term growth.",
+    "slide4Cta": "Explore Cloud Modernization",
+    "slide5Title": "Identify Risks Before They Become ",
+    "slide5Highlight": "Threats",
+    "slide5Subtitle": "Gain complete visibility into vulnerabilities, strengthen your security posture, and ensure your systems are prepared for evolving cyber risks.",
+    "slide5Cta": "Get a Cybersecurity Assessment"
   },
   "stats": {
     "yearsExcellence": "Years of Excellence",
@@ -85,31 +93,31 @@
     "securityDesc": "ISO 27001, SOC 2, and CMMI Level 3 certified processes"
   },
   "contact": {
-    "title": "Ready to Build Your AI-Powered Future?",
-    "subtitle": "Join 2,000+ enterprises. Get 40 hours of complimentary consultation.",
-    "formTitle": "Get Free Consultation",
+    "title": "Ready to Build Your AI-Driven Future?",
+    "subtitle": "Let's discuss how we can help you accelerate growth, improve efficiency, and drive real business outcomes.",
+    "formTitle": "Get in Touch",
     "name": "Full Name",
     "email": "Work Email",
     "phone": "Phone Number",
     "company": "Company Name",
     "message": "Tell us about your project",
     "service": "Service Interested In",
-    "submit": "Schedule Consultation",
+    "submit": "Submit",
     "sending": "Sending...",
     "success": "Thank you! We'll contact you shortly.",
     "error": "Something went wrong. Please try again."
   },
   "aiStory": {
-    "title": "Our AI Story",
-    "titleLine2": "Now has a Home",
-    "tagline": "Designed for discovery, engagement and exploration",
-    "description": "Experience the power of artificial intelligence through our comprehensive platform. From machine learning to generative AI, we're transforming businesses with cutting-edge technology solutions.",
+    "title": "AI That Powers Real",
+    "titleLine2": "Business Outcomes",
+    "tagline": "AI is no longer confined to experimentation; it is becoming integral to how modern businesses operate.",
+    "description": "From intelligent agents to enterprise AI platforms, organizations are embedding AI into workflows, decision-making, and customer interactions. With capabilities spanning AI engineering, agentic systems, and enterprise AI platforms, this shift moves AI beyond models into scalable systems that automate processes, enhance responsiveness, and deliver consistent, real-world outcomes.",
     "stat1Number": "1500+",
-    "stat1Label": "AI Engineers",
-    "stat2Number": "500+",
-    "stat2Label": "AI Projects",
-    "stat3Number": "98%",
-    "stat3Label": "Success Rate"
+    "stat1Label": "Experts",
+    "stat2Number": "2000+",
+    "stat2Label": "Clients",
+    "stat3Number": "26+",
+    "stat3Label": "Years of Experience"
   },
   "successStories": {
     "title": "Success Stories",
@@ -134,8 +142,8 @@
     "story6Excerpt": "Implementing enterprise-grade security solutions that protect against evolving cyber threats."
   },
   "partners": {
-    "title": "Our Partners",
-    "subtitle": "Join hands with us and experience the difference of working with a trusted global AI-based technology partner. Let's unlock new possibilities and accelerate your journey to success."
+    "title": "Our Ecosystem of Strategic Partners",
+    "subtitle": "Partnering with global technology leaders to deliver innovative, enterprise-grade solutions that drive business transformation and long-term success."
   },
   "locations": {
     "title": "Our",
@@ -157,10 +165,10 @@
     "ofText": "of"
   },
   "servicesSection": {
-    "badge": "Our Capabilities",
-    "title": "Comprehensive Technology Services",
-    "titleHighlight": "Built for Scale",
-    "subtitle": "Transform your business with our cutting-edge technology solutions designed for enterprise excellence"
+    "badge": "Our Core Capabilities",
+    "title": "Our Core Capabilities for",
+    "titleHighlight": "Scalable Digital Transformation",
+    "subtitle": "From AI engineering to cloud modernization, we deliver end-to-end solutions that drive measurable business impact."
   },
   "footer": {
     "description": "AI-Powered Technology Company Since 1999",

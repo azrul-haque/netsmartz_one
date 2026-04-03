@@ -31,6 +31,20 @@ const HeroSlider: React.FC = () => {
       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80',
       cta: t('slide3Cta'),
     },
+    {
+      title: t('slide4Title'),
+      highlight: t('slide4Highlight'),
+      subtitle: t('slide4Subtitle'),
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80',
+      cta: t('slide4Cta'),
+    },
+    {
+      title: t('slide5Title'),
+      highlight: t('slide5Highlight'),
+      subtitle: t('slide5Subtitle'),
+      image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1920&q=80',
+      cta: t('slide5Cta'),
+    },
   ];
 
   useEffect(() => {

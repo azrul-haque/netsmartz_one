@@ -9,7 +9,7 @@ const StatsSection: React.FC = () => {
 
   const stats = [
     { 
-      number: '25+', 
+      number: '26+', 
       label: t('yearsExcellence'),
       gradient: 'from-primary to-orange-600',
       icon: FiAward
@@ -27,7 +27,7 @@ const StatsSection: React.FC = () => {
       icon: FiUsers
     },
     { 
-      number: '98%', 
+      number: '10+', 
       label: t('retentionRate'),
       gradient: 'from-yellow-600 to-primary',
       icon: FiStar

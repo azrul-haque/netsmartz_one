@@ -40,7 +40,7 @@ const OutcomesSection: React.FC = () => {
             <ul className="space-y-4">
               {outcomes.map((outcome, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <FiCheckCircle className="text-green-500 text-2xl flex-shrink-0 mt-0.5" />
+                  <FiCheckCircle className="text-[#fe7725] text-2xl flex-shrink-0 mt-0.5" />
                   <span className="text-lg text-gray-700">{outcome}</span>
                 </li>
               ))}

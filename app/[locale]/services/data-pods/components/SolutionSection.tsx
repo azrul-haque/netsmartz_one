@@ -34,9 +34,9 @@ const SolutionSection: React.FC = () => {
               ))}
             </ul>
 
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 rounded-xl p-6">
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 border-l-4 border-[#fe7725] rounded-xl p-6">
               <p className="text-2xl font-bold text-gray-900">
-                Delivered in <span className="text-green-600">90 days</span> - not 12 months.
+                Delivered in <span className="text-[#fe7725]">90 days</span> - not 12 months.
               </p>
             </div>
           </div>

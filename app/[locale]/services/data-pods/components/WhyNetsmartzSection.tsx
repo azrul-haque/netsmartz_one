@@ -21,12 +21,29 @@ const WhyNetsmartzSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {reasons.map((reason, index) => (
+        {/* First row - 3 items */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {reasons.slice(0, 3).map((reason, index) => (
             <div
               key={index}
               className="flex items-center gap-4 bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
               data-testid={`reason-${index}`}
+            >
+              <div className="w-12 h-12 bg-gradient-to-br from-[#fe7725] to-[#ff9555] rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                {reason.icon}
+              </div>
+              <span className="text-gray-700 font-medium">{reason.text}</span>
+            </div>
+          ))}
+        </div>
+        
+        {/* Second row - 2 items centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {reasons.slice(3, 5).map((reason, index) => (
+            <div
+              key={index + 3}
+              className="flex items-center gap-4 bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              data-testid={`reason-${index + 3}`}
             >
               <div className="w-12 h-12 bg-gradient-to-br from-[#fe7725] to-[#ff9555] rounded-lg flex items-center justify-center text-white flex-shrink-0">
                 {reason.icon}

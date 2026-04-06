@@ -46,12 +46,30 @@ const ApproachSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {approaches.map((approach, index) => (
+        {/* First row - 3 items */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {approaches.slice(0, 3).map((approach, index) => (
             <div
               key={index}
               className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300"
               data-testid={`approach-${index}`}
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-[#fe7725] to-[#ff9555] rounded-xl flex items-center justify-center text-white mb-6">
+                {approach.icon}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">{approach.title}</h3>
+              <p className="text-gray-300 leading-relaxed">{approach.description}</p>
+            </div>
+          ))}
+        </div>
+        
+        {/* Second row - 2 items centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {approaches.slice(3, 5).map((approach, index) => (
+            <div
+              key={index + 3}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300"
+              data-testid={`approach-${index + 3}`}
             >
               <div className="w-16 h-16 bg-gradient-to-br from-[#fe7725] to-[#ff9555] rounded-xl flex items-center justify-center text-white mb-6">
                 {approach.icon}

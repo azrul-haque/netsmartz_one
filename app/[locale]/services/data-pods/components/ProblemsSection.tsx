@@ -41,12 +41,35 @@ const ProblemsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {problems.map((problem, index) => (
+        {/* First row - 3 items */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {problems.slice(0, 3).map((problem, index) => (
             <div
               key={index}
               className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300"
               data-testid={`problem-${index}`}
+            >
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={problem.image}
+                  alt={problem.text}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed">{problem.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Second row - 2 items centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+          {problems.slice(3, 5).map((problem, index) => (
+            <div
+              key={index + 3}
+              className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300"
+              data-testid={`problem-${index + 3}`}
             >
               <div className="h-48 overflow-hidden">
                 <img

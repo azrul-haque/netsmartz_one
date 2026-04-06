@@ -39,8 +39,9 @@ const UseCasesSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {useCases.map((useCase, index) => (
+        {/* First row - 3 items */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {useCases.slice(0, 3).map((useCase, index) => (
             <div
               key={index}
               className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
@@ -55,8 +56,26 @@ const UseCasesSection: React.FC = () => {
             </div>
           ))}
         </div>
+        
+        {/* Second row - 2 items centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
+          {useCases.slice(3, 5).map((useCase, index) => (
+            <div
+              key={index + 3}
+              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              data-testid={`usecase-${index + 3}`}
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#fe7725] to-[#ff9555] rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                  {useCase.icon}
+                </div>
+                <p className="text-gray-700 leading-relaxed">{useCase.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
-        <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-8 text-center">
+        <div className="bg-gradient-to-r from-[#fe7725] to-[#ff9555] rounded-2xl p-8 text-center">
           <p className="text-2xl font-bold text-white">
             These are <span className="underline">production deployments</span>, not experiments.
           </p>

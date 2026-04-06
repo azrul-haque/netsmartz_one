@@ -21,12 +21,31 @@ const ProblemsSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {problems.map((problem, index) => (
+        {/* First row - 3 items */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {problems.slice(0, 3).map((problem, index) => (
             <div
               key={index}
               className="bg-white border border-red-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
               data-testid={`problem-${index}`}
+            >
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center text-red-600 flex-shrink-0">
+                  {problem.icon}
+                </div>
+                <p className="text-gray-700 leading-relaxed">{problem.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Second row - 2 items centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {problems.slice(3, 5).map((problem, index) => (
+            <div
+              key={index + 3}
+              className="bg-white border border-red-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+              data-testid={`problem-${index + 3}`}
             >
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center text-red-600 flex-shrink-0">

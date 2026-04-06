@@ -46,12 +46,33 @@ const ProcessSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {steps.map((step, index) => (
+        {/* First row - 3 items */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {steps.slice(0, 3).map((step, index) => (
             <div
               key={index}
               className="relative bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105"
               data-testid={`process-step-${index}`}
+            >
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-[#fe7725] to-[#ff9555] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                {step.number}
+              </div>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#fe7725]/10 to-[#ff9555]/10 rounded-xl flex items-center justify-center text-[#fe7725] mb-6">
+                {step.icon}
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+              <p className="text-gray-600 leading-relaxed text-sm">{step.description}</p>
+            </div>
+          ))}
+        </div>
+        
+        {/* Second row - 2 items centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {steps.slice(3, 5).map((step, index) => (
+            <div
+              key={index + 3}
+              className="relative bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:scale-105"
+              data-testid={`process-step-${index + 3}`}
             >
               <div className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-[#fe7725] to-[#ff9555] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                 {step.number}

@@ -377,13 +377,16 @@ const Header: React.FC = () => {
                     <FiChevronDown className="text-xs" />
                   </button>
 
-                  {activeMenu === key && (
-                    <div 
-                      className="fixed left-0 right-0 bg-white border-t border-gray-200 shadow-2xl"
-                      style={{ top: isScrolled ? '70px' : '104px', zIndex: 60 }}
-                      onMouseEnter={() => setActiveMenu(key)}
-                      onMouseLeave={() => setActiveMenu(null)}
-                    >
+                  <div 
+                    className={`fixed left-0 right-0 bg-white border-t border-gray-200 shadow-2xl transition-all duration-300 ease-in-out ${
+                      activeMenu === key 
+                        ? 'opacity-100 visible translate-y-0' 
+                        : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+                    }`}
+                    style={{ top: isScrolled ? '70px' : '104px', zIndex: 60 }}
+                    onMouseEnter={() => setActiveMenu(key)}
+                    onMouseLeave={() => setActiveMenu(null)}
+                  >
                       <div className="container mx-auto px-6 max-w-7xl py-8 h-[80vh]">
                         <div className="flex gap-8">
                           <div className="w-[35%] pr-8 border-r border-gray-200">
@@ -473,7 +476,6 @@ const Header: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                  )}
                 </div>
               ))}
               

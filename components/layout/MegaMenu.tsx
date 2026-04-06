@@ -94,7 +94,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-12 gap-0">
             {/* Left Sidebar */}
-            <div className="col-span-3 bg-[#1f2630] p-8 py-12">
+            <div className="col-span-3 bg-[#1f2630] p-8 py-10">
               <h2 className="text-4xl font-bold text-white mb-6">Services</h2>
               <p className="text-gray-300 leading-relaxed">
                 We transform businesses at the intersection of deep domain knowledge and emerging technologies expertise, helping organizations modernize operations, optimize processes, and accelerate digital transformation with scalable, future-ready solutions.
@@ -102,7 +102,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
             </div>
 
             {/* Services Grid */}
-            <div className="col-span-9 p-8 py-12">
+            <div className="col-span-9 p-8 py-10">
               <div className="grid grid-cols-3 gap-x-12 gap-y-10">
                 {serviceCategories.map((category, index) => (
                   <div key={index}>

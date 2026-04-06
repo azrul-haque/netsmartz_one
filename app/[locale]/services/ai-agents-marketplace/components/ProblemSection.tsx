@@ -26,7 +26,7 @@ const ProblemSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-50 text-red-600 text-sm font-semibold mb-4 border border-red-200">

@@ -9,7 +9,7 @@ const AIStorySection: React.FC = () => {
   const tCommon = useTranslations('common');
 
   return (
-    <section className="relative py-32 bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] overflow-hidden">
+    <section className="relative py-10 bg-gradient-to-br from-[#0f0f0f] via-[#1a1a1a] to-[#0f0f0f] overflow-hidden">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 bg-hero-pattern opacity-20"></div>
       

@@ -5,7 +5,7 @@ import { FiDownload, FiFileText } from 'react-icons/fi';
 
 const DownloadSection: React.FC = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-[#fe7725] to-[#ff9555]">
+    <section className="py-10 bg-gradient-to-r from-[#fe7725] to-[#ff9555]">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex-1">

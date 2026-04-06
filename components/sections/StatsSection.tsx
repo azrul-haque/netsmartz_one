@@ -35,7 +35,7 @@ const StatsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+    <section className="py-10 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-hero-pattern opacity-10"></div>
       

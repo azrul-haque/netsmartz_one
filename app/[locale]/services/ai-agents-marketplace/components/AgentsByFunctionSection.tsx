@@ -48,7 +48,7 @@ const AgentsByFunctionSection: React.FC = () => {
   ];
 
   return (
-    <section id="agents" className="py-20 bg-white">
+    <section id="agents" className="py-10 bg-white">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#fe7725]/10 text-[#fe7725] text-sm font-semibold mb-4 border border-[#fe7725]/30">

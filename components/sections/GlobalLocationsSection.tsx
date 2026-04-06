@@ -142,7 +142,7 @@ const GlobalLocationsSection: React.FC = () => {
   const activeLocation = locations[activeIndex];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-purple-50 overflow-hidden relative">
+    <section className="py-10 bg-gradient-to-br from-orange-50 via-white to-purple-50 overflow-hidden relative">
       {/* Gradient Orbs Background */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-200 to-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-glow"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-200 to-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-glow" style={{ animationDelay: '2s' }}></div>

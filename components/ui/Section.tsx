@@ -20,7 +20,7 @@ export const Section: React.FC<SectionProps> = ({
     <section
       id={id}
       className={cn(
-        'py-16 md:py-24',
+        'py-10',
         background === 'gray' ? 'bg-gray-50' : 'bg-white',
         className
       )}

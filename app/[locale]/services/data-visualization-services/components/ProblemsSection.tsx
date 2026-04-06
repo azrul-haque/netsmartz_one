@@ -32,7 +32,7 @@ const ProblemsSection: React.FC = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Where Data Visualization <span className="text-red-600">Typically Falls Short</span>
+            Where Data Visualization <span className="text-[#fe7725]">Typically Falls Short</span>
           </h2>
         </div>
 

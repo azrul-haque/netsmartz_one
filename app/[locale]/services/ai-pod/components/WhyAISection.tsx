@@ -35,7 +35,7 @@ const WhyAISection: React.FC = () => {
             Why SaaS Leaders Can't Delay AI Anymore?
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Delaying AI Is Now a <span className="text-red-600">Business Risk</span>
+            Delaying AI Is Now a <span className="text-[#fe7725]">Business Risk</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             AI is no longer a differentiator but a baseline expectation for modern SaaS. The winners are shipping it to production and turning intelligence into measurable business outcomes. SaaS products without embedded AI capabilities are already seeing:

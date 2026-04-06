@@ -33,7 +33,7 @@ const ProblemSection: React.FC = () => {
             The Hard Truth About AI Execution
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Vision without execution is just <span className="text-red-600">hallucination</span>
+            Vision without execution is just <span className="text-[#fe7725]">hallucination</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Business leaders know AI can transform operations. But the gap between ambition and reality is where most initiatives fail.

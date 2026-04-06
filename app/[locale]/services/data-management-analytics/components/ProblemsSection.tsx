@@ -36,7 +36,7 @@ const ProblemsSection: React.FC = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Where Most Data Setups <span className="text-red-600">Fall Short</span>
+            Where Most Data Setups <span className="text-[#fe7725]">Fall Short</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Even mature organizations face recurring challenges:
@@ -70,7 +70,7 @@ const ProblemsSection: React.FC = () => {
 
         <div className="bg-gradient-to-br from-red-50 to-orange-50 border-l-4 border-red-500 rounded-xl p-8 max-w-3xl mx-auto text-center">
           <p className="text-2xl font-bold text-gray-900">
-            Data exists, but it doesn't <span className="text-red-600">drive decisions</span>.
+            Data exists, but it doesn't <span className="text-[#fe7725]">drive decisions</span>.
           </p>
         </div>
       </div>

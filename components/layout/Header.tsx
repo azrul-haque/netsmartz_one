@@ -98,7 +98,7 @@ const Header: React.FC = () => {
             { label: 'Data Management & Analytics', href: '/services/data-management-analytics' },
             { label: 'DataLake & Warehouse', href: '/services/datalake-warehouse' },
             { label: 'Data Pods', href: '/services/data-pods' },
-            { label: 'Data Visualization Services', href: '/services/data/visualization' }
+            { label: 'Data Visualization Services', href: '/services/data-visualization-services' }
           ] 
         },
         { 

@@ -72,16 +72,16 @@ const GlobalLocationsSection: React.FC = () => {
       image: '/assets/office_locations/singapore.png',
       mapIcon: '🇸🇬'
     },
-    {
-      id: 7,
-      name: 'Pune',
-      label: 'India',
-      description: t('descriptionShort'),
-      subtitle: t('descriptionSuffix'),
-      address: '22 B Wing, City Vista, Fountain Road\nAshoka Nagar, Kharadi, Pune, Maharashtra 411014',
-      image: '/assets/office_locations/Pune.jpg',
-      mapIcon: '🇮🇳'
-    },
+    // {
+    //   id: 7,
+    //   name: 'Pune',
+    //   label: 'India',
+    //   description: t('descriptionShort'),
+    //   subtitle: t('descriptionSuffix'),
+    //   address: '22 B Wing, City Vista, Fountain Road\nAshoka Nagar, Kharadi, Pune, Maharashtra 411014',
+    //   image: '/assets/office_locations/Pune.jpg',
+    //   mapIcon: '🇮🇳'
+    // },
     {
       id: 8,
       name: 'Gurugram',

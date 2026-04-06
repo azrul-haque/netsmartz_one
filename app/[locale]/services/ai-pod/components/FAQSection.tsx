@@ -5,6 +5,7 @@ import { FiChevronDown } from 'react-icons/fi';
 
 const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const faqs = [
     {
@@ -37,6 +38,8 @@ const FAQSection: React.FC = () => {
     }
   ];
 
+  const displayedFaqs = showAll ? faqs : faqs.slice(0, 5);
+
   return (
     <section className="py-10 bg-white">
       <div className="container mx-auto px-6 max-w-4xl">
@@ -47,7 +50,7 @@ const FAQSection: React.FC = () => {
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
+          {displayedFaqs.map((faq, index) => (
             <div
               key={index}
               className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300"
@@ -72,6 +75,19 @@ const FAQSection: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {faqs.length > 5 && (
+          <div className="text-center mt-8">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#fe7725] to-[#ff9555] hover:from-[#ff9555] hover:to-[#fe7725] text-white rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+              data-testid="toggle-faqs-btn"
+            >
+              {showAll ? 'Show Less' : `Show All ${faqs.length} FAQs`}
+              <FiChevronDown className={`text-lg transition-transform duration-300 ${showAll ? 'rotate-180' : ''}`} />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

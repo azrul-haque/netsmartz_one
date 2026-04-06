@@ -63,7 +63,7 @@ const Header: React.FC = () => {
         { 
           title: 'AI', 
           links: [
-            { label: 'AI Agents Marketplace', href: '/services/ai/agents-marketplace' },
+            { label: 'AI Agents Marketplace', href: '/services/ai-agents-marketplace' },
             { label: 'AI Platforms', href: '/services/ai/platforms' },
             { label: 'AI Pods', href: '/services/ai/pods' },
             { label: 'AI/ML Services', href: '/services/ai/ml-services' }

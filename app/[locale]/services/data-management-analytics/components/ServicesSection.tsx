@@ -42,7 +42,7 @@ const ServicesSection: React.FC = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            How We Help You <span className="text-[#fe7725]">Implement Microsoft Fabric</span>
+            How We Help You <br/><span className="text-[#fe7725]">Implement Microsoft Fabric</span>
           </h2>
         </div>
 

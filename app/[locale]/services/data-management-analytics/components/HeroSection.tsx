@@ -17,6 +17,16 @@ const HeroSection: React.FC = () => {
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        {/* Microsoft Partner Logo */}
+          {/* <div className="flex justify-center">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+              <img
+                src="/microsoft-partner-logo.webp"
+                alt="Microsoft Solutions Partner"
+                className="h-16 w-auto"
+              />
+            </div>
+          </div> */}
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Turn Fragmented Data into <span className="text-[#fe7725]">Real-Time Business Intelligence</span> with Microsoft Fabric
@@ -40,16 +50,7 @@ const HeroSection: React.FC = () => {
             </Link>
           </div>
 
-          {/* Microsoft Partner Logo */}
-          <div className="flex justify-center">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <img
-                src="/microsoft-partner-logo.webp"
-                alt="Microsoft Solutions Partner"
-                className="h-16 w-auto"
-              />
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>

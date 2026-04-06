@@ -9,7 +9,7 @@ const DualPillarsSection: React.FC = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Data Management & Analytics—<span className="text-[#fe7725]">Unified in One Platform</span>
+            Data Management & Analytics—<br/><span className="text-[#fe7725]">Unified in One Platform</span>
           </h2>
         </div>
 

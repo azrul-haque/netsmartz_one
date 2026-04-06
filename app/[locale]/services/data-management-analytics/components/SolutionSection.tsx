@@ -17,7 +17,7 @@ const SolutionSection: React.FC = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            What Microsoft Fabric Enables <span className="text-[#fe7725]">(When Implemented Right)</span>
+            What Microsoft Fabric Enables<br/> <span className="text-[#fe7725]">(When Implemented Right)</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
             Microsoft Fabric is not just another analytics tool—it's a unified data platform. Unlocking its full potential means:

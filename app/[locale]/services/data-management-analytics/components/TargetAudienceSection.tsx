@@ -17,7 +17,7 @@ const TargetAudienceSection: React.FC = () => {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Built for Organizations That Need More Than <span className="text-[#fe7725]">Just Dashboards</span>
+            Built for Organizations That Need <br/>More Than <span className="text-[#fe7725]">Just Dashboards</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             This is not for companies looking to "add another BI tool." Microsoft Fabric is ideal if you are:

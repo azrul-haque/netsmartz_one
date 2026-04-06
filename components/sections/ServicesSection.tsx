@@ -17,6 +17,7 @@ const ServicesSection: React.FC = () => {
       description: t('aiDescription'),
       gradient: 'from-primary to-orange-600',
       bgGradient: 'from-orange-50 to-orange-100',
+      link: '/services/ai-ml-services'
     },
     {
       icon: <FiCloud className="text-4xl" />,
@@ -24,6 +25,7 @@ const ServicesSection: React.FC = () => {
       description: t('saasDescription'),
       gradient: 'from-gray-800 to-black',
       bgGradient: 'from-gray-50 to-gray-100',
+      link: '#'
     },
     {
       icon: <FiShield className="text-4xl" />,
@@ -31,6 +33,7 @@ const ServicesSection: React.FC = () => {
       description: t('cybersecurityDescription'),
       gradient: 'from-primary to-red-600',
       bgGradient: 'from-red-50 to-orange-50',
+      link: '#'
     },
     {
       icon: <FiCheckCircle className="text-4xl" />,
@@ -38,6 +41,7 @@ const ServicesSection: React.FC = () => {
       description: t('qaDescription'),
       gradient: 'from-gray-700 to-gray-900',
       bgGradient: 'from-gray-50 to-gray-100',
+      link: '#'
     },
     {
       icon: <FiServer className="text-4xl" />,
@@ -45,6 +49,7 @@ const ServicesSection: React.FC = () => {
       description: t('cloudDescription'),
       gradient: 'from-primary-600 to-yellow-600',
       bgGradient: 'from-yellow-50 to-orange-50',
+      link: '#'
     },
     {
       icon: <FiBarChart2 className="text-4xl" />,
@@ -52,15 +57,16 @@ const ServicesSection: React.FC = () => {
       description: t('dataDescription'),
       gradient: 'from-black to-gray-800',
       bgGradient: 'from-gray-50 to-slate-100',
+      link: '#'
     },
   ];
 
   return (
     <Section id="services" className="bg-white">
       <div className="text-center mb-16">
-        <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-4">
+        {/* <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-4">
           {tSection('badge')}
-        </div>
+        </div> */}
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           {tSection('title')}
           <br />
@@ -101,8 +107,8 @@ const ServicesSection: React.FC = () => {
 
               {/* Link */}
               <a
-                href="#"
-                className={`inline-flex items-center font-semibold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent hover:gap-2 transition-all duration-300`}
+                href={service.link}
+                className={`inline-flex items-center font-semibold bg-[#fe7725] bg-clip-text text-transparent hover:gap-2 transition-all duration-300`}
               >
                 {tNav('exploreSolution')}
                 <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />

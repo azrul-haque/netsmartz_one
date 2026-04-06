@@ -362,7 +362,7 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between h-20">
            {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img src="/logo.webp" alt="Netsmartz Logo" className="h-10 w-auto" />
+            <img src="/logo.webp" alt="Netsmartz Logo" className="h-12 w-auto" />
           </Link>
 
             {/* Desktop Navigation */}

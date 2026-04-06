@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiTwitter, FiFacebook, FiInstagram } from 'react-icons/fi';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   const t = useTranslations('footer');
@@ -50,8 +51,17 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent mb-4">
-              Netsmartz
+           <div className="">
+              <div className="relative w-[200px] h-[100px]">
+                <Image
+                  src="/assets/footer/iso.png"
+                  alt="sustainability icon"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
+                        </div>
             <p className="text-sm text-gray-400 mb-4">
               {t('description')}
             </p>

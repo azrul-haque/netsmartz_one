@@ -3,6 +3,11 @@
   "framework": "nextjs",
   "installCommand": "yarn install",
   "regions": ["iad1"],
+  "build": {
+    "env": {
+      "DATABASE_URL": "postgresql://dummy:dummy@localhost:5432/dummy?schema=public"
+    }
+  },
   "env": {
     "DATABASE_URL": "@database_url"
   }

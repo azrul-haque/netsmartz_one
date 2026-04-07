@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
-import { sendContactFormEmail } from '@/lib/email';
+
+// Mark as dynamic to prevent static generation
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 export async function POST(request: NextRequest) {
   try {
+    // Import prisma and email functions only at runtime
+    const { prisma } = await import('@/lib/prisma');
+    const { sendContactFormEmail } = await import('@/lib/email');
+    
     const body = await request.json();
     const { name, email, phone, company, message, service } = body;
 

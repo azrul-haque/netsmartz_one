@@ -73,7 +73,7 @@ const Header: React.FC = () => {
           title: 'GCC', 
           links: [
             { label: 'SaaS PODS', href: '/services/saas-pods' },
-            { label: 'Executive Search Firms', href: '/services/gcc/build-operate-transfer' },
+            { label: 'Executive Search Firms', href: '/services/executive-search-firms' },
             { label: 'AI PODS', href: '/services/gcc/build-operate-transfer' },
             { label: 'Data PODS', href: '/services/gcc/build-operate-transfer' },
             { label: 'Microsoft Support PODS for MSPs', href: '/services/gcc/build-operate-transfer' },

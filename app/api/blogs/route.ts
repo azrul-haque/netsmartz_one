@@ -4,24 +4,25 @@ import { NextRequest, NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+// DATABASE COMMENTED OUT FOR DEPLOYMENT
+// Will be enabled after database setup
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const limit = parseInt(searchParams.get('limit') || '10');
     const offset = parseInt(searchParams.get('offset') || '0');
 
-    // Check if we're in build phase or if DATABASE_URL is not set
-    if (!process.env.DATABASE_URL || process.env.DATABASE_URL.includes('file:./dev.db')) {
-      // Return empty response for build/development without real DB
-      return NextResponse.json({
-        blogs: [],
-        total: 0,
-        limit,
-        offset,
-      });
-    }
+    // TEMPORARY: Return empty data (database not connected yet)
+    return NextResponse.json({
+      blogs: [],
+      total: 0,
+      limit,
+      offset,
+      message: 'Database not connected yet'
+    });
 
-    // Only import and use Prisma when database is available
+    /* DATABASE CODE - UNCOMMENT WHEN READY
     const { prisma } = await import('@/lib/prisma');
     
     const blogs = await prisma.blog.findMany({
@@ -49,17 +50,18 @@ export async function GET(request: NextRequest) {
     const total = await prisma.blog.count({ where: { published: true } });
 
     return NextResponse.json({ blogs: blogsWithArrayTags, total, limit, offset });
+    */
   } catch (error) {
     console.error('Blogs API error:', error);
     return NextResponse.json(
       { 
-        error: 'Failed to fetch blogs',
+        error: 'API not ready',
         blogs: [],
         total: 0,
         limit: 10,
         offset: 0 
       },
-      { status: 200 } // Return 200 even on error to prevent build failures
+      { status: 200 }
     );
   }
 }

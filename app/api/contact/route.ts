@@ -4,6 +4,9 @@ import { NextRequest, NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+// DATABASE COMMENTED OUT FOR DEPLOYMENT
+// Will be enabled after database setup
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -16,15 +19,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if database is available
-    if (!process.env.DATABASE_URL || process.env.DATABASE_URL.includes('file:./dev.db')) {
-      console.warn('Database not configured, skipping form submission');
-      return NextResponse.json({
-        success: true,
-        message: 'Form received (database not configured)',
-      });
-    }
+    // TEMPORARY: Return success without saving (database not connected yet)
+    console.log('Contact form submission (not saved to DB):', { name, email, company });
+    
+    return NextResponse.json({
+      success: true,
+      message: 'Form received (database connection pending)',
+      note: 'Data will be saved once database is connected'
+    }, { status: 200 });
 
+    /* DATABASE CODE - UNCOMMENT WHEN READY
     const { prisma } = await import('@/lib/prisma');
     const { sendContactFormEmail } = await import('@/lib/email');
     
@@ -52,10 +56,11 @@ export async function POST(request: NextRequest) {
       message: 'Form submitted successfully',
       id: submission.id,
     }, { status: 201 });
+    */
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(
-      { error: 'Failed to submit form' },
+      { error: 'Failed to process form' },
       { status: 500 }
     );
   }

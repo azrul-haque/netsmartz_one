@@ -77,7 +77,7 @@ const Header: React.FC = () => {
             { label: 'AI PODS', href: '/services/gcc/build-operate-transfer' },
             { label: 'Data PODS', href: '/services/gcc/build-operate-transfer' },
             { label: 'Microsoft Support PODS for MSPs', href: '/services/gcc/build-operate-transfer' },
-            { label: 'Existing Indian GCCs scalling in the Tier2', href: '/services/gcc/build-operate-transfer' }
+            { label: 'Existing Indian GCCs scalling in the Tier2', href: '/services/indian-gcc-scalling-in-tier2' }
           ]
         },
         { 

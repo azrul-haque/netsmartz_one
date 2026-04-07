@@ -1,0 +1,47 @@
+# Vercel Ignore File - Files and directories to exclude from deployment
+
+# Development database
+prisma/dev.db
+prisma/dev.db-journal
+*.db
+*.db-journal
+
+# Environment files (use Vercel Environment Variables instead)
+.env
+.env.local
+.env.development
+.env.test
+
+# Node modules
+node_modules
+
+# Build output (Vercel will build)
+.next
+out
+dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+.cache
+temp
+tmp

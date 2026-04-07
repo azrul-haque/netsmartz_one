@@ -41,9 +41,9 @@ const HiringProcessSection: React.FC = () => {
                 <div className="w-24 h-24 bg-gradient-to-br from-[#fe7725] to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   {step.icon}
                 </div>
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#fe7725] rounded-full flex items-center justify-center text-2xl font-bold">
+                {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#fe7725] rounded-full flex items-center justify-center text-2xl font-bold">
                   {index + 1}
-                </div>
+                </div> */}
               </div>
               <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
               <p className="text-gray-300">{step.description}</p>

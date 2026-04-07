@@ -74,8 +74,8 @@ const Header: React.FC = () => {
           links: [
             { label: 'SaaS PODS', href: '/services/saas-pods' },
             { label: 'Executive Search Firms', href: '/services/executive-search-firms' },
-            { label: 'AI PODS', href: '/services/gcc/build-operate-transfer' },
-            { label: 'Data PODS', href: '/services/gcc/build-operate-transfer' },
+            { label: 'AI PODS', href: '/services/ai-pod' },
+            { label: 'Data PODS', href: '/services/data-pods' },
             { label: 'Microsoft Support PODS for MSPs', href: '/services/gcc/build-operate-transfer' },
             { label: 'Existing Indian GCCs scalling in the Tier2', href: '/services/indian-gcc-scalling-in-tier2' }
           ]

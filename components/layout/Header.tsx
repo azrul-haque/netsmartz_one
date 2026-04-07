@@ -104,6 +104,7 @@ const Header: React.FC = () => {
         { 
           title: 'Digital Engineering', 
           links: [
+            { label: 'Software Product Development', href: '/services/software-product-development' },
             { label: 'Software as a Service', href: '/services/digital/saas' },
             { label: 'Full-Stack Engineering', href: '/services/digital/fullstack' },
             { label: 'Custom Software Development', href: '/services/digital/custom-software' },

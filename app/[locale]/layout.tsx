@@ -8,8 +8,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Netsmartz - AI-Powered Technology Company Since 1999',
-  description: 'Partner with Netsmartz — a global AI-first technology company trusted by 2,000+ SaaS businesses for over 25 years.',
+  title: 'AI-Powered SaaS Software Development Company USA - Netsmartz',
+  description: 'AI-Powered SaaS software development company in the USA specializing in custom, cloud-ready, and scalable artificial intelligence solutions. Reach us at +1-888-661-8967 to get started today.',
   icons: {
     icon: '/favicon.ico',
   },

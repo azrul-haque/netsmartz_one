@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               <div className="relative w-[200px] h-[100px]">
                 <Image
                   src="/assets/footer/iso.png"
-                  alt="sustainability icon"
+                  alt="sustainability icons"
                   fill
                   className="object-contain"
                 />

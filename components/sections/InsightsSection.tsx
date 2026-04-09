@@ -2,29 +2,19 @@
 
 import React from 'react';
 
-const InsightsSection: React.FC = () => {
-  const insights = [
-    {
-      type: "Whitepaper",
-      title: "Unleashing the Power of Minimum Viable Product (MVP) for a Business",
-      description: "A significant reason for the failure of startups is that entrepreneurs and business leaders design their initial products based on assumptions. They assume that their business product will solve probl...",
-      link: "#",
-      image: ""
-    },
-    {
-      type: "Blog",
-      title: "How to build a Minimum Viable Product (MVP) for a Successful Business",
-      image: "https://netsmartz.com/wp-content/uploads/2022/03/How-to-build-a-Minimum-Viable-Product-MVP-for-a-Successful-Business.png",
-      link: "#"
-    },
-    {
-      type: "Blog",
-      title: "Dedicated Product Development Teams for Projects of Any Scale and Complexity",
-      image: "https://netsmartz.com/wp-content/uploads/2021/03/dedicated-team-blog-2.png",
-      link: "#"
-    }
-  ];
+interface Insight {
+  type: 'Blog' | 'Whitepaper';
+  title: string;
+  description?: string;
+  image?: string;
+  link: string;
+}
 
+interface InsightsSectionProps {
+  insights: Insight[];
+}
+
+const InsightsSection: React.FC<InsightsSectionProps> = ({ insights }) => {
   return (
     <section className="py-16 bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -65,7 +55,7 @@ const InsightsSection: React.FC = () => {
                   href={insight.link}
                   className="inline-flex items-center text-[#fe7725] font-semibold hover:text-orange-400 transition-colors"
                 >
-                  {insight.type === "Whitepaper" ? "Download Whitepaper" : "Read Article"}
+                  {insight.type === 'Whitepaper' ? 'Download Whitepaper' : 'Read Article'}
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

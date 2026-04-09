@@ -49,10 +49,31 @@ const CompetenciesSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {competencies.map((competency, index) => (
+        {/* First row: 3 items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {competencies.slice(0, 3).map((competency, index) => (
             <div
               key={index}
+              className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all group"
+            >
+              <div className="w-16 h-16 mb-4 overflow-hidden rounded-lg">
+                <img 
+                  src={competency.icon} 
+                  alt={competency.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{competency.title}</h3>
+              <p className="text-gray-700 leading-relaxed">{competency.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Second row: 3 items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {competencies.slice(3, 6).map((competency, index) => (
+            <div
+              key={index + 3}
               className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all group"
             >
               <div className="w-16 h-16 mb-4 overflow-hidden rounded-lg">

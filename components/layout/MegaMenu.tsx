@@ -25,7 +25,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
     {
       title: 'GCC',
       services: [
-        { name: 'GCC - MEENA', href: '#' },
+        { name: 'GCC - MENA', href: '#' },
         { name: 'SaaS PODS', href: '#gcc' },
         { name: 'Executive Search Firms', href: '#bot' },
         { name: 'AI PODS', href: '#bot' },

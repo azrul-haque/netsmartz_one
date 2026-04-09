@@ -32,6 +32,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
         { name: 'Microsoft Support PODS for MSPs', href: '#bot' },
         { name: 'Existing Indian GCCs scalling in the Tier2', href: '#bot' },
         { name: 'GCC for Mid-sized American Companies', href: '#bot' },
+        { name: 'GCC - MEENA', href: '#' },
       ],
     },
     {

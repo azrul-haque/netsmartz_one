@@ -50,10 +50,34 @@ const OfferingSection: React.FC = () => {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {offerings.map((offering, index) => (
+        {/* First row: 3 items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-8">
+          {offerings.slice(0, 3).map((offering, index) => (
             <div
               key={index}
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all"
+            >
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={offering.image}
+                  alt={offering.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold text-white mb-3">{offering.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{offering.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Second row: 2 items centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {offerings.slice(3, 5).map((offering, index) => (
+            <div
+              key={index + 3}
               className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all"
             >
               <div className="relative h-48 overflow-hidden">

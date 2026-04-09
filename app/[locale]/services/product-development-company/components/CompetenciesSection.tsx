@@ -87,18 +87,6 @@ const CompetenciesSection: React.FC = () => {
             );
           })}
         </div>
-              <div className="w-16 h-16 mb-4 overflow-hidden rounded-lg">
-                <img 
-                  src={competency.icon} 
-                  alt={competency.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{competency.title}</h3>
-              <p className="text-gray-700 leading-relaxed">{competency.description}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

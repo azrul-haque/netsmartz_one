@@ -32,9 +32,7 @@ export default function FullStackEngineeringPage() {
       <HowWeWorkSection />
       <WhoThisWorksForSection />
       <WhyNetsmartzSection />
-      <SuccessStoriesSection />
-      <TechStackSection />
-      <IndustriesSection />
+     
       <ContactSection />
     </div>
   );

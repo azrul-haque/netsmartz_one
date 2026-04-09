@@ -61,7 +61,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
         { name: 'Full-Stack Engineering', href: '/services/full-stack-engineering' },
         { name: 'Product Development Company', href: '/services/product-development-company' },
         { name: 'Custom Software Development', href: '#custom-dev' },
-        { name: 'Mobile Application Development', href: '#mobile' },
+        { name: 'Mobile Application Development', href: '/services/mobile-app-development-company' },
         { name: 'Digital Commerce', href: '#ecommerce' },
       ],
     },

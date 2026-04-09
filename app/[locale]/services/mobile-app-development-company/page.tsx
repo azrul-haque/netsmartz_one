@@ -1,14 +1,14 @@
 import React from 'react';
 import { Metadata } from 'next';
 import ContactSection from '@/components/sections/ContactSection';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
+import InsightsSection from '@/components/sections/InsightsSection';
 import HeroSection from './components/HeroSection';
 import CompetenciesSection from './components/CompetenciesSection';
 import OfferingSection from './components/OfferingSection';
 import TechStackSection from '../software-product-development/components/TechStackSection';
 import SuccessStoriesSection from './components/SuccessStoriesSection';
-import TestimonialsSection from './components/TestimonialsSection';
 import EngagementModelsSection from './components/EngagementModelsSection';
-import InsightsSection from './components/InsightsSection';
 
 export const metadata: Metadata = {
   title: 'Custom Mobile App Development Services | Netsmartz',

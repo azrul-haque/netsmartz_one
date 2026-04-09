@@ -319,7 +319,8 @@ const Header: React.FC = () => {
             { label: 'Expert Q&A', href: '/resources/expert-qa' },
             { label: 'Whitepapers', href: '/resources/whitepapers' },
             { label: 'Industry Reports', href: '/resources/industry-reports' },
-            { label: 'Podcasts', href: '/resources/podcasts' }
+            { label: 'Podcasts', href: '/resources/podcasts' },
+            { label: 'Webinars', href: '/resources/webinars' }
           ] 
         }
       ]

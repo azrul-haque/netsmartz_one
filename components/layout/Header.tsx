@@ -115,7 +115,7 @@ const Header: React.FC = () => {
           title: 'Cybersecurity', 
           links: [
             { label: 'Cybersecurity Assessment', href: '/services/cybersecurity' },
-            { label: 'Penetration Testing', href: '/services/cybersecurity/penetration-testing' },
+            { label: 'Penetration Testing', href: '/services/vulnerability-assessment-penetration-testing' },
             { label: 'SOC-as-a-Service', href: '/services/cybersecurity/soc' },
             { label: 'MDR', href: '/services/cybersecurity/mdr' },
             { label: 'Cloud Security', href: '/services/cybersecurity/cloud-security' },

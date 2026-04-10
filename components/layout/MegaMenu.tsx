@@ -70,7 +70,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
       title: 'Cybersecurity',
       services: [
         { name: 'Cybersecurity Assessment', href: '/services/cybersecurity' },
-        { name: 'Penetration Testing', href: '#pentest' },
+        { name: 'Penetration Testing', href: '/services/vulnerability-assessment-penetration-testing' },
         { name: 'SOC-as-a-Service', href: '#soc' },
         { name: 'MDR', href: '#mdr' },
         { name: 'Cloud Security', href: '#cloud-security' },

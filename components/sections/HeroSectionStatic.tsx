@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
 
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               Partner with Netsmartz — a global AI-first technology company trusted by{' '}
-              <strong className="text-gray-900">2,000+ SaaS businesses</strong> for over 25 years.
+              <strong className="text-gray-900">2,000+ SaaS businesses</strong> for over 26 years.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

@@ -41,7 +41,7 @@ const HeroSection: React.FC = () => {
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-2xl">
               Partner with Netsmartz — a global AI-first technology company trusted by{' '}
-              <span className="font-semibold text-blue-600">2,000+ SaaS businesses</span> for over 25 years.
+              <span className="font-semibold text-blue-600">2,000+ SaaS businesses</span> for over 26 years.
             </p>
 
             {/* CTA Buttons */}

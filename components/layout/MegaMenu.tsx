@@ -23,7 +23,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
       ],
     },
     {
-      title: 'GCC',
+      title: 'Global Capability Center',
       services: [
         { name: 'SaaS PODS', href: '#gcc' },
         { name: 'Executive Search Firms', href: '#bot' },

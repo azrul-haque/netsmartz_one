@@ -70,7 +70,7 @@ const Header: React.FC = () => {
           ] 
         },
         { 
-          title: 'GCC', 
+          title: 'Global Capability Center', 
           links: [
             { label: 'SaaS PODS', href: '/services/saas-pods' },
             { label: 'Executive Search Firms', href: '/services/executive-search-firms' },
@@ -161,7 +161,7 @@ const Header: React.FC = () => {
           title: '', 
           links: [
             { label: 'Construction & Real Estate', href: '/industries/construction-real-estate' },
-            { label: 'Healthcare & Life Sciences', href: '/industries/healthcare' },
+            { label: 'Healthcare', href: '/industries/healthcare' },
             { label: 'Technology & SaaS', href: '/industries/technology-saas' },
             { label: 'Telecommunication', href: '/industries/telecommunication' }
           ] 

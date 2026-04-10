@@ -1,0 +1,6 @@
+{
+  "framework": "nextjs",
+  "installCommand": "yarn install",
+  "buildCommand": "next build",
+  "regions": ["iad1"]
+}

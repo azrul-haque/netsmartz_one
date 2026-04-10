@@ -7,8 +7,8 @@ const HeroSection: React.FC = () => {
     <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 sm:py-16 lg:py-20 overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <img
-          src="/images/services/devops/hero-bg.jpg"
-          alt="DevOps Infrastructure"
+          src="/images/services/infrastructure-modernization/hero-bg.jpg"
+          alt="Infrastructure Modernization"
           className="w-full h-full object-cover"
         />
       </div>
@@ -19,18 +19,18 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-            Eliminate Development <span className="text-[#fe7725]">Bottlenecks with DevOps</span>
+            Modernize Your Infrastructure <span className="text-[#fe7725]">Without Disrupting Your Business</span>
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
-            Looking for a way to speed up the implementation of changes to your software without sacrificing quality? Look no further.
+            As businesses scale, infrastructure must evolve with them, but legacy systems often limit performance, flexibility, and security. Infrastructure modernization creates a scalable, secure foundation that supports faster deployments, improved reliability, and future-ready operations.
           </p>
 
           <a
             href="#contact"
             className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#fe7725] to-[#ff9555] hover:from-[#ff9555] hover:to-[#fe7725] text-white rounded-xl font-semibold text-sm sm:text-base lg:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            Get a Free Security Assessment
+            Build a Resilient, Scalable Infrastructure
           </a>
         </div>
       </div>

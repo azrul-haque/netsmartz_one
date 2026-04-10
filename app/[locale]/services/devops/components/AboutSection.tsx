@@ -8,11 +8,12 @@ const AboutSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           <div className="lg:w-1/2">
-            <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-orange-100 to-orange-200 flex items-center justify-center">
-              <svg className="w-32 h-32" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="64" cy="64" r="60" stroke="#fe7725" strokeWidth="3" fill="none"/>
-                <path d="M44 64L56 76L84 48" stroke="#fe7725" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+            <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="/images/services/devops/about-section.jpg"
+                alt="DevOps Team Collaboration"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <div className="lg:w-1/2">

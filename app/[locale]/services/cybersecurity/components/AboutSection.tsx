@@ -8,11 +8,12 @@ const AboutSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
           <div className="lg:w-1/2">
-            <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-              <svg className="w-48 h-48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100 40L60 70V110C60 140 80 160 100 180C120 160 140 140 140 110V70L100 40Z" stroke="#fe7725" strokeWidth="6" fill="none"/>
-                <path d="M80 100L90 110L120 80" stroke="#fe7725" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+            <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg">
+              <img
+                src="/images/services/cybersecurity/about-section.jpg"
+                alt="Cybersecurity Operations"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <div className="lg:w-1/2">

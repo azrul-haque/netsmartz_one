@@ -246,15 +246,15 @@ const Header: React.FC = () => {
         { 
           title: '', 
           links: [
-            { label: 'Microsoft Partner', href: '/partners/microsoft', icon: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg' },
-            { label: 'IBM Partner', href: '/partners/ibm', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg' },
-            { label: 'Adobe Partner', href: '/partners/adobe', icon: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Adobe_Corporate_logo.svg' },
-            { label: 'Salesforce Partner', href: '/partners/salesforce', icon: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg' },
-            { label: 'ServiceNow Partner', href: '/partners/servicenow', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/57/ServiceNow_logo.svg' },
-            { label: 'AWS Partner', href: '/partners/aws', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' },
-            { label: 'Google Partner', href: '/partners/google', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg' },
-            { label: 'Crowdstrike Partner', href: '/partners/crowdstrike', icon: 'https://logos-world.net/wp-content/uploads/2021/10/CrowdStrike-Logo.png' },
-            { label: 'SentinelOne Partner', href: '/partners/sentinelone', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZL8fYGZ-5vF0JQfXZqFZLQvZKQfXZqFZLQg&s' }
+            { label: 'Microsoft Partner', href: '/partners/microsoft', icon: '/assets/products_icon/microsoft.webp' },
+            { label: 'IBM Partner', href: '/partners/ibm', icon: '/assets/products_icon/ibm.webp' },
+            { label: 'Adobe Partner', href: '/partners/adobe', icon: '/assets/products_icon/adobe.webp' },
+            { label: 'Salesforce Partner', href: '/partners/salesforce', icon: '/assets/products_icon/salesforce.webp' },
+            { label: 'ServiceNow Partner', href: '/partners/servicenow', icon: '/assets/products_icon/servicenow.webp' },
+            { label: 'AWS Partner', href: '/partners/aws', icon: '/assets/products_icon/aws.webp' },
+            { label: 'Google Partner', href: '/partners/google', icon: '/assets/products_icon/google.webp' },
+            { label: 'Crowdstrike Partner', href: '/partners/crowdstrike', icon: '/assets/products_icon/crowdstrike.webp' },
+            { label: 'SentinelOne Partner', href: '/partners/sentinelone', icon: '/assets/products_icon/sentinel.webp' }
           ] 
         }
       ]

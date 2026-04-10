@@ -5,10 +5,16 @@ import React from 'react';
 const HeroSection: React.FC = () => {
   return (
     <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-12 sm:py-16 lg:py-20 overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#fe7725] rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-pulse"></div>
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-orange-600 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
+      <div className="absolute inset-0 opacity-20">
+        <img
+          src="/images/services/ci-cd-automation/hero-bg.jpg"
+          alt="CI/CD Pipeline"
+          className="w-full h-full object-cover"
+        />
       </div>
+
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#fe7725] rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-orange-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
 
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">

@@ -246,15 +246,15 @@ const Header: React.FC = () => {
         { 
           title: '', 
           links: [
-            { label: 'Microsoft Partner', href: '/partners/microsoft', icon: '/assets/products_icon/microsoft.webp' },
-            { label: 'IBM Partner', href: '/partners/ibm', icon: '/assets/products_icon/ibm.webp' },
-            { label: 'Adobe Partner', href: '/partners/adobe', icon: '/assets/products_icon/adobe.webp' },
-            { label: 'Salesforce Partner', href: '/partners/salesforce', icon: '/assets/products_icon/salesforce.webp' },
-            { label: 'ServiceNow Partner', href: '/partners/servicenow', icon: '/assets/products_icon/servicenow.webp' },
-            { label: 'AWS Partner', href: '/partners/aws', icon: '/assets/products_icon/aws.webp' },
-            { label: 'Google Partner', href: '/partners/google', icon: '/assets/products_icon/google.webp' },
-            { label: 'Crowdstrike Partner', href: '/partners/crowdstrike', icon: '/assets/products_icon/crowdstrike.webp' },
-            { label: 'SentinelOne Partner', href: '/partners/sentinelone', icon: '/assets/products_icon/sentinel.webp' }
+            { label: 'Microsoft Partner', href: '/partners/microsoft', icon: '/assets/products/microsoft.webp' },
+            { label: 'IBM Partner', href: '/partners/ibm', icon: '/assets/products/ibm.webp' },
+            { label: 'Adobe Partner', href: '/partners/adobe', icon: '/assets/products/adobe.webp' },
+            { label: 'Salesforce Partner', href: '/partners/salesforce', icon: '/assets/products/salesforce.webp' },
+            { label: 'ServiceNow Partner', href: '/partners/servicenow', icon: '/assets/products/servicenow.webp' },
+            { label: 'AWS Partner', href: '/partners/aws', icon: '/assets/products/aws.webp' },
+            { label: 'Google Partner', href: '/partners/google', icon: '/assets/products/google.webp' },
+            { label: 'Crowdstrike Partner', href: '/partners/crowdstrike', icon: '/assets/products/crowdstrike.webp' },
+            { label: 'SentinelOne Partner', href: '/partners/sentinelone', icon: '/assets/products/sentinel.webp' }
           ] 
         }
       ]

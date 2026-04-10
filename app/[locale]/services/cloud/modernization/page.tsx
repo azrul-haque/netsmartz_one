@@ -8,7 +8,7 @@ import DevOpsServicesSection from './components/DevOpsServicesSection';
 import WhyChooseSection from './components/WhyChooseSection';
 
 export const metadata: Metadata = {
-  title: 'Managed Cloud Services | Netsmartz',
+  title: 'Cloud Modernization | Netsmartz',
   description: 'Maximize performance, reduce costs, and ensure scalability with tailored cloud solutions designed for your business success.',
 };
 

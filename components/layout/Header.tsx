@@ -305,7 +305,7 @@ const Header: React.FC = () => {
         { 
           title: 'Customer Success', 
           links: [
-            { label: 'Case Studies', href: '/resources/case-studies' },
+            { label: 'Case Studies', href: '/success-story' },
             { label: 'Testimonials', href: '/resources/testimonials' },
             { label: 'Certifications', href: '/resources/certifications' },
             { label: 'Events & Media', href: '/resources/events-media' }

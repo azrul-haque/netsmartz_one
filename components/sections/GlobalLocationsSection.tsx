@@ -19,7 +19,7 @@ const GlobalLocationsSection: React.FC = () => {
       description: t('description'),
       subtitle: t('descriptionSuffix'),
       address: '1250 Pittsford Victor Road Ste 310\nPittsford, NY 14534',
-      image: '/assets/office_locations/rochester.jpg',
+      image: '/assets/office_locations/Rochester.jpg',
       mapIcon: '🇺🇸'
     },
     {

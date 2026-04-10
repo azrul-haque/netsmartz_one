@@ -648,12 +648,13 @@ const Header: React.FC = () => {
                           </div>
                           <div className={`${megaMenus[key].graphic ? 'w-[45%]' : 'w-[65%]'} max-h-[400px] overflow-y-auto`}>
                             <div
-  className={`grid ${
-    key === 'partners' ? 'grid-cols-1' : 'grid-cols-3'
-  } gap-x-2 gap-y-8`}
+  className={`${
+    key === 'partners' ? 'grid grid-cols-1' : 'columns-3 gap-x-6'
+  }`}
+  style={key !== 'partners' ? { columnGap: '1.5rem' } : undefined}
 >
                               {megaMenus[key].categories.map((cat: MenuCategory, idx: number) => (
-                                <div key={idx}>
+                                <div key={idx} className={`${key !== 'partners' ? 'break-inside-avoid mb-8' : ''}`}>
                                   {cat.title && (
                                     <>
                                       <h3 className="text-[15px] font-semibold text-[#fe7725] mb-1">{cat.title}</h3>

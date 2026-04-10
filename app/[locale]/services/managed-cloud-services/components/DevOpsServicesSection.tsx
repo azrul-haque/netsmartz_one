@@ -57,8 +57,8 @@ const DevOpsServicesSection: React.FC = () => {
     <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            DevOps Services
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+            <span className="text-[#fe7725]">DevOps</span> Services
           </h2>
         </div>
 
@@ -81,8 +81,8 @@ const DevOpsServicesSection: React.FC = () => {
 
         {/* Microsoft Azure and AWS Proficiency */}
         <div className="mt-12 sm:mt-16 lg:mt-20 text-center">
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
-            Microsoft Azure and AWS Proficiency
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-6 sm:mb-8">
+            Microsoft Azure and <span className="text-[#fe7725]">AWS Proficiency</span>
           </h3>
           <div className="flex flex-wrap justify-center gap-8 items-center">
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 px-8 py-6 rounded-xl">

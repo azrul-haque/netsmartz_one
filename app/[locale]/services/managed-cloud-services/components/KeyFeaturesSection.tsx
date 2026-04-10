@@ -59,8 +59,8 @@ const KeyFeaturesSection: React.FC = () => {
     <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Key Features of Managed Cloud Services
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4">
+            Key Features of <span className="text-[#fe7725]">Managed Cloud Services</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             These key features of Managed Cloud Services ensure optimal performance, security, and seamless scalability for your business.

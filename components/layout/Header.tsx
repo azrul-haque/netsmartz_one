@@ -249,7 +249,7 @@ const Header: React.FC = () => {
             { label: 'Microsoft Partner', href: '/partners/microsoft', icon: '/assets/partners/microsoft.webp' },
             { label: 'IBM Partner', href: '/partners/ibm', icon: '/assets/partners/ibm.webp' },
             { label: 'Adobe Partner', href: '/partners/adobe', icon: '/assets/partners/adobe.webp' },
-            { label: 'Salesforce Partner', href: '/partners/salesforce', icon: '/assets/partners/salesforce.webp' },
+            { label: 'Salesforce Partner', href: '/partners/salesforce', icon: '/assets/partners/saleforce.webp' },
             { label: 'ServiceNow Partner', href: '/partners/servicenow', icon: '/assets/partners/servicenow.webp' },
             { label: 'AWS Partner', href: '/partners/aws', icon: '/assets/partners/aws.webp' },
             { label: 'Google Partner', href: '/partners/google', icon: '/assets/partners/google.webp' },

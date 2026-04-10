@@ -29,7 +29,6 @@ const SuccessStoriesSection: React.FC = () => {
       link: '/success-stories/netsmartz-ai-pods-case-study-staffing'
     }
   ];
-  ];
 
   return (
     <section className="py-10 bg-gradient-to-br from-orange-50 via-white to-rose-50 overflow-hidden relative">

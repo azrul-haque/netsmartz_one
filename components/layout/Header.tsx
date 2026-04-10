@@ -656,7 +656,7 @@ const Header: React.FC = () => {
                                 <div key={idx}>
                                   {cat.title && (
                                     <>
-                                      <h3 className="text-sm font-semibold text-[#fe7725] mb-1">{cat.title}</h3>
+                                      <h3 className="text-[15px] font-semibold text-[#fe7725] mb-1">{cat.title}</h3>
                                       <div className="w-12 h-1 bg-[#fe7725] mb-3"></div>
                                     </>
                                   )}

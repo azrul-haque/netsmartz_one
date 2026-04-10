@@ -650,7 +650,7 @@ const Header: React.FC = () => {
                             <div
   className={`grid ${
     key === 'partners' ? 'grid-cols-1' : 'grid-cols-3'
-  } gap-x-12 gap-y-8`}
+  } gap-x-2 gap-y-8`}
 >
                               {megaMenus[key].categories.map((cat: MenuCategory, idx: number) => (
                                 <div key={idx}>

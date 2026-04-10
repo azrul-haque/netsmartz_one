@@ -40,6 +40,94 @@ const Header: React.FC = () => {
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const [isContactDropdownOpen, setIsContactDropdownOpen] = useState(false);
 
+  // Helper function to get relevant SVG icons for menu items
+  const getMenuIcon = (label: string) => {
+    const lowerLabel = label.toLowerCase();
+    
+    // AI & ML related
+    if (lowerLabel.includes('ai') || lowerLabel.includes('ml') || lowerLabel.includes('agent')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 9a1 1 0 112 0v4a1 1 0 11-2 0V9zm1-4a1 1 0 100 2 1 1 0 000-2z"/></svg>;
+    }
+    // Cloud related
+    if (lowerLabel.includes('cloud') || lowerLabel.includes('infrastructure') || lowerLabel.includes('modernization')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"/></svg>;
+    }
+    // DevOps & CI/CD
+    if (lowerLabel.includes('devops') || lowerLabel.includes('ci/cd') || lowerLabel.includes('automation') || lowerLabel.includes('sre')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd"/></svg>;
+    }
+    // Data related
+    if (lowerLabel.includes('data') || lowerLabel.includes('analytics') || lowerLabel.includes('warehouse') || lowerLabel.includes('visualization')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>;
+    }
+    // Security related
+    if (lowerLabel.includes('security') || lowerLabel.includes('penetration') || lowerLabel.includes('soc') || lowerLabel.includes('mdr') || lowerLabel.includes('identity') || lowerLabel.includes('access')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clipRule="evenodd"/></svg>;
+    }
+    // Development related
+    if (lowerLabel.includes('software') || lowerLabel.includes('development') || lowerLabel.includes('full-stack') || lowerLabel.includes('custom') || lowerLabel.includes('mobile') || lowerLabel.includes('engineering')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"/></svg>;
+    }
+    // Commerce & Business
+    if (lowerLabel.includes('commerce') || lowerLabel.includes('ecommerce') || lowerLabel.includes('retail')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd"/></svg>;
+    }
+    // Testing & Quality
+    if (lowerLabel.includes('test') || lowerLabel.includes('quality') || lowerLabel.includes('qa') || lowerLabel.includes('performance') || lowerLabel.includes('regression')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>;
+    }
+    // SaaS & Pods
+    if (lowerLabel.includes('saas') || lowerLabel.includes('pod') || lowerLabel.includes('gcc')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>;
+    }
+    // Business Applications & Platforms
+    if (lowerLabel.includes('microsoft') || lowerLabel.includes('salesforce') || lowerLabel.includes('servicenow') || lowerLabel.includes('adobe') || lowerLabel.includes('ibm')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11 4a1 1 0 10-2 0v4a1 1 0 102 0V7zm-3 1a1 1 0 10-2 0v3a1 1 0 102 0V8zM8 9a1 1 0 00-2 0v2a1 1 0 102 0V9z" clipRule="evenodd"/></svg>;
+    }
+    // Industries
+    if (lowerLabel.includes('healthcare') || lowerLabel.includes('construction') || lowerLabel.includes('manufacturing') || lowerLabel.includes('telecom')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clipRule="evenodd"/></svg>;
+    }
+    // Media, Travel, Food
+    if (lowerLabel.includes('media') || lowerLabel.includes('entertainment') || lowerLabel.includes('travel') || lowerLabel.includes('tourism') || lowerLabel.includes('f & b') || lowerLabel.includes('food')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd"/></svg>;
+    }
+    // Non-profit, public sector
+    if (lowerLabel.includes('non profit') || lowerLabel.includes('public')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>;
+    }
+    // Aerospace, Data Centers
+    if (lowerLabel.includes('aerospace') || lowerLabel.includes('data center')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h.01a1 1 0 100-2H7zm2 1a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zm4-4a1 1 0 100 2h.01a1 1 0 100-2H13zM9 9a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1zM7 8a1 1 0 000 2h.01a1 1 0 000-2H7z" clipRule="evenodd"/></svg>;
+    }
+    // Company, About, Locations
+    if (lowerLabel.includes('story') || lowerLabel.includes('leader') || lowerLabel.includes('award') || lowerLabel.includes('innovation') || lowerLabel.includes('school')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"/></svg>;
+    }
+    // Locations
+    if (lowerLabel.includes('rochester') || lowerLabel.includes('austin') || lowerLabel.includes('vancouver') || lowerLabel.includes('toronto') || lowerLabel.includes('dubai') || lowerLabel.includes('singapore') || lowerLabel.includes('melbourne') || lowerLabel.includes('chandigarh') || lowerLabel.includes('mohali') || lowerLabel.includes('gurugram') || lowerLabel.includes('noida')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/></svg>;
+    }
+    // Culture, CSR
+    if (lowerLabel.includes('culture') || lowerLabel.includes('talent') || lowerLabel.includes('giving') || lowerLabel.includes('csr') || lowerLabel.includes('sustainability')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>;
+    }
+    // Resources - Case Studies, Testimonials, etc
+    if (lowerLabel.includes('case') || lowerLabel.includes('testimonial') || lowerLabel.includes('certification') || lowerLabel.includes('event') || lowerLabel.includes('media')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clipRule="evenodd"/><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"/></svg>;
+    }
+    // Blogs, Whitepapers, Reports, Podcasts
+    if (lowerLabel.includes('blog') || lowerLabel.includes('whitepaper') || lowerLabel.includes('report') || lowerLabel.includes('podcast') || lowerLabel.includes('expert')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd"/></svg>;
+    }
+    // Executive Search
+    if (lowerLabel.includes('executive') || lowerLabel.includes('search')) {
+      return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>;
+    }
+    // Default icon for items without specific category
+    return <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"/></svg>;
+  };
+
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => {
@@ -401,7 +489,12 @@ const Header: React.FC = () => {
 >
                               {megaMenus[key].categories.map((cat: MenuCategory, idx: number) => (
                                 <div key={idx}>
-                                  {cat.title && <h3 className="text-sm font-semibold text-[#fe7725] mb-3">{cat.title}</h3>}
+                                  {cat.title && (
+                                    <>
+                                      <h3 className="text-sm font-semibold text-[#fe7725] mb-1">{cat.title}</h3>
+                                      <div className="w-12 h-1 bg-[#fe7725] mb-3"></div>
+                                    </>
+                                  )}
                                   <ul
   className={`${
     key === 'partners'
@@ -418,7 +511,7 @@ const Header: React.FC = () => {
                                             rel="noopener noreferrer"
                                             className="text-sm text-gray-700 hover:text-[#fe7725] transition-colors flex items-center gap-2"
                                           >
-                                            {link.icon && (
+                                            {link.icon ? (
                                               <img 
                                                 src={link.icon} 
                                                 alt={link.label} 
@@ -427,6 +520,8 @@ const Header: React.FC = () => {
                                                   e.currentTarget.style.display = 'none';
                                                 }}
                                               />
+                                            ) : (
+                                              <span className="text-[#fe7725]">{getMenuIcon(link.label)}</span>
                                             )}
                                             {link.label}
                                           </a>
@@ -436,7 +531,7 @@ const Header: React.FC = () => {
                                             className="text-sm text-gray-700 hover:text-[#fe7725] transition-colors flex items-center gap-2"
                                             onClick={() => setActiveMenu(null)}
                                           >
-                                            {link.icon && (
+                                            {link.icon ? (
                                               <img 
                                                 src={link.icon} 
                                                 alt={link.label} 
@@ -445,6 +540,8 @@ const Header: React.FC = () => {
                                                   e.currentTarget.style.display = 'none';
                                                 }}
                                               />
+                                            ) : (
+                                              <span className="text-[#fe7725]">{getMenuIcon(link.label)}</span>
                                             )}
                                             {link.label}
                                           </Link>
@@ -616,17 +713,41 @@ const Header: React.FC = () => {
                                     href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block py-1 text-sm text-gray-700 hover:text-[#fe7725]"
+                                    className="block py-1 text-sm text-gray-700 hover:text-[#fe7725] flex items-center gap-2"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                   >
+                                    {link.icon ? (
+                                      <img 
+                                        src={link.icon} 
+                                        alt={link.label} 
+                                        className="w-4 h-4 object-contain"
+                                        onError={(e) => {
+                                          e.currentTarget.style.display = 'none';
+                                        }}
+                                      />
+                                    ) : (
+                                      <span className="text-[#fe7725]">{getMenuIcon(link.label)}</span>
+                                    )}
                                     {link.label}
                                   </a>
                                 ) : (
                                   <Link 
                                     href={link.href}
-                                    className="block py-1 text-sm text-gray-700 hover:text-[#fe7725]"
+                                    className="block py-1 text-sm text-gray-700 hover:text-[#fe7725] flex items-center gap-2"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                   >
+                                    {link.icon ? (
+                                      <img 
+                                        src={link.icon} 
+                                        alt={link.label} 
+                                        className="w-4 h-4 object-contain"
+                                        onError={(e) => {
+                                          e.currentTarget.style.display = 'none';
+                                        }}
+                                      />
+                                    ) : (
+                                      <span className="text-[#fe7725]">{getMenuIcon(link.label)}</span>
+                                    )}
                                     {link.label}
                                   </Link>
                                 )}

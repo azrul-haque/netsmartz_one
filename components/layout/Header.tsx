@@ -83,6 +83,7 @@ const Header: React.FC = () => {
         { 
           title: 'Cloud, DevOps & Infrastructure', 
           links: [
+            { label: 'Managed Cloud Services', href: '/services/managed-cloud-services' },
             { label: 'Cloud Modernization', href: '/services/cloud/modernization' },
             { label: 'DevOps Engineering', href: '/services/cloud/devops' },
             { label: 'CI/CD & Automation', href: '/services/cloud/cicd-automation' },

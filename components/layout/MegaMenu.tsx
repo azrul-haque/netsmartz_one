@@ -41,7 +41,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ isOpen, onClose }) => {
       services: [
         { name: 'Cloud Modernization', href: '/services/managed-cloud-services' },
         { name: 'DevOps Engineering', href: '/services/devops' },
-        { name: 'CI/CD & Automation', href: '#cicd' },
+        { name: 'CI/CD & Automation', href: '/services/ci-cd-automation' },
         { name: 'Infrastructure Modernization', href: '#infrastructure' },
         { name: 'SRE (24x7)', href: '#sre' },
       ],

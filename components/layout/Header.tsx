@@ -87,7 +87,7 @@ const Header: React.FC = () => {
             { label: 'DevOps Engineering', href: '/services/devops' },
             { label: 'CI/CD & Automation', href: '/services/ci-cd-automation' },
             { label: 'Infrastructure Modernization', href: '/services/infrastructure-modernization' },
-            { label: 'SRE (24×7)', href: '/services/cloud/sre' },
+            { label: 'SRE (24×7)', href: '/services/site-reliability-engineering' },
             { label: 'Verticalization for Home Healthcare', href: '/services/cloud/sre' }
             
           ] 

@@ -24,7 +24,7 @@ export default function StaffingCaseStudyPage() {
     },
     {
       title: 'Traditional Staffing Limitations',
-      description: "The staffing firm's standard model—posting job descriptions and placing full-time engineers—couldn't solve the speed gap. The client needed execution, not another candidate slate."
+      description: 'The staffing firm\'s standard model—posting job descriptions and placing full-time engineers—couldn\'t solve the speed gap. The client needed execution, not another candidate slate.'
     },
     {
       title: 'High Cost of Delay',
@@ -35,7 +35,7 @@ export default function StaffingCaseStudyPage() {
   const solutions = [
     {
       title: 'The AI Pod Model',
-      description: 'A dedicated AI Pod was deployed, consisting of: AI/ML Engineer, Data Engineer, Integration Engineer, Product Owner. This team took full ownership of the SaaS client's AI roadmap.'
+      description: 'A dedicated AI Pod was deployed, consisting of: AI/ML Engineer, Data Engineer, Integration Engineer, Product Owner. This team took full ownership of the SaaS client\'s AI roadmap.'
     },
     {
       title: 'Production-First Delivery',

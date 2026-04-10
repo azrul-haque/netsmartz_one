@@ -7,7 +7,7 @@ const StatsSection: React.FC = () => {
     { number: "6", label: "In-House Products" },
     { number: "1500+", label: "Agile Developers" },
     { number: "150+", label: "Delivered Products" },
-    { number: "25+", label: "Years of Experience" },
+    { number: "26+", label: "Years of Experience" },
     { number: "71", label: "NPS Score" },
   ];
 

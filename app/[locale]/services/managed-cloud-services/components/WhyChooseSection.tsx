@@ -13,7 +13,7 @@ const benefits = [
     ),
   },
   {
-    title: '25 Years of IT Excellence',
+    title: '26 Years of IT Excellence',
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="48" height="48" rx="8" fill="#FEF3E7"/>

@@ -4,7 +4,7 @@ import React from 'react';
 
 const reasons = [
   {
-    title: '25+ years of enterprise experience',
+    title: '26+ years of enterprise experience',
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="48" height="48" rx="8" fill="#FEF3E7"/>

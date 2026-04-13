@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
+import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
 
 const SuccessStoriesSection: React.FC = () => {
@@ -12,45 +12,21 @@ const SuccessStoriesSection: React.FC = () => {
   const successStories = [
     {
       id: '1',
-      title: t('story1Title'),
-      category: t('story1Category'),
-      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80',
-      excerpt: t('story1Excerpt')
+      title: 'How a Fractional CTO Scaled AI Execution in Manufacturing Without Hiring',
+      category: 'AI Pod - Advisory',
+      location: 'Manufacturing / USA',
+      image: '/images/case-studies/advisory-thumb.jpg',
+      excerpt: 'Learn how a fractional CTO partnered with Netsmartz to move a manufacturing client from hiring paralysis to production-ready AI—using the AI Pod model.',
+      link: '/success-stories/netsmartz-ai-pods-case-study-advisory'
     },
     {
       id: '2',
-      title: t('story2Title'),
-      category: t('story2Category'),
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-      excerpt: t('story2Excerpt')
-    },
-    {
-      id: '3',
-      title: t('story3Title'),
-      category: t('story3Category'),
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80',
-      excerpt: t('story3Excerpt')
-    },
-    {
-      id: '4',
-      title: t('story4Title'),
-      category: t('story4Category'),
-      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
-      excerpt: t('story4Excerpt')
-    },
-    {
-      id: '5',
-      title: t('story5Title'),
-      category: t('story5Category'),
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
-      excerpt: t('story5Excerpt')
-    },
-    {
-      id: '6',
-      title: t('story6Title'),
-      category: t('story6Category'),
-      image: 'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&q=80',
-      excerpt: t('story6Excerpt')
+      title: 'How an IT Staffing Firm Closed 3 AI Pods in 60 Days with Netsmartz',
+      category: 'AI Pod - Staffing',
+      location: 'IT Staffing / Denver',
+      image: '/images/case-studies/staffing-thumb.jpg',
+      excerpt: 'Discover how a Denver IT staffing firm partnered with Netsmartz to deliver AI for their SaaS client—using a new model that turned a stalled project into three new revenue streams.',
+      link: '/success-stories/netsmartz-ai-pods-case-study-staffing'
     }
   ];
 
@@ -71,12 +47,13 @@ const SuccessStoriesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Stories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Stories Grid - Only 2 stories centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
           {successStories.map((story) => (
-            <div
+            <Link
               key={story.id}
-              className="group bg-white/60 backdrop-blur-lg rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border border-white/50 relative"
+              href={story.link}
+              className="group bg-white/60 backdrop-blur-lg rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border border-white/50 relative block"
               data-testid={`success-story-${story.id}`}
             >
               {/* Orange Gradient Overlay */}
@@ -84,26 +61,24 @@ const SuccessStoriesSection: React.FC = () => {
               
               {/* Image */}
               <div className="relative h-64 overflow-hidden bg-gradient-to-br from-orange-100 to-rose-100">
-                <Image
+                <img
                   src={story.image}
                   alt={story.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 {/* Gradient Overlay on Image */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#fe7725]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
-                {story.category && (
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#fe7725] to-orange-500 text-white backdrop-blur-sm rounded-full text-sm font-semibold shadow-lg">
-                      {story.category}
-                    </span>
-                  </div>
-                )}
+                <div className="absolute top-4 left-4">
+                  <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#fe7725] to-orange-500 text-white backdrop-blur-sm rounded-full text-sm font-semibold shadow-lg">
+                    {story.category}
+                  </span>
+                </div>
               </div>
 
               {/* Content */}
               <div className="p-6 relative z-10">
+                <p className="text-xs sm:text-sm text-[#fe7725] font-semibold mb-2">{story.location}</p>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#fe7725] transition-colors">
                   {story.title}
                 </h3>
@@ -117,8 +92,19 @@ const SuccessStoriesSection: React.FC = () => {
                   <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="text-center">
+          <Link
+            href="/success-story"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#fe7725] to-[#ff9555] hover:from-[#ff9555] hover:to-[#fe7725] text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            View All Case Studies
+            <FiArrowRight />
+          </Link>
         </div>
       </div>
     </section>

@@ -30,10 +30,15 @@ const Footer: React.FC = () => {
   ];
 
   const servicesLinks = [
-    { label: 'AI Development', href: '#ai' },
-    { label: 'SaaS Engineering', href: '#saas' },
-    { label: 'Cybersecurity', href: '#security' },
-    { label: 'Cloud & DevOps', href: '#cloud' },
+    { label: 'AI', href: '#ai' },
+    { label: 'GCC', href: '#gcc' },
+    { label: 'Cloud, DevOps & Infrastructure', href: '#cloud-devops' },
+    { label: 'Data & Analytics', href: '#data' },
+    { label: 'Digital Engineering', href: '#digital-engineering' },
+    { label: 'Cybersecurity', href: '#cybersecurity' },
+    { label: 'Business Applications & Platforms', href: '#business-apps' },
+    { label: 'Quality Engineering', href: '#quality' },
+    { label: 'Data Centers', href: '#data-centers' },
   ];
 
   const socialLinks = [
@@ -50,21 +55,22 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
+            <h3 className="text-white font-semibold text-lg mb-3">About Netsmartz</h3>
+            <p className="text-sm text-gray-400 mb-6 leading-relaxed">
+              As a leading global SaaS technology partner, we continue to empower enterprises across industries with every facet of their business. With over 26 years of experience and having nurtured numerous successful SaaS ventures, we have the expertise to address essential tech and non-tech requirements.
+            </p>
             <div className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent mb-4">
-           <div className="">
-              <div className="relative w-[200px] h-[100px]">
-                <Image
-                  src="/assets/footer/iso.png"
-                  alt="sustainability icons"
-                  fill
-                  className="object-contain"
-                />
+              <div className="">
+                <div className="relative w-[200px] h-[100px]">
+                  <Image
+                    src="/assets/footer/iso.png"
+                    alt="sustainability icon"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
-                        </div>
-            <p className="text-sm text-gray-400 mb-4">
-              {t('description')}
-            </p>
             <div className="flex space-x-3 rtl:space-x-reverse">
               {socialLinks.map((social, index) => (
                 <a
